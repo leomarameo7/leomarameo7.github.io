@@ -1,7 +1,18 @@
 ---
 title: "Dr. Leonardo Capitani"
-image: Leonardo_SYKE.JPG
 toc: false
+image: Leonardo_SYKE.JPG
+about: 
+ template: trestles
+ image-shape: round
+ image-width: 20em
+ links:
+    - text: Twitter
+      href: https://twitter.com/LeoCapitani7
+    - text: GitHub
+      href: https://github.com/leomarameo7
+    - text: Email
+      href: mailto:leocapi07@gmail.com
 ---
 
 This is a Quarto website.
