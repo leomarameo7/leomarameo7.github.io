@@ -13,18 +13,23 @@ about:
       href: https://github.com/leomarameo7
     - text: Email
       href: mailto:leocapi07@gmail.com
+theme:
+  light: flatly
+  dark: darkly
 ---
 
-I am a quantitative ecologist with expertise on food-web modelling and Bayesian data analysis. 
+I am a quantitative ecologist with expertise on food-web modelling and Bayesian data analysis.
 
-## Education
+### Education
 
-Universidade Federal do Rio Grande do Norte | Natal, Brazil
-PhD in Ecology | June 2017 - June 2021
+-   PhD in Ecology \| June 2017 - June 2021
 
-Universidade Federal do Rio Grande do Sul | Porto Alegre, Brazil
-MSc in Ecology | April 2015 - May 2017
+    Universidade Federal do Rio Grande do Norte \| Natal, Brazil
 
-Universitat de Barcelona | Barcelona, Spain
-B.A in Enviromental Sciencies | Sept 2008 - Sept 2014
----
+-   MSc in Ecology \| April 2015 - May 2017
+
+    Universidade Federal do Rio Grande do Sul \| Porto Alegre, Brazil
+
+-   B.A in Enviromental Sciencies \| Sept 2008 - Sept 2014
+
+    Universitat de Barcelona \| Barcelona, Spain
