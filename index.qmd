@@ -1,5 +1,6 @@
 ---
 title: "Dr. Leonardo Capitani"
+image: Leonardo_SYKE.JPG
 toc: false
 ---
 
