@@ -13,9 +13,6 @@ about:
       href: https://github.com/leomarameo7
     - text: Email
       href: mailto:leocapi07@gmail.com
-theme:
-  light: flatly
-  dark: darkly
 ---
 
 I am a quantitative ecologist with expertise on food-web modelling and Bayesian data analysis.
