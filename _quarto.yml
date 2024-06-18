@@ -9,7 +9,10 @@ website:
     right:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - icon: github
+        href: https://github.com/leomarameo7
+      - icon: envelope
+        href: mailto:leocapi07@gmail.com
   page-footer:    
     background: light
     left: This website is licensed under a [Creative Commons Attributions 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
@@ -20,9 +23,9 @@ format:
     page-layout: full
     toc: false
     theme: 
-      - styles.scss
-    mainfont: Sen
-
+     light: minty
+     dark: solar
+    css: styles.scss
 editor: visual
 
 
