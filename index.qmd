@@ -1,6 +1,6 @@
 ---
 title: "<span style = 'display:none;'>Dr. Leonardo Zanoli Capitani</span>"
-image: media/Leonardo_SYKE.JPG
+image: docs/media/Leonardo_SYKE.JPG
 about: 
  template: jolla
  image-shape: round
