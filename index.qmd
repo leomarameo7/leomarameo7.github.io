@@ -1,11 +1,11 @@
 ---
 title: "<span style = 'display:none;'>Dr. Leonardo Zanoli Capitani</span>"
-image: Leonardo_SYKE.JPG
+image: media/Leonardo_SYKE.JPG
 about: 
  template: trestles
  image-shape: round
  image-width: 20em
-links:
+ links:
     - text: Twitter
       href: https://twitter.com/LeoCapitani7
     - text: GitHub
