@@ -1,0 +1,27 @@
+---
+title: "<span style = 'display:none;'>Dr. Leonardo Zanoli Capitani</span>"
+image: Leonardo_SYKE.JPG
+about: 
+ template: trestles
+ image-shape: round
+ image-width: 20em
+links:
+    - text: Twitter
+      href: https://twitter.com/LeoCapitani7
+    - text: GitHub
+      href: https://github.com/leomarameo7
+    - text: Email
+      href: mailto:leocapi07@gmail.com
+---
+
+I am a quantitative ecologist with expertise on food-web modelling and Bayesian data analysis.
+
+------------------------------------------------------------------------
+
+```{r}
+#| include: false
+# Prompt R
+Sys.Date()
+```
+
+Created with Quarto by Leonardo Zanoli Capitani; Updated `r as.character(Sys.Date())`
