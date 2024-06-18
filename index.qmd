@@ -2,7 +2,7 @@
 title: "<span style = 'display:none;'>Dr. Leonardo Zanoli Capitani</span>"
 image: media/Leonardo_SYKE.JPG
 about: 
- template: trestles
+ template: jolla
  image-shape: round
  image-width: 20em
  links:
