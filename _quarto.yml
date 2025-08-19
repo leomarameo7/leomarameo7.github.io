@@ -9,6 +9,8 @@ website:
     right:
       - href: index.qmd
         text: Home
+      - text: "Research Projects"
+        href: scientific_projects/index.qmd
       - icon: github
         href: https://github.com/leomarameo7
       - icon: envelope
