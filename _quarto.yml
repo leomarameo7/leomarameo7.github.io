@@ -4,7 +4,7 @@ project:
   render:
     - "*.qmd"
 website:
-  title: "Dr. Leonardo Zanoli Capitani"
+  title: "Dr. Leonardo Capitani"
   navbar:
     right:
       - href: index.qmd

@@ -1,0 +1,89 @@
+---
+title: "Atlantic reef ecosystems and sea warming"
+categories: [project, GACR]
+image: "Atol_das_Rocas.png"
+about:
+  id: heading
+  template: jolla
+  image-shape: round
+  image-width: 500px
+listing: 
+  - id: blogs
+    max-description-length: 500
+    fields: [title, description]
+    contents: "blog"
+    sort: "date desc" 
+    type: grid
+    grid-item-border: true
+---
+
+::: {#heading}
+This research project contains three sub project that last 4-years during my Ph.D. at the Universidade Federal do Rio Grande do Norte, Brazil. I have received funding by the [Brazilian Federal Agency for Support and Evaluation of Graduate Education](https://www.gov.br/capes/pt-br) (CAPES), and started on 1.6.2017.
+:::
+
+## Project description
+
+Coral reefs are among the most diverse and sensitive ecosystems on the planet, with multiple reports of severe impacts by ocean warming.
+
+::: {.callout-important appearance="minimal" icon="false"}
+## Open questions adressed:
+
+-   To what extent sea warming influence reef species standing biomass?
+
+-   Does sea warming change the ecosystem energy transfer efficiency ?
+
+-   Do species trophic interaction strenght modulate sea warming influence ?
+:::
+
+To understand the impacts of ocean warming on reef ecosystems, we investigated the potential future effects of human-induced ocean warming on standing biomass in reef food webs using a near-pristine tropical reef ecosystem in the Southwestern Atlantic Ocean as a model. We focus on We did *in situ* experiments (video link [here](https://www.youtube.com/watch?v=EPeJAe6WuaI)), fish visual censuses and food web modelling to forecast to what extent temperature affects reef fish trophic interactions in the Western Atlantic and modeled projections of changes in reef food web species due to climate change. 
+
+![Experiment setup with GoPro camera and the herbivorous fish Acanthurus chirurgus individual in frame at the Rocas Atoll, Western Atlantic. Photographs credits: Dr. [Natalia Roos](https://scholar.google.com/citations?hl=pt-BR&user=ehXdQVMAAAAJ&view_op=list_works&sortby=pubdate).](Screenshot 2025-08-19 at 11.19.14.png){fig-align="center"}
+
+## Results obtained
+
+-   By the end of this century reef ecosystem standing biomass is projected to decline by approximately 1 %, 8 %, and 44 % under low, moderate, and high warming scenarios.
+
+-   Ecosystem transfer efficiency will drop by \~2 % and biomass residence time will decrease by \~10 % under the high warming scenario.
+
+-   The result is a simplification of reef communities, with fewer resources and lower resilience to disturbance.
+
+[![Response of total fish standing biomass to ocean warming. Retrieved from [Capitani et al. 2022](https://link.springer.com/article/10.1007/s10021-021-00691-z). ](10021_2021_691_Fig3_HTML.png.webp){fig-align="center"}](10.1007/s10021-021-00691-z)
+
+## Research paper associated: 
+
+**Capitani, L.**, de Araujo, J. N., Vieira, E. A., Angelini, R., & Longo, G. O. (2022). Ocean warming will reduce standing biomass in a tropical Western Atlantic reef ecosystem. *Ecosystems, 25*, 843–857. [https://doi.org/10.1007/s10021-021-00691-z](https://link.springer.com/article/10.1007/s10021-021-00691-z)
+
+**Capitani, L.**, Roos, N. C., Longo, G. O., Angelini, R., & Schenone, L. (2021). Resource-to-consumer ratio determines the functional response of an herbivorous fish in a field experiment. *Oikos, 130*(12), 2100–2110. <https://doi.org/10.1111/oik.08784>
+
+Artana, C., **Capitani, L**., Garcia, G. S., & Coll, M. (2024). Food web trophic control modulates tropical Atlantic reef ecosystems response to marine heat wave intensity and duration. *Journal of Animal Ecology.* [https://doi.org/10.1111/1365-2656.14107](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/1365-2656.14107)
+
+## My role
+
+I was the principal investigator of the project.
+
+## In the media
+
+::: {#blogs}
+:::
+
+## Core collaborators
+
+### Guilherme Longo  ![](Guilherme-Longo.jpg){align="right" width="126"}
+
+-   Research group leader
+
+-   🏦 Federal University of Rio Grande do Norte, Brazil
+
+### Ronaldo Angelini ![](Ronaldo-Angelini-2.jpg.webp){align="right" width="137"}
+
+-   Research group leader
+
+-   🏦 Federal University of Rio Grande do Norte, Brazil
+
+### Irena Šímová <img src="https://www.cts.cuni.cz/img/people/%C5%A0%C3%ADmov%C3%A1.jpg" align="right" width="120"/>
+
+-   Researcher
+-   🏦Charles University, Czech Republic
+-   📬email: simova(at)cts.cuni.cz
+-   [![ORCID](https://img.shields.io/badge/orcid-0000--0002--9474--569X-brightgreen.svg)](https://orcid.org/0000-0002-9474-569X)
+-   [🔗personal webiste](https://www.cts.cuni.cz/en/simova.html)

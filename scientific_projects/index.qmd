@@ -1,0 +1,35 @@
+---
+title: "Research projects"
+description: |
+  Research Projects, in which I have partecipated or I am actively participating.
+listing:
+  - id: active
+    max-description-length: 500
+    image-height: 200px
+    fields: [image, title, description]
+    
+    sort: "false" 
+    type: grid
+    grid-item-border: false
+  
+  - id: past
+    max-description-length: 500
+    image-height: 200px
+    fields: [image, title, description]
+    contents: 
+      - RocasAtoll/index.qmd
+    sort: "false" 
+    type: grid
+    grid-item-border: false
+
+---
+
+## Active Projects
+
+::: {#active}
+:::
+
+## Past Projects
+::: {#past}
+:::
+
