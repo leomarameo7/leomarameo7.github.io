@@ -18,7 +18,7 @@ listing:
 ---
 
 ::: {#heading}
-This research project contains three sub project that last 4-years during my Ph.D. at the Universidade Federal do Rio Grande do Norte, Brazil. I have received funding by the [Brazilian Federal Agency for Support and Evaluation of Graduate Education](https://www.gov.br/capes/pt-br) (CAPES), and started on 1.6.2017.
+This research project contains three sub projects that I have done during my Ph.D. in Ecology at the Universidade Federal do Rio Grande do Norte, Brazil. I have received funding by the Brazilian Federal Agency for Support and Evaluation of Graduate Education ([CAPES](https://www.gov.br/capes/pt-br)), and started in June 2017.
 :::
 
 ## Project description
