@@ -22,7 +22,6 @@ listing:
     sort: "false" 
     type: grid
     grid-item-border: false
-
 ---
 
 ## Active Projects
@@ -31,6 +30,6 @@ listing:
 :::
 
 ## Past Projects
+
 ::: {#past}
 :::
-

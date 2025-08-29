@@ -1,6 +1,18 @@
 ---
-title: "index"
-format: html
-editor: visual
+title: "seewandel Klima"
+categories: [project, GACR]
+image: "images/seewandel_logo.png"
+about:
+  id: heading
+  template: jolla
+  image-shape: round
+  image-width: 500px
+listing: 
+  - id: blogs
+    max-description-length: 500
+    fields: [title, description]
+    contents: "blog"
+    sort: "date desc" 
+    type: grid
+    grid-item-border: true
 ---
-
