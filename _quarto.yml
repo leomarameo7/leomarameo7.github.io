@@ -7,7 +7,7 @@ website:
   title: "Dr. Leonardo Capitani"
   navbar:
     right:
-      - href: index.qmd
+      - href: index_home.qmd
         text: Home
       - text: "Research Projects"
         href: scientific_projects/index.qmd
