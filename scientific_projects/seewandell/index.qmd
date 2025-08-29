@@ -6,7 +6,7 @@ about:
   id: heading
   template: jolla
   image-shape: round
-  image-width: 500px
+  image-width: 250px
 listing: 
   - id: blogs
     max-description-length: 500

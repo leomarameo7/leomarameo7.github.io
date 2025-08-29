@@ -6,6 +6,9 @@
     "scientific_projects/index.qmd": [
       "seewandell/index.qmd",
       "RocasAtoll/index.qmd"
+    ],
+    "scientific_projects/seewandell/index.qmd": [
+      "blog"
     ]
   }
 }
