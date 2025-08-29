@@ -13,5 +13,12 @@
   {
     "listing": "/scientific_projects/seewandell/index.html",
     "items": []
+  },
+  {
+    "listing": "/scientific_projects/index_sci_pro.html",
+    "items": [
+      "/scientific_projects/seewandell/index.html",
+      "/scientific_projects/RocasAtoll/index.html"
+    ]
   }
 ]
