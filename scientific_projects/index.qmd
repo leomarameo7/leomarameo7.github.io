@@ -5,7 +5,7 @@ description: |
 listing:
   - id: active
     max-description-length: 500
-    image-height: 200px
+    image-height: 100px
     fields: [image, title, description]
     contents: 
       - seewandell/index.qmd
@@ -15,7 +15,7 @@ listing:
   
   - id: past
     max-description-length: 500
-    image-height: 200px
+    image-height: 100px
     fields: [image, title, description]
     contents: 
       - RocasAtoll/index.qmd
