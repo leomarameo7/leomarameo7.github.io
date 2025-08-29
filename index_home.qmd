@@ -6,7 +6,7 @@ about:
  image-width: 20em
 ---
 
-![](docs/media/Leonardo_SYKE.JPG){.profile-photo width="142"}
+![](docs/media/Leonardo_SYKE.JPG){.profile-photo fig-align="left" width="142"}
 
 ::: {style="text-align:center;"}
 ![Antonio Ligabue, *Volpe in fuga.* 1948. Private Collection.](docs/media/liga_fox.jpg){fig-align="center" width="72%"}
