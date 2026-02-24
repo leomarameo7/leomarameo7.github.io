@@ -37,7 +37,7 @@ Coral reefs are among the most diverse and sensitive ecosystems on the planet, w
 
 To understand the impacts of ocean warming on reef ecosystems, we investigated the potential future effects of human-induced ocean warming on standing biomass in reef food webs using a near-pristine tropical reef ecosystem in the Southwestern Atlantic Ocean as a model. We focus on We did *in situ* experiments (video link [here](https://www.youtube.com/watch?v=EPeJAe6WuaI)), fish visual censuses and food web modelling to forecast to what extent temperature affects reef fish trophic interactions in the Western Atlantic and modeled projections of changes in reef food web species due to climate change. 
 
-![Experiment setup with GoPro camera and the herbivorous fish Acanthurus chirurgus individual in frame at the Rocas Atoll, Western Atlantic. Photographs credits: Dr. [Natalia Roos](https://scholar.google.com/citations?hl=pt-BR&user=ehXdQVMAAAAJ&view_op=list_works&sortby=pubdate).](Screenshot 2025-08-19 at 11.19.14.png){fig-align="center"}
+![Experiment setup with GoPro camera and the herbivorous fish Acanthurus chirurgus individual in frame at the Rocas Atoll, Western Atlantic. Photographs credits: Dr. [Natalia Roos](https://scholar.google.com/citations?hl=pt-BR&user=ehXdQVMAAAAJ&view_op=list_works&sortby=pubdate).](Screenshot%202025-08-19%20at%2011.19.14.png){fig-align="center"}
 
 ## Results obtained
 
@@ -47,9 +47,9 @@ To understand the impacts of ocean warming on reef ecosystems, we investigated t
 
 -   The result is a simplification of reef communities, with fewer resources and lower resilience to disturbance.
 
-[![Response of total fish standing biomass to ocean warming. Retrieved from [Capitani et al. 2022](https://link.springer.com/article/10.1007/s10021-021-00691-z). ](10021_2021_691_Fig3_HTML.png.webp){fig-align="center"}](10.1007/s10021-021-00691-z)
+[![Response of total fish standing biomass to ocean warming. Retrieved from \[Capitani et al. 2022\](https://link.springer.com/article/10.1007/s10021-021-00691-z).](10021_2021_691_Fig3_HTML.png.webp){fig-align="center"}](10.1007/s10021-021-00691-z)
 
-## Research paper associated: 
+## Research paper associated:
 
 **Capitani, L.**, de Araujo, J. N., Vieira, E. A., Angelini, R., & Longo, G. O. (2022). Ocean warming will reduce standing biomass in a tropical Western Atlantic reef ecosystem. *Ecosystems, 25*, 843–857. [https://doi.org/10.1007/s10021-021-00691-z](https://link.springer.com/article/10.1007/s10021-021-00691-z)
 
@@ -68,7 +68,7 @@ I was the principal investigator of the project.
 
 ## Core collaborators
 
-### Guilherme Longo  ![](Guilherme-Longo.jpg){align="right" width="126"}
+### Guilherme Longo ![](Guilherme-Longo.jpg){align="right" width="126"}
 
 -   Research group leader
 
