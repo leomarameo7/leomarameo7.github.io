@@ -6,11 +6,7 @@ about:
  image-width: 20em
 ---
 
-![](docs/media/LC.jpeg){.profile-photo fig-align="left" width="180"}
-
-::: {style="text-align:center;"}
-![Antonio Ligabue, *Volpe in fuga.* 1948. Private Collection.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center"}
-:::
+![](docs/media/LC.jpeg){.profile-photo fig-align="left" width="115"}
 
 ### Who am I ?
 
@@ -20,7 +16,9 @@ Well, I am an ecologist. What is an ecologist? An ecologist is someone who finds
 >
 > Paul Colinvax, 1978. *Why big fierce animals are rare?* Princeton University Press.
 
-------------------------------------------------------------------------
+::: {style="text-align:center;"}
+![Antonio Ligabue, *Volpe in fuga.* 1948. Private Collection.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center"}
+:::
 
 ```{r}
 #| include: false
