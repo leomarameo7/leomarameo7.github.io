@@ -9,6 +9,9 @@
     ],
     "scientific_projects/seewandell/index.qmd": [
       "blog"
+    ],
+    "notebooks/index_notebooks.qmd": [
+      "seewandell/CON_clean_dataset.html"
     ]
   }
 }

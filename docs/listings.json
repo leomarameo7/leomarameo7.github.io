@@ -13,5 +13,9 @@
       "/scientific_projects/seewandell/index.html",
       "/scientific_projects/RocasAtoll/index.html"
     ]
+  },
+  {
+    "listing": "/notebooks/index_notebooks.html",
+    "items": []
   }
 ]

@@ -5,6 +5,8 @@ project:
     - "*.qmd"
 website:
   title: "Dr. Leonardo Capitani"
+  page-navigation: true
+  back-to-top-navigation: true
   navbar:
     right:
       - href: index_home.qmd
@@ -17,6 +19,16 @@ website:
         href: https://github.com/leomarameo7
       - icon: envelope
         href: mailto:leocapi07@gmail.com
+  sidebar:
+    - title: "Notebooks"
+      style: "docked"
+      contents:
+        - text: "Notebooks"
+          href: notebooks/index_notebooks.qmd
+        - text: "Clean data: lake Constance"
+          href: notebooks/seewandell/CON_clean_dataset.html
+        - text: "Gaussian Processes"
+          href: notebooks/seewandell/GP_workbook.html
   page-footer:    
     background: light
     left: This website is licensed under a [Creative Commons Attributions 4.0 International License](https://creativecommons.org/licenses/by/4.0/)

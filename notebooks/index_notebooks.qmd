@@ -1,25 +1,5 @@
 ---
 title: "Notebooks"
 description: |
-  Notebooks made with quarto + R code. I aim to use these notebooks as drafts to share with collaborators who are not familiar with R and quarto.
-listing:
-  - id: active
-    max-description-length: 500
-    image-height: 100px
-    fields: [image, title, description]
-    contents: 
-      - seewandell/CON_clean_dataset.html
-    sort: "false" 
-    type: grid
-    grid-item-border: false
+  Notebooks made with quarto + R code. I aim to use these notebooks as drafts to share with scientific collaborators or students.
 ---
-
-## Active Projects
-
-::: {#active}
-:::
-
-## Past Projects
-
-::: {#past}
-:::

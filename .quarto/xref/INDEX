@@ -16,5 +16,8 @@
   },
   "scientific_projects/index_sci_pro.qmd": {
     "index_sci_pro.html": "99e7a5b3"
+  },
+  "notebooks/index_notebooks.qmd": {
+    "index_notebooks.html": "4cf8b259"
   }
 }
