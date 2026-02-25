@@ -9,7 +9,7 @@ website:
   back-to-top-navigation: true
   navbar:
     right:
-      - href: index_home.qmd
+      - href: index.qmd
         text: Home
       - text: "Research Projects"
         href: scientific_projects/index_sci_pro.qmd
