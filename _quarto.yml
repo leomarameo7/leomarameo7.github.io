@@ -5,6 +5,7 @@ project:
     - "*.qmd"
 website:
   title: "Dr. Leonardo Capitani"
+  favicon: docs/media/LC.jpeg
   page-navigation: true
   back-to-top-navigation: true
   navbar:
@@ -29,6 +30,7 @@ website:
           href: notebooks/seewandell/CON_clean_dataset.html
         - text: "Gaussian Processes"
           href: notebooks/seewandell/GP_workbook.html
+          
   page-footer:    
     background: light
     left: This website is licensed under a [Creative Commons Attributions 4.0 International License](https://creativecommons.org/licenses/by/4.0/)

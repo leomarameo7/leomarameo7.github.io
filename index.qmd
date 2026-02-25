@@ -6,8 +6,6 @@ about:
  image-width: 20em
 ---
 
-![](docs/media/LC.jpeg){.profile-photo fig-align="left" width="115"}
-
 ### Who am I ?
 
 Well, I am an ecologist. What is an ecologist? An ecologist is someone who finds excitement in the beauty and complexity of nature.
