@@ -2,8 +2,9 @@
 title: "<span style = 'display:none;'>Dr. Leonardo Capitani</span>"
 about: 
  template: jolla
+ image: docs/media/LC.jpeg
  image-shape: round
- image-width: 20em
+ image-width: 5em
 ---
 
 ### Who am I ?

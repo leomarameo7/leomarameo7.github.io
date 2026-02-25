@@ -234,15 +234,5 @@ blockquote { // style blockquotes (for speech bubbles)
 } 
 
 
-/* Fixed profile photo in upper-left corner, below navbar */
-.profile-photo {
-  position: fixed;       /* fixed so it stays visible even when scrolling */
-  top: 80px;             /* push below navbar (adjust if needed) */
-  left: 20px;
-  width: 160px;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  z-index: 1000;         /* ensures photo stays above content but below navbar */
-}
 
 
