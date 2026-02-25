@@ -3,20 +3,22 @@ title: "<span style = 'display:none;'>Dr. Leonardo Capitani</span>"
 about: 
  template: jolla
  image: docs/media/LC.jpeg
- image-shape: round
- image-width: 5em
+ links:
+    - href: mailto:leocapi07@gmail.com
+      text: Email
+      icon: envelope-fill
 ---
 
 ### Who am I ?
 
-Well, I am an ecologist. What is an ecologist? An ecologist is someone who finds excitement in the beauty and complexity of nature.
+Well, I am an ecologist. What is an ecologist? An ecologist is someone who finds excitement in the beauty and complexity of nature. I am also a passionate educator and thoroughly enjoy chances to teach and learn with audiences of all levels of prior experience.
 
 > And so an ecologist who begins by asking himself how life works very quickly finds himself asking instead why the natural ecosystems are made up of so many parts and why there are so many of each kind of part. Before he can answer an engineer's question “how does this work,” he is faced with even more fundamental questions beginning with “why”: Why are there so many different kinds of plants and animals? Why are some common but others rare? Why are some large but others small? Why do they sometimes do such peculiar things?
 >
 > Paul Colinvax, 1978. *Why big fierce animals are rare?* Princeton University Press.
 
 ::: {style="text-align:center;"}
-![Antonio Ligabue, *Volpe in fuga.* 1948. Private Collection.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center"}
+![Antonio Ligabue, *Volpe in fuga.* 1948. Private Collection.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center" width="785"}
 :::
 
 ```{r}

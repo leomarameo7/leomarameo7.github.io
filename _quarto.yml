@@ -5,11 +5,9 @@ project:
     - "*.qmd"
 website:
   title: "Dr. Leonardo Capitani"
-  favicon: docs/media/LC.jpeg
   page-navigation: true
   back-to-top-navigation: true
   navbar:
-    logo: docs/media/LC.jpeg  # Path to your image
     right:
       - href: index.qmd
         text: Home

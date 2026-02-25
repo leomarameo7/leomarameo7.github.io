@@ -58,7 +58,7 @@ blockquote { // style blockquotes (for speech bubbles)
 
 // openscapes logo size/position (navbar top left); see https://github.com/robertmitchellv/robertmitchellv.github.io/blob/main/custom-dark.scss
 .navbar-brand img { 
-  max-height: 70px; // was 200px when using alt logo (from blogdown site)
+  max-height: 200px; // was 200px when using alt logo (from blogdown site)
   width: auto;
   padding-left: 20px;
 }
@@ -232,6 +232,7 @@ blockquote { // style blockquotes (for speech bubbles)
 	margin-left: -11.5px;
 	margin-bottom: -50px; 
 } 
+
 
 
 
