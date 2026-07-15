@@ -1,0 +1,23 @@
+---
+title: "seewandel Klima"
+lang: fr
+categories: [project, GACR]
+image: "images/seewandel_logo.png"
+about:
+ id: heading
+ template: jolla
+ image-shape: round
+ image-width: 250px
+listing:
+  - id: blogs
+    max-description-length: 500
+    fields: [title, description]
+    contents: "blog"
+    sort: "date desc"
+    type: grid
+    grid-item-border: true
+---
+
+::: {.lang-switch}
+🌐 [English](index.qmd) · [Italiano](index.it.qmd) · [Español](index.es.qmd) · [Português](index.pt.qmd) · **Français** · [Deutsch](index.de.qmd)
+:::
