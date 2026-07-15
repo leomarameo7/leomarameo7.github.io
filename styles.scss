@@ -234,6 +234,13 @@ blockquote { // style blockquotes (for speech bubbles)
 } 
 
 
+// language switcher line shown under page titles
+.lang-switch {
+  font-size: 15px;
+  color: $medium-gray1;
+  margin-bottom: 1.5em;
+}
+
 /* Fixed profile photo in upper-left corner, below navbar */
 .profile-photo {
   position: fixed;       /* fixed so it stays visible even when scrolling */

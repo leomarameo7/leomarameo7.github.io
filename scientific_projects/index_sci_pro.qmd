@@ -24,6 +24,10 @@ listing:
     grid-item-border: false
 ---
 
+::: {.lang-switch}
+🌐 **English** · [Italiano](index_sci_pro.it.qmd) · [Español](index_sci_pro.es.qmd) · [Português](index_sci_pro.pt.qmd) · [Français](index_sci_pro.fr.qmd) · [Deutsch](index_sci_pro.de.qmd)
+:::
+
 ## Active Projects
 
 ::: {#active}

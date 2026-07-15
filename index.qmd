@@ -9,6 +9,10 @@ about:
       icon: envelope-fill
 ---
 
+::: {.lang-switch}
+🌐 **English** · [Italiano](index.it.qmd) · [Español](index.es.qmd) · [Português](index.pt.qmd) · [Français](index.fr.qmd) · [Deutsch](index.de.qmd)
+:::
+
 ### Who am I ?
 
 Well, I am an ecologist. What is an ecologist? An ecologist is someone who finds excitement in the beauty and complexity of nature. I am also a passionate educator and thoroughly enjoy chances to teach and learn with audiences of all levels of prior experience.
