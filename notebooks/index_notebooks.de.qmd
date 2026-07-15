@@ -1,0 +1,10 @@
+---
+title: "Notebooks"
+lang: de
+description: |
+  Notebooks erstellt mit quarto + R-Code. Ich möchte diese Notebooks als Entwürfe verwenden, die ich mit wissenschaftlichen Mitarbeitenden oder Studierenden teile.
+---
+
+::: {.lang-switch}
+🌐 [English](index_notebooks.qmd) · [Italiano](index_notebooks.it.qmd) · [Español](index_notebooks.es.qmd) · [Português](index_notebooks.pt.qmd) · [Français](index_notebooks.fr.qmd) · **Deutsch**
+:::

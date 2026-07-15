@@ -1,0 +1,94 @@
+---
+title: "Atlantische Riffökosysteme und Meereserwärmung"
+lang: de
+categories: [project, GACR]
+image: "Atol_das_Rocas.png"
+about:
+  id: heading
+  template: jolla
+  image-shape: round
+  image-width: 500px
+listing:
+  - id: blogs
+    max-description-length: 500
+    fields: [title, description]
+    contents: "blog"
+    sort: "date desc"
+    type: grid
+    grid-item-border: true
+---
+
+::: {.lang-switch}
+🌐 [English](index.qmd) · [Italiano](index.it.qmd) · [Español](index.es.qmd) · [Português](index.pt.qmd) · [Français](index.fr.qmd) · **Deutsch**
+:::
+
+::: {#heading}
+Dieses Forschungsprojekt umfasst drei Teilprojekte, die ich während meiner Promotion in Ökologie an der Universidade Federal do Rio Grande do Norte, Brasilien, durchgeführt habe. Ich erhielt eine Förderung der brasilianischen Bundesagentur für die Förderung und Evaluierung der Hochschulausbildung ([CAPES](https://www.gov.br/capes/pt-br)); das Projekt begann im Juni 2017.
+:::
+
+## Projektbeschreibung
+
+Korallenriffe zählen zu den vielfältigsten und empfindlichsten Ökosystemen des Planeten, mit zahlreichen Berichten über schwerwiegende Auswirkungen der Ozeanerwärmung.
+
+::: {.callout-important appearance="minimal" icon="false"}
+## Behandelte Forschungsfragen:
+
+-   Inwieweit beeinflusst die Meereserwärmung die stehende Biomasse von Riffarten?
+
+-   Verändert die Meereserwärmung die Energieübertragungseffizienz des Ökosystems?
+
+-   Moduliert die Stärke trophischer Interaktionen zwischen Arten den Einfluss der Meereserwärmung?
+:::
+
+Um die Auswirkungen der Ozeanerwärmung auf Riffökosysteme zu verstehen, untersuchten wir die potenziellen zukünftigen Effekte der menschengemachten Ozeanerwärmung auf die stehende Biomasse in Riff-Nahrungsnetzen, wobei ein nahezu unberührtes tropisches Riffökosystem im südwestlichen Atlantik als Modell diente. Wir führten *In-situ*-Experimente durch (Video [hier](https://www.youtube.com/watch?v=EPeJAe6WuaI)), visuelle Fischzählungen sowie Nahrungsnetzmodellierungen, um vorherzusagen, inwieweit die Temperatur die trophischen Interaktionen von Riff-Fischen im westlichen Atlantik beeinflusst, einschließlich modellierter Projektionen von Veränderungen der Riff-Nahrungsnetzarten infolge des Klimawandels.
+
+![Versuchsaufbau mit GoPro-Kamera und einem Individuum des pflanzenfressenden Fisches Acanthurus chirurgus im Bild, am Rocas-Atoll, westlicher Atlantik. Fotocredits: Dr. [Natalia Roos](https://scholar.google.com/citations?hl=pt-BR&user=ehXdQVMAAAAJ&view_op=list_works&sortby=pubdate).](Screenshot%202025-08-19%20at%2011.19.14.png){fig-align="center"}
+
+## Erzielte Ergebnisse
+
+-   Bis zum Ende dieses Jahrhunderts wird ein Rückgang der stehenden Biomasse des Riffökosystems um etwa 1 %, 8 % beziehungsweise 44 % bei geringer, moderater und starker Erwärmung prognostiziert.
+
+-   Die Transfereffizienz des Ökosystems wird im Szenario starker Erwärmung um etwa 2 % sinken, und die Verweilzeit der Biomasse wird um etwa 10 % abnehmen.
+
+-   Das Ergebnis ist eine Vereinfachung der Riffgemeinschaften mit weniger verfügbaren Ressourcen und geringerer Widerstandsfähigkeit gegenüber Störungen.
+
+[![Reaktion der gesamten stehenden Fischbiomasse auf die Ozeanerwärmung. Entnommen aus \[Capitani et al. 2022\](https://link.springer.com/article/10.1007/s10021-021-00691-z).](10021_2021_691_Fig3_HTML.png.webp){fig-align="center"}](10.1007/s10021-021-00691-z)
+
+## Zugehörige Forschungsarbeiten:
+
+**Capitani, L.**, de Araujo, J. N., Vieira, E. A., Angelini, R., & Longo, G. O. (2022). Ocean warming will reduce standing biomass in a tropical Western Atlantic reef ecosystem. *Ecosystems, 25*, 843–857. [https://doi.org/10.1007/s10021-021-00691-z](https://link.springer.com/article/10.1007/s10021-021-00691-z)
+
+**Capitani, L.**, Roos, N. C., Longo, G. O., Angelini, R., & Schenone, L. (2021). Resource-to-consumer ratio determines the functional response of an herbivorous fish in a field experiment. *Oikos, 130*(12), 2100–2110. <https://doi.org/10.1111/oik.08784>
+
+Artana, C., **Capitani, L**., Garcia, G. S., & Coll, M. (2024). Food web trophic control modulates tropical Atlantic reef ecosystems response to marine heat wave intensity and duration. *Journal of Animal Ecology.* [https://doi.org/10.1111/1365-2656.14107](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/1365-2656.14107)
+
+## Meine Rolle
+
+Ich war der Hauptverantwortliche (Principal Investigator) des Projekts.
+
+## In den Medien
+
+::: {#blogs}
+:::
+
+## Wichtigste Mitarbeiter
+
+### Guilherme Longo ![](Guilherme-Longo.jpg){align="right" width="126"}
+
+-   Leiter der Forschungsgruppe
+
+-   🏦 Universidade Federal do Rio Grande do Norte, Brasilien
+
+### Ronaldo Angelini ![](Ronaldo-Angelini-2.jpg.webp){align="right" width="137"}
+
+-   Leiter der Forschungsgruppe
+
+-   🏦 Universidade Federal do Rio Grande do Norte, Brasilien
+
+### Irena Šímová <img src="https://www.cts.cuni.cz/img/people/%C5%A0%C3%ADmov%C3%A1.jpg" align="right" width="120"/>
+
+-   Wissenschaftlerin
+-   🏦Charles University, Tschechische Republik
+-   📬E-Mail: simova(at)cts.cuni.cz
+-   [![ORCID](https://img.shields.io/badge/orcid-0000--0002--9474--569X-brightgreen.svg)](https://orcid.org/0000-0002-9474-569X)
+-   [🔗persönliche Website](https://www.cts.cuni.cz/en/simova.html)
