@@ -1,0 +1,10 @@
+---
+title: "Notebooks"
+lang: it
+description: |
+  Notebook realizzati con quarto + codice R. Il mio obiettivo è utilizzare questi notebook come bozze da condividere con collaboratori scientifici o studenti.
+---
+
+::: {.lang-switch}
+🌐 [English](index_notebooks.qmd) · **Italiano** · [Español](index_notebooks.es.qmd) · [Português](index_notebooks.pt.qmd) · [Français](index_notebooks.fr.qmd) · [Deutsch](index_notebooks.de.qmd)
+:::
