@@ -1,0 +1,40 @@
+---
+title: "Proyectos de investigación"
+lang: es
+description: |
+  Proyectos de investigación en los que he participado o participo activamente.
+listing:
+  - id: active
+    max-description-length: 500
+    image-height: 100px
+    fields: [image, title, description]
+    contents:
+      - seewandell/index.es.qmd
+    sort: "false"
+    type: grid
+    grid-item-border: false
+
+  - id: past
+    max-description-length: 500
+    image-height: 100px
+    fields: [image, title, description]
+    contents:
+      - RocasAtoll/index.es.qmd
+    sort: "false"
+    type: grid
+    grid-item-border: false
+---
+
+::: {.lang-switch}
+🌐 [English](index_sci_pro.qmd) · [Italiano](index_sci_pro.it.qmd) · **Español** · [Português](index_sci_pro.pt.qmd) · [Français](index_sci_pro.fr.qmd) · [Deutsch](index_sci_pro.de.qmd)
+:::
+
+## Proyectos activos
+
+::: {#active}
+:::
+
+## Proyectos pasados
+
+::: {#past}
+:::

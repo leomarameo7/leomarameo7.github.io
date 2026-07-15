@@ -1,0 +1,35 @@
+---
+title: "<span style = 'display:none;'>Dr. Leonardo Capitani</span>"
+lang: es
+about:
+ template: jolla
+ image: docs/media/LC.jpeg
+ links:
+    - href: mailto:leocapi07@gmail.com
+      text: Email
+      icon: envelope-fill
+---
+
+::: {.lang-switch}
+🌐 [English](index.qmd) · [Italiano](index.it.qmd) · **Español** · [Português](index.pt.qmd) · [Français](index.fr.qmd) · [Deutsch](index.de.qmd)
+:::
+
+### ¿Quién soy?
+
+Bueno, soy ecólogo. ¿Qué es un ecólogo? Un ecólogo es alguien que encuentra entusiasmo en la belleza y la complejidad de la naturaleza. También soy un educador apasionado y disfruto enormemente de las oportunidades de enseñar y aprender con audiencias de todos los niveles de experiencia previa.
+
+> And so an ecologist who begins by asking himself how life works very quickly finds himself asking instead why the natural ecosystems are made up of so many parts and why there are so many of each kind of part. Before he can answer an engineer's question "how does this work," he is faced with even more fundamental questions beginning with "why": Why are there so many different kinds of plants and animals? Why are some common but others rare? Why are some large but others small? Why do they sometimes do such peculiar things?
+>
+> Paul Colinvax, 1978. *Why big fierce animals are rare?* Princeton University Press.
+
+::: {style="text-align:center;"}
+![Antonio Ligabue, *Volpe in fuga.* 1948. Colección privada.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center" width="785"}
+:::
+
+```{r}
+#| include: false
+# Prompt R
+Sys.Date()
+```
+
+Creado por Leonardo Capitani; Actualizado el `r format(Sys.Date(), "%d %B %Y")`

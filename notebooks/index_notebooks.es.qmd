@@ -1,0 +1,10 @@
+---
+title: "Notebooks"
+lang: es
+description: |
+  Notebooks creados con quarto + código R. Mi objetivo es usar estos notebooks como borradores para compartir con colaboradores científicos o estudiantes.
+---
+
+::: {.lang-switch}
+🌐 [English](index_notebooks.qmd) · [Italiano](index_notebooks.it.qmd) · **Español** · [Português](index_notebooks.pt.qmd) · [Français](index_notebooks.fr.qmd) · [Deutsch](index_notebooks.de.qmd)
+:::
