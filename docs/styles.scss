@@ -58,7 +58,7 @@ blockquote { // style blockquotes (for speech bubbles)
 
 // openscapes logo size/position (navbar top left); see https://github.com/robertmitchellv/robertmitchellv.github.io/blob/main/custom-dark.scss
 .navbar-brand img { 
-  max-height: 200px; // was 200px when using alt logo (from blogdown site)
+  max-height: 70px; // was 200px when using alt logo (from blogdown site)
   width: auto;
   padding-left: 20px;
 }
@@ -234,6 +234,22 @@ blockquote { // style blockquotes (for speech bubbles)
 } 
 
 
+// language switcher line shown under page titles
+.lang-switch {
+  font-size: 15px;
+  color: $medium-gray1;
+  margin-bottom: 1.5em;
+}
 
+/* Fixed profile photo in upper-left corner, below navbar */
+.profile-photo {
+  position: fixed;       /* fixed so it stays visible even when scrolling */
+  top: 80px;             /* push below navbar (adjust if needed) */
+  left: 20px;
+  width: 160px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 1000;         /* ensures photo stays above content but below navbar */
+}
 
 

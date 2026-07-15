@@ -4,7 +4,11 @@
     "items": []
   },
   {
-    "listing": "/scientific_projects/RocasAtoll/index.html",
+    "listing": "/scientific_projects/seewandell/index.it.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/seewandell/index.es.html",
     "items": []
   },
   {
@@ -15,7 +19,74 @@
     ]
   },
   {
-    "listing": "/notebooks/index_notebooks.html",
+    "listing": "/scientific_projects/index_sci_pro.it.html",
+    "items": [
+      "/scientific_projects/seewandell/index.it.html",
+      "/scientific_projects/RocasAtoll/index.it.html"
+    ]
+  },
+  {
+    "listing": "/scientific_projects/index_sci_pro.es.html",
+    "items": [
+      "/scientific_projects/seewandell/index.es.html",
+      "/scientific_projects/RocasAtoll/index.es.html"
+    ]
+  },
+  {
+    "listing": "/scientific_projects/RocasAtoll/index.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/RocasAtoll/index.it.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/RocasAtoll/index.es.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/RocasAtoll/index.de.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/RocasAtoll/index.fr.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/RocasAtoll/index.pt.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/index_sci_pro.de.html",
+    "items": [
+      "/scientific_projects/seewandell/index.de.html",
+      "/scientific_projects/RocasAtoll/index.de.html"
+    ]
+  },
+  {
+    "listing": "/scientific_projects/index_sci_pro.fr.html",
+    "items": [
+      "/scientific_projects/seewandell/index.fr.html",
+      "/scientific_projects/RocasAtoll/index.fr.html"
+    ]
+  },
+  {
+    "listing": "/scientific_projects/index_sci_pro.pt.html",
+    "items": [
+      "/scientific_projects/seewandell/index.pt.html",
+      "/scientific_projects/RocasAtoll/index.pt.html"
+    ]
+  },
+  {
+    "listing": "/scientific_projects/seewandell/index.de.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/seewandell/index.fr.html",
+    "items": []
+  },
+  {
+    "listing": "/scientific_projects/seewandell/index.pt.html",
     "items": []
   }
 ]

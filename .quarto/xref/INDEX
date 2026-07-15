@@ -19,5 +19,98 @@
   },
   "notebooks/index_notebooks.qmd": {
     "index_notebooks.html": "4cf8b259"
+  },
+  "index.de.qmd": {
+    "index.de.html": "61dfa58d"
+  },
+  "index.es.qmd": {
+    "index.es.html": "dadc24ec"
+  },
+  "index.fr.qmd": {
+    "index.fr.html": "c89a31dc"
+  },
+  "index.it.qmd": {
+    "index.it.html": "505d497a"
+  },
+  "index.pt.qmd": {
+    "index.pt.html": "c2b6bdac"
+  },
+  "notebooks/index_notebooks.de.qmd": {
+    "index_notebooks.de.html": "1b7eed6f"
+  },
+  "notebooks/index_notebooks.es.qmd": {
+    "index_notebooks.es.html": "b4be828a"
+  },
+  "notebooks/index_notebooks.fr.qmd": {
+    "index_notebooks.fr.html": "0a25522b"
+  },
+  "notebooks/index_notebooks.it.qmd": {
+    "index_notebooks.it.html": "ad187cff"
+  },
+  "notebooks/index_notebooks.pt.qmd": {
+    "index_notebooks.pt.html": "eeef4ca8"
+  },
+  "open_science.de.qmd": {
+    "open_science.de.html": "69e4b20c"
+  },
+  "open_science.es.qmd": {
+    "open_science.es.html": "0033882f"
+  },
+  "open_science.fr.qmd": {
+    "open_science.fr.html": "c7be9069"
+  },
+  "open_science.it.qmd": {
+    "open_science.it.html": "dd5d2a26"
+  },
+  "open_science.pt.qmd": {
+    "open_science.pt.html": "05fc4e15"
+  },
+  "open_science.qmd": {
+    "open_science.html": "59cb6f6a"
+  },
+  "scientific_projects/RocasAtoll/index.de.qmd": {
+    "index.de.html": "c9456723"
+  },
+  "scientific_projects/RocasAtoll/index.es.qmd": {
+    "index.es.html": "c33be436"
+  },
+  "scientific_projects/RocasAtoll/index.fr.qmd": {
+    "index.fr.html": "669e1d78"
+  },
+  "scientific_projects/RocasAtoll/index.it.qmd": {
+    "index.it.html": "3c22c272"
+  },
+  "scientific_projects/RocasAtoll/index.pt.qmd": {
+    "index.pt.html": "c3ae90b1"
+  },
+  "scientific_projects/index_sci_pro.de.qmd": {
+    "index_sci_pro.de.html": "ddb5d66b"
+  },
+  "scientific_projects/index_sci_pro.es.qmd": {
+    "index_sci_pro.es.html": "0ff63502"
+  },
+  "scientific_projects/index_sci_pro.fr.qmd": {
+    "index_sci_pro.fr.html": "a78057f3"
+  },
+  "scientific_projects/index_sci_pro.it.qmd": {
+    "index_sci_pro.it.html": "c702ab1c"
+  },
+  "scientific_projects/index_sci_pro.pt.qmd": {
+    "index_sci_pro.pt.html": "5c0247cf"
+  },
+  "scientific_projects/seewandell/index.de.qmd": {
+    "index.de.html": "16150d2a"
+  },
+  "scientific_projects/seewandell/index.es.qmd": {
+    "index.es.html": "7585782d"
+  },
+  "scientific_projects/seewandell/index.fr.qmd": {
+    "index.fr.html": "503a01a6"
+  },
+  "scientific_projects/seewandell/index.it.qmd": {
+    "index.it.html": "43c46d5a"
+  },
+  "scientific_projects/seewandell/index.pt.qmd": {
+    "index.pt.html": "10bed3bb"
   }
 }

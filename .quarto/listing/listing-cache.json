@@ -1,17 +1,64 @@
 {
   "listingMap": {
+    "scientific_projects/RocasAtoll/index.de.qmd": [
+      "blog"
+    ],
+    "scientific_projects/RocasAtoll/index.es.qmd": [
+      "blog"
+    ],
+    "scientific_projects/RocasAtoll/index.fr.qmd": [
+      "blog"
+    ],
+    "scientific_projects/RocasAtoll/index.it.qmd": [
+      "blog"
+    ],
+    "scientific_projects/RocasAtoll/index.pt.qmd": [
+      "blog"
+    ],
     "scientific_projects/RocasAtoll/index.qmd": [
       "blog"
+    ],
+    "scientific_projects/index_sci_pro.de.qmd": [
+      "seewandell/index.de.qmd",
+      "RocasAtoll/index.de.qmd"
+    ],
+    "scientific_projects/index_sci_pro.es.qmd": [
+      "seewandell/index.es.qmd",
+      "RocasAtoll/index.es.qmd"
+    ],
+    "scientific_projects/index_sci_pro.fr.qmd": [
+      "seewandell/index.fr.qmd",
+      "RocasAtoll/index.fr.qmd"
+    ],
+    "scientific_projects/index_sci_pro.it.qmd": [
+      "seewandell/index.it.qmd",
+      "RocasAtoll/index.it.qmd"
+    ],
+    "scientific_projects/index_sci_pro.pt.qmd": [
+      "seewandell/index.pt.qmd",
+      "RocasAtoll/index.pt.qmd"
     ],
     "scientific_projects/index_sci_pro.qmd": [
       "seewandell/index.qmd",
       "RocasAtoll/index.qmd"
     ],
-    "scientific_projects/seewandell/index.qmd": [
+    "scientific_projects/seewandell/index.de.qmd": [
       "blog"
     ],
-    "notebooks/index_notebooks.qmd": [
-      "seewandell/CON_clean_dataset.html"
+    "scientific_projects/seewandell/index.es.qmd": [
+      "blog"
+    ],
+    "scientific_projects/seewandell/index.fr.qmd": [
+      "blog"
+    ],
+    "scientific_projects/seewandell/index.it.qmd": [
+      "blog"
+    ],
+    "scientific_projects/seewandell/index.pt.qmd": [
+      "blog"
+    ],
+    "scientific_projects/seewandell/index.qmd": [
+      "blog"
     ]
   }
 }
