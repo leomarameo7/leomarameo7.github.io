@@ -1,0 +1,22 @@
+---
+title: "Open Science"
+---
+
+::: {.lang-switch}
+🌐 **English** · [Italiano](open_science.it.qmd) · [Español](open_science.es.qmd) · [Português](open_science.pt.qmd) · [Français](open_science.fr.qmd) · [Deutsch](open_science.de.qmd)
+:::
+
+### Commitment to research transparency and open science
+
+> "Open Science encompasses the entire research process and the entire research community. It empowers researchers everywhere to share valuable artifacts from each stage of their investigation and increase visibility and collaboration around their work. Every research community and individual has an opportunity to shape the activities and norms that inspire trust in their work. A commitment to Open Science, therefore, is not a pledge to adopt a few specific behaviors, but to advance openness, transparency and reproducibility in daily life as a researcher." ([plos.org/commit-to-openness](https://plos.org/commit-to-openness/))
+
+As an ecologist, I believe that sharing data, code, and methods openly is what allows our findings to be checked, reused, and built upon by others. It is also, simply, good scientific practice.
+
+### Activities
+
+-   **Since 2021** — Voluntary member of the [Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology (SORTEE)](https://www.sortee.org/).
+
+### Links
+
+-   [SORTEE](https://www.sortee.org/) — Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology
+-   [GitHub](https://github.com/leomarameo7)

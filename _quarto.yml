@@ -15,6 +15,8 @@ website:
         href: scientific_projects/index_sci_pro.qmd
       - text: "Notebooks"
         href: notebooks/index_notebooks.qmd
+      - text: "Open Science"
+        href: open_science.qmd
       - icon: github
         href: https://github.com/leomarameo7
       - icon: envelope
