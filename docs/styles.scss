@@ -254,9 +254,11 @@ blockquote { // style blockquotes (for speech bubbles)
   }
 }
 
-/* Fixed profile photo in upper-left corner, below navbar (home page only,
-   matched by its src since quarto's about-jolla template gives no hook
-   for a custom class) */
+/* Floating profile photo that follows the cursor (home page only, matched by
+   its src since quarto's about-jolla template gives no hook for a custom
+   class). Position (left/top) is driven by mousemove in
+   _lang-switch-navbar.html; the transition here is what gives it a
+   trailing/floating feel instead of snapping straight to the pointer. */
 img.about-image[src="docs/media/LC.jpeg"] {
   position: fixed;
   top: 90px;
@@ -266,15 +268,11 @@ img.about-image[src="docs/media/LC.jpeg"] {
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   z-index: 999;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  pointer-events: none;
+  transition: left 0.35s ease-out, top 0.35s ease-out;
 }
 
-img.about-image[src="docs/media/LC.jpeg"]:hover {
-  transform: translateY(-8px);
-}
-
-/* CV link, relocated by _lang-switch-navbar.html to sit just under the photo */
+/* CV link, kept just under the floating photo by the same mousemove handler */
 .cv-link-under-photo {
   position: fixed;
   top: 240px;
@@ -284,6 +282,7 @@ img.about-image[src="docs/media/LC.jpeg"]:hover {
   padding: 4px 12px;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: left 0.35s ease-out, top 0.35s ease-out;
 }
 
 
