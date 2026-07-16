@@ -9,13 +9,17 @@ lang: pt
 
 ### Compromisso com a transparência da pesquisa e a Open Science
 
-> "Open Science encompasses the entire research process and the entire research community. It empowers researchers everywhere to share valuable artifacts from each stage of their investigation and increase visibility and collaboration around their work. Every research community and individual has an opportunity to shape the activities and norms that inspire trust in their work. A commitment to Open Science, therefore, is not a pledge to adopt a few specific behaviors, but to advance openness, transparency and reproducibility in daily life as a researcher." ([plos.org/commit-to-openness](https://plos.org/commit-to-openness/))
+*Quando digo ciência aberta, digo isso literalmente: se você tornar público o seu código de análise e os seus dados — tudo o que está por trás da sua pesquisa, não só os resultados — eu confio em você e na sua forma de fazer ciência.*
 
-Como ecólogo, acredito que compartilhar dados, código e métodos abertamente é o que permite que nossos resultados sejam verificados, reutilizados e ampliados por outras pessoas. Além disso, é simplesmente uma boa prática científica.
+Como pesquisador que vive em um período de crescente desconfiança nas práticas científicas, acredito que compartilhar dados, código e métodos abertamente é o que permite que nossos resultados sejam verificados, reutilizados e ampliados por outros. É também uma forma de devolver à sociedade o que recebemos por meio das agências de financiamento.
+
+> "Open Science encompasses the entire research process and the entire research community. It empowers researchers everywhere to share valuable artifacts from each stage of their investigation and increase visibility and collaboration around their work. Every research community and individual has an opportunity to shape the activities and norms that inspire trust in their work. A commitment to Open Science, therefore, is not a pledge to adopt a few specific behaviors, but to advance openness, transparency and reproducibility in daily life as a researcher." ([plos.org/commit-to-openness](https://plos.org/commit-to-openness/))
 
 ### Atividades
 
 -   **Desde 2021** — Membro voluntário da [Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology (SORTEE)](https://www.sortee.org/).
+
+[![Logo da SORTEE (Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology)](docs/media/sortee_logo.png){width="220px"}](https://www.sortee.org/)
 
 ### Links
 
