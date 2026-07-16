@@ -7,6 +7,9 @@ about:
     - href: mailto:leocapi07@gmail.com
       text: Email
       icon: envelope-fill
+    - href: cv.pdf
+      text: CV
+      icon: file-earmark-pdf
 ---
 
 ::: lang-switch

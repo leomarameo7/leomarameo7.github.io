@@ -4,7 +4,7 @@ project:
   render:
     - "*.qmd"
 website:
-  title: "Dr. Leonardo Capitani"
+  title: "Leonardo Capitani"
   page-navigation: true
   back-to-top-navigation: true
   navbar:
