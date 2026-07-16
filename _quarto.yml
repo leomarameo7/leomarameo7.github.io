@@ -31,6 +31,8 @@ website:
           href: notebooks/seewandell/GP_workbook.html
         - text: "Measurement Error"
           href: notebooks/measurement_error/Measurement_error_simulations.html
+        - text: "Priors"
+          href: notebooks/priors/Visualize_priors.html
 
   page-footer:    
     background: light
