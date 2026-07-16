@@ -14,14 +14,12 @@ $blue: #38A7BB;
 $light-blue: #53C9DF;
 $light-yellow: #FFF6E1;
 
-// Base document colors (find more Quarto Sass vars here: https://quarto.org/docs/output-formats/html-themes.html#sass-variables)
-$navbar-bg: $white;
-$navbar-fg: $dark-gray; 
-$navbar-hl: $dark-gray; 
-$body-bg: $white;
-$body-color: $dark-gray;
-$footer-bg: $medium-gray2; 
-$link-color: $blue;
+// NOTE: deliberately NOT overriding $navbar-bg/$body-bg/$body-color/$footer-bg/
+// $link-color/etc. here. This one file is shared by both theme.light and
+// theme.dark (see _quarto.yml); a hardcoded light value here would get baked
+// into the dark bundle too, forcing a white background even in dark mode
+// (this happened — see project memory). Let each base theme (default/slate)
+// own those; only define plain helper colors above for use in scss:rules.
 
 /*-- scss:rules --*/
 
@@ -263,8 +261,8 @@ img.about-image[src="docs/media/LC.jpeg"] {
   position: fixed;
   top: 90px;
   left: 20px;
-  width: 140px !important;
-  height: 140px !important;
+  width: 190px !important;
+  height: 190px !important;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   z-index: 999;
@@ -275,7 +273,7 @@ img.about-image[src="docs/media/LC.jpeg"] {
 /* CV link, kept just under the floating photo by the same mousemove handler */
 .cv-link-under-photo {
   position: fixed;
-  top: 240px;
+  top: 290px;
   left: 20px;
   z-index: 999;
   background: $white;
@@ -283,6 +281,92 @@ img.about-image[src="docs/media/LC.jpeg"] {
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   transition: left 0.35s ease-out, top 0.35s ease-out;
+}
+
+/* About section: two-column prose + career timeline, modeled after
+   https://github.com/EIvimeyCook/EIvimeyCook.github.io */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 54px;
+  margin-top: 20px;
+}
+
+@media (max-width: 820px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
+.about-grid .prose p {
+  margin: 0 0 1.1em;
+  color: $medium-gray2;
+}
+
+.roles h3 {
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0 0 14px;
+  color: $dark-gray;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: $light-gray2;
+}
+
+.timeline li {
+  position: relative;
+  padding: 0 0 18px 28px;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 7px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: $white;
+  border: 2px solid $blue;
+}
+
+.timeline li.now::before {
+  background: $blue;
+}
+
+.t-role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $dark-gray;
+  line-height: 1.4;
+}
+
+.t-where {
+  font-size: 0.86rem;
+  color: $medium-gray1;
+  margin-top: 1px;
+}
+
+.t-proj {
+  font-size: 0.84rem;
+  color: $medium-gray2;
+  font-style: italic;
+  margin-top: 4px;
 }
 
 

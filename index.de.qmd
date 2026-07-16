@@ -18,24 +18,33 @@ about:
 :::
 
 ::: {style="text-align:center;"}
-![Antonio Ligabue, *Volpe in fuga.* 1948. Privatsammlung.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center" width="550"}
+![Antonio Ligabue, *Volpe in fuga.* 1948. Privatsammlung.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center" width="650"}
 :::
 
 > And so an ecologist who begins by asking himself how life works very quickly finds himself asking instead why the natural ecosystems are made up of so many parts and why there are so many of each kind of part. Before he can answer an engineer's question "how does this work," he is faced with even more fundamental questions beginning with "why": Why are there so many different kinds of plants and animals? Why are some common but others rare? Why are some large but others small? Why do they sometimes do such peculiar things?
 >
 > Paul Colinvax, 1978. *Why big fierce animals are rare?* Princeton University Press.
 
-### Wer bin ich?
+### Über mich
 
-Nun, ich bin Ökologe. Was ist ein Ökologe? Ein Ökologe ist jemand, der Begeisterung in der Schönheit und Komplexität der Natur findet. Ich bin außerdem ein leidenschaftlicher Lehrender und genieße es sehr, mit Publikum jeden Erfahrungsniveaus zu lehren und zu lernen.
-
-```{r}
-#| echo: false
-#| fig-width: 9
-#| fig-height: 3.2
-source("_timeline.R")
-career_timeline("de")
-```
+<div class="about-grid">
+<div class="prose">
+<p>Nun, ich bin Ökologe. Was ist ein Ökologe? Ein Ökologe ist jemand, der Begeisterung in der Schönheit und Komplexität der Natur findet. Ich bin außerdem ein leidenschaftlicher Lehrender und genieße es sehr, mit Publikum jeden Erfahrungsniveaus zu lehren und zu lernen.</p>
+</div>
+<div class="roles">
+<h3>Aktuell</h3>
+<ul class="timeline">
+<li class="now"><div class="t-role">Wissenschaftler, Aquatische Ökologie</div><div class="t-where">EAWAG, Schweiz</div></li>
+</ul>
+<h3>Zuvor</h3>
+<ul class="timeline">
+<li><div class="t-role">Postdoc</div><div class="t-where">WSL, Schweiz</div><div class="t-proj">2023–2025</div></li>
+<li><div class="t-role">Promotion in Ökologie (Ph.D.)</div><div class="t-where">UFRN, Brasilien</div><div class="t-proj">2017–2021</div></li>
+<li><div class="t-role">Master in Ökologie</div><div class="t-where">UFRGS, Brasilien</div><div class="t-proj">2015–2017</div></li>
+<li><div class="t-role">Bachelor in Umweltwissenschaften</div><div class="t-where">Universität Barcelona</div><div class="t-proj">2008–2014</div></li>
+</ul>
+</div>
+</div>
 
 ```{r}
 #| include: false
