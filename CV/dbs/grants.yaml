@@ -1,0 +1,36 @@
+grant2:
+  title:
+    de: Sachbeihilfe
+    en: Ph.D Grant
+    pt: Bolsa de Pesquisa
+  subtitle:
+    de: 
+    en: Brazilian Federal Agency for Support and Evaluation of Graduate Education
+    pt: 
+  location:
+    de: 
+    en: 
+    pt: 
+  left: "2017-2021"
+  description:
+    de: 
+    en: "amount: 31,000 Euros"
+    pt: 
+grant1:
+  title:
+    de: 
+    en: Master Grant
+    pt: 
+  subtitle:
+    de: 
+    en: Brazilian Federal Agency for Support and Evaluation of Graduate Education
+    pt: 
+  location:
+    de: Brasilien
+    en: Brazil
+    pt: Brasil
+  left: "2015-2017"
+  description:
+    de: 
+    en: "amount: 5,800 Euros"
+    pt: 

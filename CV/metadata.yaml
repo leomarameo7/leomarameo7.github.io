@@ -1,0 +1,31 @@
+colors:
+  main_color: "#579D90"
+  lightgray_color: "#d5d5d5"
+  gray_color: "#737373"
+personal:
+  name: ["Capitani, Leonardo"]
+  split: true
+  socials:
+    email:
+      username: leocapi07@gmail.com
+      icon: paper-plane
+      set: fa 
+      prefix: "mailto:"
+    homepage:
+      username: leomarameo7.github.io
+      icon: globe
+      set: fa
+      prefix: https://
+    github:
+      username: leomarameo7
+      icon: github
+      set: fa
+      prefix: https://github.com/
+    orcid:
+      username: 0000-0003-0292-5130
+      prefix: https://orcid.org
+      icon: orcid
+      set: ai
+    
+    
+    

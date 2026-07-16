@@ -1,0 +1,61 @@
+methods:
+  course6:
+    title: Introduction to Machine Learning with R
+    location: SIB, Basel
+    left: "2025"
+  course5:
+    title: Make Your Life Easier with Git
+    location: Eawag, Dubendorf
+    left: "2024"
+  course4:
+    title: Bayesian networks
+    location: Università della Svizzera italiana, Lugano
+    left: "2024"
+  course3:
+    title: Spatial-temporal data analysis with R-INLA 
+    location: Highlands Statistics
+    left: "2023"
+  course2: 
+    title: Quantitative methods for population dynamics modelling
+    location: Online
+    left: "2023"
+  course1:
+    title: Bayesian data analysis (Global South)
+    location: Stan team, Online
+    left: "2021"
+    
+didactics:
+  course3:
+    title:
+      de: 
+      en: Making Your Research Data FAIR
+    location: 
+      de: 
+      en: SORTEE, online
+      pt: 
+    left: "2025"
+  course2:
+    title:
+      de: 
+      en: Science-Policy Interface for Scientists
+      pt: 
+    location: 
+      de: 
+      en: ETH Zurich
+      pt: 
+    left: "2024"
+  course1:
+    title:
+      de: 
+      en: Scientific Manuscript Writing
+      pt: 
+    subtitle:
+      de: 
+      en: 
+      pt: 
+    location: 
+      de: 
+      en: Eawag, Dubendorf
+      pt: 
+    left: "2023"
+    

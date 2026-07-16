@@ -1,0 +1,89 @@
+computer:
+  r:
+    name: R
+    level: 4
+    description:
+      de: 
+      en: longstanding experience, taught several courses
+      pt: 
+  phyton:
+    name: phyton
+    level: 3
+    description:
+      de: 
+      en: 
+      pt: 
+  quarto:
+    name: Quarto / Markdown
+    level: 3
+    description:
+      de: 
+      en: "used in presentations, dashboards & reports"
+      pt: 
+  typst:
+    name: LaTeX / Typst
+    level: 2
+    description:
+      de: 
+      en: "used in presentations and papers, first steps with own templates/packages"
+      pt: 
+
+programs:
+  QGIS:
+    name: QGIS
+    level: 3
+    description:
+      de: 
+      en:  "thematic mapping & spatial queries"
+      pt:
+  Ecopath:
+    name: Ecopath
+    level: 4
+    description:
+      de: 
+      en: Food web modelling
+      pt: 
+  office:
+    name: Office
+    level: 4
+    description:
+      de: 
+      en: "longstanding experience (Win/MacOS)"
+      pt:
+
+languages:
+  italian:
+    name: Italian
+    level: 4
+    description:
+      de: 
+      en: native tongue
+      pt: 
+  german:
+    name: German
+    level: 1
+    description:
+      de: 
+      en: A1.3
+      pt: 
+  english:
+    name: English
+    level: 3
+    description:
+      de: 
+      en: 
+      pt: 
+  portugues:
+    name: Portuguese
+    level: 4
+    description:
+      de: 
+      en: C1
+      pt: 
+  spanish:
+    name: Spanish
+    level: 4
+    description:
+      de: 
+      en: C1
+      pt: 

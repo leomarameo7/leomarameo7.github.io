@@ -1,0 +1,43 @@
+"2025":
+ course1:
+    summer: F
+    name:
+      de: 
+      en: "Aquatic Ecology"
+      pt: 
+    study:
+      de: 
+      en: Bachelor & Master (UZH, ETH)
+      pt: 
+"2018-2022":
+  course2:
+    summer: 
+    name:
+      de: 
+      en: "Ecopath: food web modelling"
+      pt: 
+    study:
+      de: 
+      en: Master & Ph.D.
+      pt: 
+"2019-2021":
+  course3:
+    summer:
+    name:
+      de: 
+      en: Data analysis with R
+      pt: 
+    study:
+      de: 
+      en: Bachelor 
+      pt: 
+  course1:
+    summer: T
+    name:
+      de: 
+      en: Bayesian data analysis with R 
+      pt: 
+    study:
+      de: 
+      en: Master & Ph.D.
+      pt: 

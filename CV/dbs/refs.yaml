@@ -1,0 +1,121 @@
+Artana2025:
+  type: "article"
+  date: 2025
+  page-range: 1492–1506
+  title: "Food web trophic control modulates tropical Atlantic reef ecosystems response to marine heat wave intensity and duration"
+  tags: "peer"
+  author: [ "Artana, C.", "Capitani, L.", "Santos Garcia, G.", "Angelini, R.", "Coll, M." ]
+  parent:
+    title: "Journal of Animal Ecology"
+    volume: 94
+    issue: 8
+  serial-number:
+    doi: "10.1111/1365-2656.14173"
+
+Moser2025:
+  type: "article"
+  date: 2025
+  title: "Habitat heterogeneity and food availability in beaver-engineered streams foster bat richness, activity and feeding"
+  tags: "peer"
+  author: [ "Moser, V.", "Capitani, L.", "Zehnder, L.", "Hürbin, A.", "Obrist, M. K.", "Ecker, K.", "Boch, S.", "Minnig, S.", "Angst, C.", "Pomati, F.", "others" ]
+  parent:
+    title: "Journal of Animal Ecology"
+  serial-number:
+    doi: "10.1111/1365-2656.14238"
+
+Schenone2025:
+  type: "article"
+  date: 2025
+  page-range: 126252
+  title: "Microbial plankton uptake enhances the degradation of a biodegradable microplastic"
+  tags: "peer"
+  author: [ "Schenone, L.", "Capitani, L.", "Lora, U.", "Setälä, O.", "Kaartokallio, H.", "Seppälä, J.", "Lehtiniemi, M." ]
+  parent:
+    title: "Environmental Pollution"
+    volume: 374
+  serial-number:
+    doi: "10.1016/j.envpol.2025.126252"
+
+Ortega2025:
+  type: "article"
+  date: 2025
+  page-range: "e2024EF004826"
+  title: "An integrated global-to-regional scale workflow for simulating climate change impacts on marine ecosystems"
+  tags: "peer"
+  author: [ "Ortega-Cisneros, K.", "Fierros-Arcos, D.", "Capitani, L.", "Lindmark, M.", "Novaglio, C.", "Woodworth-Jefcoats, P.", "Eddy, T. D.", "Coll, M.", "Fulton, E.", "Oliveros-Ramos, R.", "Reum, J.", "others" ]
+  parent:
+    title: "Earth’s Future"
+    volume: 13
+    issue: 2
+  serial-number:
+    doi: "10.1029/2024EF004826"
+
+Blanchard2024:
+  type: "article"
+  date: 2024
+  page-range: "e2023EF004402"
+  title: "Detecting, attributing, and projecting global marine ecosystem and fisheries change: FishMIP 2.0"
+  tags: "peer"
+  author: [ "Blanchard, J. L.", "Novaglio, C.", "Capitani, L.","Maury, O.", "Harrison, C. S.", "Petrik, C. M.", "Fierro-Arcos, D.", "Ortega-Cisneros, K.", "Bryndum-Buchholz, A.", "Eddy, T. D.", "Heneghan, R.", "others" ]
+  parent:
+    title: "Earth’s Future"
+    volume: 12
+    issue: 12
+  serial-number:
+    doi: "10.1029/2023EF004402"
+
+Capitani2022:
+  type: "article"
+  date: 2022
+  page-range: 843–857
+  title: "Ocean warming will reduce standing biomass in a tropical western Atlantic reef ecosystem"
+  tags: "peer"
+  author: [ "Capitani, L.", "de Araujo, J. N.", "Vieira, E. A.", "Angelini, R.", "Longo, G. O." ]
+  parent:
+    title: "Ecosystems"
+    volume: 25
+    issue: 4
+  serial-number:
+    doi: "10.1007/s10021-021-00674-3"
+
+Capitani2021b:
+  type: "article"
+  date: 2021
+  page-range: 2100–2110
+  title: "Resource-to-consumer ratio determines the functional response of an herbivorous fish in a field experiment"
+  tags: "peer"
+  author: [ "Capitani, L.", "Roos, N.", "Longo, G. O.", "Angelini, R.", "Schenone, L." ]
+  parent:
+    title: "Oikos"
+    volume: 130
+    issue: 12
+  serial-number:
+    doi: "10.1111/oik.08511"
+
+Capitani2021a:
+  type: "article"
+  date: 2021
+  page-range: 42
+  title: "Food web modeling indicates the potential impacts of increasing deforestation and fishing pressure in the Tapajós River, Brazilian Amazon"
+  tags: "peer"
+  author:  ["Capitani, L.", "Angelini, R.", "Keppeler, F. W.", "Hallwass, G.", "Silvano, R. A. M."]
+  parent:
+    title: "Regional Environmental Change"
+    volume: 21
+    issue: 2
+  serial-number:
+    doi: "10.1007/s10113-021-01768-0"
+
+Chuctaya2018:
+  type: "article"
+  date: 2018
+  page-range: 172–176
+  title: "Length–weight relationships of 23 fish species from floodplain ecosystems of the Andean Amazon piedmont, Peru"
+  tags: "peer"
+  author: [ "Chuctaya, J.", "Capitani, L.", "Faustino, D.", "Castro, E." ]
+  parent:
+    title: "Journal of Applied Ichthyology"
+    volume: 34
+    issue: 1
+  serial-number:
+    doi: "10.1111/jai.13526"

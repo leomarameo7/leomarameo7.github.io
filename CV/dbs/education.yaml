@@ -1,0 +1,42 @@
+entry1:
+  title:
+    de: 
+    en: Ph.D. 
+    pt: 
+  subtitle:
+    de: 
+    en: Quantitative Ecology
+    pt: 
+  location:
+    de: 
+    en: UFRN, Brazil
+    pt: 
+  left: 2017-2021
+master:
+  title:
+    de: 
+    en: Master of Sciences
+    pt: 
+  subtitle:
+    de: 
+    en: Quantitative Ecology
+    pt: 
+  location:
+    de: 
+    en: UFRGS, Brazil
+    pt: 
+  left: "2015-2017"
+bachelor:
+  title:
+    de: 
+    en: Bachelor of Sciences
+    pt: 
+  subtitle:
+    de: 
+    en: Environmental Sciences
+    pt: 
+  location:
+    de: 
+    en: University of Barcelona, Spain
+    pt: 
+  left: "2008-2014"
