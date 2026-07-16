@@ -254,15 +254,36 @@ blockquote { // style blockquotes (for speech bubbles)
   }
 }
 
-/* Fixed profile photo in upper-left corner, below navbar */
-.profile-photo {
-  position: fixed;       /* fixed so it stays visible even when scrolling */
-  top: 80px;             /* push below navbar (adjust if needed) */
+/* Fixed profile photo in upper-left corner, below navbar (home page only,
+   matched by its src since quarto's about-jolla template gives no hook
+   for a custom class) */
+img.about-image[src="docs/media/LC.jpeg"] {
+  position: fixed;
+  top: 90px;
   left: 20px;
-  width: 160px;
+  width: 140px !important;
+  height: 140px !important;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  z-index: 1000;         /* ensures photo stays above content but below navbar */
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+img.about-image[src="docs/media/LC.jpeg"]:hover {
+  transform: translateY(-8px);
+}
+
+/* CV link, relocated by _lang-switch-navbar.html to sit just under the photo */
+.cv-link-under-photo {
+  position: fixed;
+  top: 240px;
+  left: 20px;
+  z-index: 999;
+  background: $white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 

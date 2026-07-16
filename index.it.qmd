@@ -17,17 +17,25 @@ about:
 🌐 [English](index.qmd) · **Italiano** · [Español](index.es.qmd) · [Português](index.pt.qmd) · [Français](index.fr.qmd) · [Deutsch](index.de.qmd)
 :::
 
-### Chi sono?
-
-Ebbene, sono un ecologo. Cos'è un ecologo? Un ecologo è qualcuno che trova entusiasmo nella bellezza e nella complessità della natura. Sono anche un educatore appassionato e apprezzo molto le occasioni di insegnare e imparare con pubblici di ogni livello di esperienza.
+::: {style="text-align:center;"}
+![Antonio Ligabue, *Volpe in fuga.* 1948. Collezione privata.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center" width="350"}
+:::
 
 > And so an ecologist who begins by asking himself how life works very quickly finds himself asking instead why the natural ecosystems are made up of so many parts and why there are so many of each kind of part. Before he can answer an engineer's question "how does this work," he is faced with even more fundamental questions beginning with "why": Why are there so many different kinds of plants and animals? Why are some common but others rare? Why are some large but others small? Why do they sometimes do such peculiar things?
 >
 > Paul Colinvax, 1978. *Why big fierce animals are rare?* Princeton University Press.
 
-::: {style="text-align:center;"}
-![Antonio Ligabue, *Volpe in fuga.* 1948. Collezione privata.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center" width="785"}
-:::
+### Chi sono?
+
+Ebbene, sono un ecologo. Cos'è un ecologo? Un ecologo è qualcuno che trova entusiasmo nella bellezza e nella complessità della natura. Sono anche un educatore appassionato e apprezzo molto le occasioni di insegnare e imparare con pubblici di ogni livello di esperienza.
+
+```{r}
+#| echo: false
+#| fig-width: 9
+#| fig-height: 3.2
+source("_timeline.R")
+career_timeline("it")
+```
 
 ```{r}
 #| include: false
