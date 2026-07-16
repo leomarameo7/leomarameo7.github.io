@@ -1,5 +1,5 @@
 ---
-title: "<span style = 'display:none;'>Dr. Leonardo Capitani</span>"
+title: "<span style = 'display:none;'>Leonardo Capitani</span>"
 lang: fr
 about:
  template: jolla
