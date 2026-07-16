@@ -433,6 +433,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   switchDiv.style.display = "none";
 });
+
+// Home page only: move the CV link to sit just under the fixed profile photo
+// instead of at the bottom of the about-card links row.
+document.addEventListener("DOMContentLoaded", function () {
+  var cvLink = document.querySelector('a.about-link[href="/cv.pdf"]');
+  var photo = document.querySelector('img.about-image[src="docs/media/LC.jpeg"]');
+  if (!cvLink || !photo) return;
+
+  cvLink.classList.add("cv-link-under-photo");
+  photo.insertAdjacentElement("afterend", cvLink);
+});
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

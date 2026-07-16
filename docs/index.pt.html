@@ -313,19 +313,28 @@ ul.task-list li input[type="checkbox"] {
 <div class="lang-switch">
 <p>🌐 <a href="./index.html">English</a> · <a href="./index.it.html">Italiano</a> · <a href="./index.es.html">Español</a> · <strong>Português</strong> · <a href="./index.fr.html">Français</a> · <a href="./index.de.html">Deutsch</a></p>
 </div>
-<section id="quem-sou-eu" class="level3">
-<h3 data-anchor-id="quem-sou-eu">Quem sou eu?</h3>
-<p>Bem, sou ecólogo. O que é um ecólogo? Um ecólogo é alguém que encontra empolgação na beleza e na complexidade da natureza. Também sou um educador apaixonado e aprecio muito as oportunidades de ensinar e aprender com públicos de todos os níveis de experiência prévia.</p>
+<div style="text-align:center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="docs/media/ligabue_volpe_in_fuga.jpg" class="img-fluid figure-img" width="350"></p>
+<figcaption>Antonio Ligabue, <em>Volpe in fuga.</em> 1948. Coleção particular.</figcaption>
+</figure>
+</div>
+</div>
 <blockquote class="blockquote">
 <p>And so an ecologist who begins by asking himself how life works very quickly finds himself asking instead why the natural ecosystems are made up of so many parts and why there are so many of each kind of part. Before he can answer an engineer’s question “how does this work,” he is faced with even more fundamental questions beginning with “why”: Why are there so many different kinds of plants and animals? Why are some common but others rare? Why are some large but others small? Why do they sometimes do such peculiar things?</p>
 <p>Paul Colinvax, 1978. <em>Why big fierce animals are rare?</em> Princeton University Press.</p>
 </blockquote>
-<div style="text-align:center;">
-<div class="quarto-figure quarto-figure-center">
+<section id="quem-sou-eu" class="level3">
+<h3 data-anchor-id="quem-sou-eu">Quem sou eu?</h3>
+<p>Bem, sou ecólogo. O que é um ecólogo? Um ecólogo é alguém que encontra empolgação na beleza e na complexidade da natureza. Também sou um educador apaixonado e aprecio muito as oportunidades de ensinar e aprender com públicos de todos os níveis de experiência prévia.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="docs/media/ligabue_volpe_in_fuga.jpg" class="img-fluid figure-img" width="785"></p>
-<figcaption>Antonio Ligabue, <em>Volpe in fuga.</em> 1948. Coleção particular.</figcaption>
+<p><img src="index.pt_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="864"></p>
 </figure>
+</div>
 </div>
 </div>
 <p>Criado por Leonardo Capitani; Atualizado em 16 July 2026</p>
@@ -392,6 +401,17 @@ document.addEventListener("DOMContentLoaded", function () {
   tools.insertBefore(dropdown, tools.firstChild);
 
   switchDiv.style.display = "none";
+});
+
+// Home page only: move the CV link to sit just under the fixed profile photo
+// instead of at the bottom of the about-card links row.
+document.addEventListener("DOMContentLoaded", function () {
+  var cvLink = document.querySelector('a.about-link[href="/cv.pdf"]');
+  var photo = document.querySelector('img.about-image[src="docs/media/LC.jpeg"]');
+  if (!cvLink || !photo) return;
+
+  cvLink.classList.add("cv-link-under-photo");
+  photo.insertAdjacentElement("afterend", cvLink);
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

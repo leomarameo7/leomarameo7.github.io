@@ -327,16 +327,23 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="impegno-per-la-trasparenza-della-ricerca-e-lopen-science" class="level3">
 <h3 class="anchored" data-anchor-id="impegno-per-la-trasparenza-della-ricerca-e-lopen-science">Impegno per la trasparenza della ricerca e l’Open Science</h3>
+<p><em>Quando parlo di scienza aperta, lo intendo alla lettera: se rendi pubblici il tuo codice di analisi e i tuoi dati — tutto ciò che sta dietro alla tua ricerca, non solo i risultati — mi fido di te e del tuo modo di fare scienza.</em></p>
+<p>Come ricercatore che vive in un periodo di crescente sfiducia nelle pratiche scientifiche, credo che condividere apertamente dati, codice e metodi sia ciò che permette ai nostri risultati di essere verificati, riutilizzati e migliorati da altri. È anche un modo per restituire alla società ciò che riceviamo attraverso le agenzie di finanziamento.</p>
 <blockquote class="blockquote">
 <p>“Open Science encompasses the entire research process and the entire research community. It empowers researchers everywhere to share valuable artifacts from each stage of their investigation and increase visibility and collaboration around their work. Every research community and individual has an opportunity to shape the activities and norms that inspire trust in their work. A commitment to Open Science, therefore, is not a pledge to adopt a few specific behaviors, but to advance openness, transparency and reproducibility in daily life as a researcher.” (<a href="https://plos.org/commit-to-openness/">plos.org/commit-to-openness</a>)</p>
 </blockquote>
-<p>In quanto ecologo, credo che condividere apertamente dati, codice e metodi sia ciò che permette ai nostri risultati di essere verificati, riutilizzati e migliorati da altri. È anche, semplicemente, buona pratica scientifica.</p>
 </section>
 <section id="attività" class="level3">
 <h3 class="anchored" data-anchor-id="attività">Attività</h3>
 <ul>
 <li><strong>Dal 2021</strong> — Membro volontario della <a href="https://www.sortee.org/">Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology (SORTEE)</a>.</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.sortee.org/"><img src="docs/media/sortee_logo.png" class="img-fluid figure-img" width="220"></a></p>
+<figcaption>Logo della SORTEE (Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology)</figcaption>
+</figure>
+</div>
 </section>
 <section id="link" class="level3">
 <h3 class="anchored" data-anchor-id="link">Link</h3>
@@ -395,6 +402,17 @@ document.addEventListener("DOMContentLoaded", function () {
   tools.insertBefore(dropdown, tools.firstChild);
 
   switchDiv.style.display = "none";
+});
+
+// Home page only: move the CV link to sit just under the fixed profile photo
+// instead of at the bottom of the about-card links row.
+document.addEventListener("DOMContentLoaded", function () {
+  var cvLink = document.querySelector('a.about-link[href="/cv.pdf"]');
+  var photo = document.querySelector('img.about-image[src="docs/media/LC.jpeg"]');
+  if (!cvLink || !photo) return;
+
+  cvLink.classList.add("cv-link-under-photo");
+  photo.insertAdjacentElement("afterend", cvLink);
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
