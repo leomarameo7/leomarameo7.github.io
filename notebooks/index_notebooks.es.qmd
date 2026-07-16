@@ -2,7 +2,7 @@
 title: "Notebooks"
 lang: es
 description: |
-  Notebooks creados con quarto + código R. Mi objetivo es usar estos notebooks como borradores para compartir con colaboradores científicos o estudiantes.
+  Notebooks creados con quarto + código R. Son material de estudio personal: los escribí yo mismo para aprender y practicar, a veces adaptando o copiando partes del trabajo de otras personas en el camino. Los comparto aquí como borradores, por si también resultan útiles a colaboradores científicos o estudiantes.
 ---
 
 ::: {.lang-switch}

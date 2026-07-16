@@ -27,11 +27,11 @@ website:
       contents:
         - text: "Notebooks"
           href: notebooks/index_notebooks.qmd
-        - text: "Clean data: lake Constance"
-          href: notebooks/seewandell/CON_clean_dataset.html
         - text: "Gaussian Processes"
           href: notebooks/seewandell/GP_workbook.html
-          
+        - text: "Measurement Error"
+          href: notebooks/measurement_error/Measurement_error_simulations.html
+
   page-footer:    
     background: light
     left: This website is licensed under a [Creative Commons Attributions 4.0 International License](https://creativecommons.org/licenses/by/4.0/)

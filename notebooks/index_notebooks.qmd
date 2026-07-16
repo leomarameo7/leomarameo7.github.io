@@ -1,7 +1,7 @@
 ---
 title: "Notebooks"
 description: |
-  Notebooks made with quarto + R code. I aim to use these notebooks as drafts to share with scientific collaborators or students.
+  Notebooks made with quarto + R code. These are personal study material: I wrote them myself to learn and practice, sometimes adapting or copy-pasting pieces from other people's work along the way. I share them here as drafts, in case they're useful to scientific collaborators or students too.
 ---
 
 ::: {.lang-switch}

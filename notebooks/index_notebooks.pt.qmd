@@ -2,7 +2,7 @@
 title: "Notebooks"
 lang: pt
 description: |
-  Notebooks feitos com quarto + código R. Meu objetivo é usar esses notebooks como rascunhos para compartilhar com colaboradores científicos ou estudantes.
+  Notebooks feitos com quarto + código R. São material de estudo pessoal: eu mesmo os escrevi para aprender e praticar, às vezes adaptando ou copiando partes do trabalho de outras pessoas pelo caminho. Compartilho-os aqui como rascunhos, caso também sejam úteis a colaboradores científicos ou estudantes.
 ---
 
 ::: {.lang-switch}

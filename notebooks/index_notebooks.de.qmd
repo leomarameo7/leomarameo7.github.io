@@ -2,7 +2,7 @@
 title: "Notebooks"
 lang: de
 description: |
-  Notebooks erstellt mit quarto + R-Code. Ich möchte diese Notebooks als Entwürfe verwenden, die ich mit wissenschaftlichen Mitarbeitenden oder Studierenden teile.
+  Notebooks erstellt mit quarto + R-Code. Es handelt sich um persönliches Lernmaterial: Ich habe sie selbst geschrieben, um zu lernen und zu üben, manchmal unterwegs Teile aus der Arbeit anderer übernommen oder angepasst. Ich teile sie hier als Entwürfe, falls sie auch für wissenschaftliche Mitarbeitende oder Studierende nützlich sind.
 ---
 
 ::: {.lang-switch}
