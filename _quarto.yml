@@ -41,11 +41,10 @@ format:
   html:
     page-layout: full
     toc: false
-    theme: 
-     light: default
-     dark: slate
+    theme:
+     light: [default, styles.scss]
+     dark: [slate, styles.scss]
     light-dark: true
-    css: styles.scss
     include-after-body: _lang-switch-navbar.html
 editor: visual
 
