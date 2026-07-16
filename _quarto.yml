@@ -46,6 +46,7 @@ format:
      dark: slate
     light-dark: true
     css: styles.scss
+    include-after-body: _lang-switch-navbar.html
 editor: visual
 
 

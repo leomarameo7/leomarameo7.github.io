@@ -234,11 +234,24 @@ blockquote { // style blockquotes (for speech bubbles)
 } 
 
 
-// language switcher line shown under page titles
+// language switcher line shown under page titles (hidden once moved into the navbar, see below)
 .lang-switch {
   font-size: 15px;
   color: $medium-gray1;
   margin-bottom: 1.5em;
+}
+
+// navbar language switcher (built from .lang-switch by _lang-switch-navbar.html), opens on hover
+.lang-switch-dropdown {
+  display: inline-block;
+
+  .dropdown-menu {
+    margin-top: 0;
+  }
+
+  &:hover .dropdown-menu {
+    display: block;
+  }
 }
 
 /* Fixed profile photo in upper-left corner, below navbar */
