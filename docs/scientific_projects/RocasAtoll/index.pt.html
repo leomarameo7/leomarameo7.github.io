@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ecossistemas de recifes atlânticos e aquecimento do mar – Dr.&nbsp;Leonardo Capitani</title>
+<title>Ecossistemas de recifes atlânticos e aquecimento do mar – Leonardo Capitani</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -310,7 +310,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Dr.&nbsp;Leonardo Capitani</span>
+    <span class="navbar-title">Leonardo Capitani</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Procurar"></div>
@@ -484,6 +484,54 @@ window.Quarto = {
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a></main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var switchDiv = document.querySelector(".lang-switch");
+  var tools = document.querySelector(".quarto-navbar-tools");
+  if (!switchDiv || !tools) return;
+
+  var dropdown = document.createElement("div");
+  dropdown.className = "nav-item dropdown lang-switch-dropdown";
+
+  var toggle = document.createElement("a");
+  toggle.href = "";
+  toggle.className = "quarto-navigation-tool px-1 dropdown-toggle";
+  toggle.setAttribute("role", "button");
+  toggle.setAttribute("data-bs-toggle", "dropdown");
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.title = "Change language";
+  toggle.innerHTML = '<i class="bi bi-translate"></i>';
+  toggle.addEventListener("click", function (e) {
+    e.preventDefault();
+  });
+
+  var menu = document.createElement("ul");
+  menu.className = "dropdown-menu dropdown-menu-end";
+
+  switchDiv.querySelectorAll("strong, a").forEach(function (el) {
+    var li = document.createElement("li");
+    if (el.tagName === "A") {
+      var a = document.createElement("a");
+      a.className = "dropdown-item";
+      a.href = el.getAttribute("href");
+      a.textContent = el.textContent;
+      li.appendChild(a);
+    } else {
+      var span = document.createElement("span");
+      span.className = "dropdown-item disabled active";
+      span.textContent = el.textContent;
+      li.appendChild(span);
+    }
+    menu.appendChild(li);
+  });
+
+  dropdown.appendChild(toggle);
+  dropdown.appendChild(menu);
+  tools.insertBefore(dropdown, tools.firstChild);
+
+  switchDiv.style.display = "none";
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
