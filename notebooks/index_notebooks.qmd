@@ -7,3 +7,8 @@ description: |
 ::: {.lang-switch}
 🌐 **English** · [Italiano](index_notebooks.it.qmd) · [Español](index_notebooks.es.qmd) · [Português](index_notebooks.pt.qmd) · [Français](index_notebooks.fr.qmd) · [Deutsch](index_notebooks.de.qmd)
 :::
+
+-   [Gaussian Processes](seewandell/GP_workbook.qmd) — I introduce Gaussian Process regression and the GP-EDM framework, working through the maths and then a few ecological toy examples.
+-   [Measurement Error](measurement_error/Measurement_error_simulations.qmd) — I use `brms` to simulate how measurement error in a predictor and/or an outcome distorts a simple regression's coefficients.
+-   [Priors](priors/Visualize_priors.qmd) — I visualize a handful of commonly used priors (Gamma, Exponential, Half-Cauchy, and more) so I can build some intuition about what they imply before I use them.
+-   [Sample Size Planning](sample_size_planning/Sample_Size_Planning.qmd) — I simulate an ecological dataset at increasing sample sizes to show you, concretely, how the number of observations you collect shapes the power and precision of a simple linear `brms` model.

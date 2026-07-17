@@ -112,5 +112,17 @@
   },
   "scientific_projects/seewandell/index.pt.qmd": {
     "index.pt.html": "10bed3bb"
+  },
+  "notebooks/measurement_error/Measurement_error_simulations.qmd": {
+    "Measurement_error_simulations.html": "db1e955c",
+    "Measurement_error_simulations.tex": "a2680a73"
+  },
+  "notebooks/priors/Visualize_priors.qmd": {
+    "Visualize_priors.html": "f73cd8ee",
+    "Visualize_priors.tex": "0163cd53"
+  },
+  "notebooks/sample_size_planning/Sample_Size_Planning.qmd": {
+    "Sample_Size_Planning.html": "4bb92b9c",
+    "Sample_Size_Planning.tex": "a91f4935"
   }
 }

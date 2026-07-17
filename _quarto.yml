@@ -28,11 +28,13 @@ website:
         - text: "Notebooks"
           href: notebooks/index_notebooks.qmd
         - text: "Gaussian Processes"
-          href: notebooks/seewandell/GP_workbook.html
+          href: notebooks/seewandell/GP_workbook.qmd
         - text: "Measurement Error"
-          href: notebooks/measurement_error/Measurement_error_simulations.html
+          href: notebooks/measurement_error/Measurement_error_simulations.qmd
         - text: "Priors"
-          href: notebooks/priors/Visualize_priors.html
+          href: notebooks/priors/Visualize_priors.qmd
+        - text: "Sample Size Planning"
+          href: notebooks/sample_size_planning/Sample_Size_Planning.qmd
 
   page-footer:    
     background: light
