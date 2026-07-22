@@ -114,7 +114,8 @@ fit_base <- brm(
               prior(exponential(1), class = sigma)),
   iter = 2000, warmup = 1000, chains = 4, cores = 4,
   seed = 1,
-  backend = "cmdstanr"
+  backend = "cmdstanr",
+  silent = 2, refresh = 0
 )
 
 print(fit_base)
@@ -145,7 +146,7 @@ sim_d_and_fit <- function(seed, n) {
 
   d <- sim_d(seed = seed, n = n)
 
-  fit_i <- update(fit_base, newdata = d, seed = seed)
+  fit_i <- update(fit_base, newdata = d, seed = seed, silent = 2, refresh = 0)
 
   fit_i |>
     fixef() |>

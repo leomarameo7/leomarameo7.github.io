@@ -124,5 +124,9 @@
   "notebooks/sample_size_planning/Sample_Size_Planning.qmd": {
     "Sample_Size_Planning.html": "4bb92b9c",
     "Sample_Size_Planning.tex": "a91f4935"
+  },
+  "notebooks/seewandell/GP_workbook.qmd": {
+    "GP_workbook.html": "85df6963",
+    "GP_workbook.tex": "288e1812"
   }
 }

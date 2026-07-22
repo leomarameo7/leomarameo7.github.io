@@ -121,6 +121,7 @@ fit_1 <- brm(formula = y ~ 1 + x,
                 prior(exponential(1), class = sigma)),
              iter = 2000, warmup = 1000, cores = 4, chains = 4,
              backend = 'cmdstanr',
+             silent = 2, refresh = 0,
       seed = 15)
 
 print(fit_1)
@@ -168,6 +169,7 @@ fit_2 <- brm(formula = y_star ~ 1 + x,
                 prior(exponential(1), class = sigma)),
              iter = 2000, warmup = 1000, cores = 4, chains = 4,
              backend = 'cmdstanr',
+             silent = 2, refresh = 0,
       seed = 15)
 
 print(fit_2)
@@ -190,6 +192,7 @@ fit_3 <- brm(formula = y ~ 1 + x_star,
                 prior(exponential(1), class = sigma)),
              iter = 2000, warmup = 1000, cores = 4, chains = 4,
              backend = 'cmdstanr',
+             silent = 2, refresh = 0,
       seed = 15)
 
 print(fit_3)
@@ -211,6 +214,7 @@ fit_4 <- brm(formula = y_star ~ 1 + x_star,
                 prior(exponential(1), class = sigma)),
              iter = 2000, warmup = 1000, cores = 4, chains = 4,
              backend = 'cmdstanr',
+             silent = 2, refresh = 0,
       seed = 15)
 
 print(fit_4)
