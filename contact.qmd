@@ -1,0 +1,10 @@
+---
+title: "Contact"
+---
+
+-   {{< fa envelope size=lg >}}&nbsp; Email: [leocapi07@gmail.com](mailto:leocapi07@gmail.com)
+-   {{< fa location-dot size=lg >}}&nbsp; Address: [Department of Aquatic Ecology, Eawag, Swiss Federal Institute of Aquatic Science and Technology, Überlandstrasse 133, CH-8600 Dübendorf, Switzerland](https://www.google.com/maps/search/?api=1&query=Eawag%2C+%C3%9Cberlandstrasse+133%2C+CH-8600+D%C3%BCbendorf%2C+Switzerland)
+-   {{< fa brands github size=lg >}}&nbsp; [GitHub](https://github.com/leomarameo7)
+-   {{< fa brands orcid size=lg >}}&nbsp; [ORCID](https://orcid.org/0000-0003-0292-5130)
+-   {{< fa graduation-cap size=lg >}}&nbsp; [Google Scholar](https://scholar.google.com/citations?user=W5PM5jkAAAAJ&hl=en&oi=ao)
+-   {{< fa brands researchgate size=lg >}}&nbsp; [ResearchGate](https://www.researchgate.net/profile/Leonardo-Capitani)

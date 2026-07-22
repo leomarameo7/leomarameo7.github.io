@@ -128,5 +128,8 @@
   "notebooks/seewandell/GP_workbook.qmd": {
     "GP_workbook.html": "85df6963",
     "GP_workbook.tex": "288e1812"
+  },
+  "contact.qmd": {
+    "contact.html": "5334e1ad"
   }
 }
