@@ -1,6 +1,6 @@
 # leomarameo7.github.io
 
-Source code for Leonardo Capitani's personal/academic website, published at
+This is the repository where I maintain my personal web page, published at
 **<https://leomarameo7.github.io>**.
 
 The site is built with [Quarto](https://quarto.org/) and hosted for free on
