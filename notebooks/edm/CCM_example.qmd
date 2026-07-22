@@ -35,7 +35,7 @@ This is the second of two notebooks. The [first one](EDM_intro.qmd) covered reco
 -   You've got two time series — say, a nutrient and an algal population, or a predator and its prey.
 -   They're correlated. **Q: does that mean one causes the other?**
 -   A: Not necessarily — and the usual fixes (Granger causality, adding lags in a regression) assume the variables are *separable*: that you could, in principle, isolate $X$'s effect from everything else going on.
--   In a tightly coupled ecological system, that assumption is often false. **Convergent Cross Mapping (CCM)** was built specifically for non-separable, dynamically coupled variables [@chang_empirical_2017].
+-   In a tightly coupled ecological system, that assumption is often false. **Convergent Cross Mapping (CCM)** [@sugihara_2012] was built specifically for non-separable, dynamically coupled variables [@chang_empirical_2017].
 
 ## Does CCM need to control for other variables?
 
@@ -221,6 +221,7 @@ Both directions peak at negative lags — each species' past state predicts the 
 
 ## Further reading
 
+-   @sugihara_2012 — the original CCM paper, introducing the method used throughout this notebook.
 -   @ye_distinguishing_2015 — the lag-scanning method used above, applied in the original paper to this same predator-prey system plus ice-core CO₂/temperature and sardine/anchovy/SST data.
 -   [Time Series Analysis Handbook, ch. 6 — Convergent Cross Mapping](https://phdinds-aim.github.io/time_series_handbook/06_ConvergentCrossMappingandSugiharaCausality/ccm_sugihara.html) — more worked examples, including where CCM correctly finds *no* causality (e.g. spurious correlations).
 -   [Does convergent cross mapping require you to control for other variables? (CrossValidated)](https://stats.stackexchange.com/questions/502697/does-convergent-cross-mapping-require-you-to-control-for-other-variables) — the discussion this notebook's "Does CCM need to control for other variables?" section is answering.

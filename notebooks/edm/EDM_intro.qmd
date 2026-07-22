@@ -103,7 +103,7 @@ A: A peak. Too few dimensions and the reconstruction folds different states on t
 
 ## Is it chaos, or is it just noise?
 
-Here's a genuinely useful diagnostic: forecast the series at increasing horizons ($T_p = 1, 2, 3, \dots$) and watch what happens to forecast skill.
+This question is where EDM started: Sugihara and May showed that nonlinear forecasting like this could tell real deterministic chaos apart from measurement error in ecological and epidemiological time series (think measles, chickenpox) — cases where a simple linear analysis just sees "noise" [@sugihara_may_1990]. Here's the diagnostic: forecast the series at increasing horizons ($T_p = 1, 2, 3, \dots$) and watch what happens to forecast skill.
 
 -   **Chaotic** systems: skill decays *smoothly* with horizon (small errors compound — the "butterfly effect").
 -   **Noise**: skill is already bad at $T_p=1$ and stays flat and low.
@@ -134,7 +134,7 @@ A: If your population's forecast skill degrades gradually like the chaotic curve
 
 ## Step 2 — S-map: does the "rulebook" change with the state of the system?
 
-Simplex gives you a forecast; **S-map** (sequential locally weighted global linear map) gives you something more diagnostic: it fits a *local* linear model around each point, weighting neighbours by
+Simplex gives you a forecast; **S-map** [@sugihara_1994] (sequential locally weighted global linear map) gives you something more diagnostic: it fits a *local* linear model around each point, weighting neighbours by
 
 $$
 w(d) = \exp\!\left(-\theta \frac{d}{\bar d}\right)
@@ -201,16 +201,92 @@ theta_thrips |>
 
 Forecast skill is far from perfect (real insect counts are noisy), but it clearly rises above the linear ($\theta=0$) baseline — a real population, not a simulation, showing the same nonlinear signature I built into the chaotic toy example above.
 
+## Step 3 — S-map coefficients: reading off interaction strength
+
+So far I've only used S-map's *forecast skill*. But since S-map fits an actual local linear model at every point, I can also look at its **coefficients** — and if I embed more than one species together, those coefficients are interpretable as time-varying interaction strengths (essentially, a Jacobian): "how much does a change in species $j$ move species $i$, right now, given the current state of the system?" [@sugihara_1994]
+
+I'll use `block_3sp`, a bundled 3-species dataset already lagged for me:
+
+```{r block3sp_setup}
+data(block_3sp)
+species_cols <- c("x_t", "y_t", "z_t")
+block_3sp |> select(time, all_of(species_cols)) |> head()
+```
+
+```{r smap_coefficients}
+smap_out <- SMap(
+  dataFrame = block_3sp, lib = "1 100", pred = "101 190", E = 3,
+  columns = species_cols, target = "x_t", embedded = TRUE, theta = 2,
+  showPlot = FALSE
+)
+
+smap_out$coefficients |>
+  rename(effect_of_x = 3, effect_of_y = 4, effect_of_z = 5) |>
+  select(time, effect_of_x, effect_of_y, effect_of_z) |>
+  pivot_longer(-time, names_to = "predictor", values_to = "coefficient") |>
+  ggplot(aes(x = time, y = coefficient, color = predictor)) +
+  geom_line(linewidth = 0.8) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
+  scale_color_manual(values = c("#1B7837", "#762A83", "#2166AC"),
+                      labels = c("effect of x on x", "effect of y on x", "effect of z on x")) +
+  labs(x = "Time", y = "S-map coefficient", color = NULL,
+       title = "Time-varying effect of x, y and z on species x") +
+  theme_bw(base_size = 14) +
+  theme(legend.position = "bottom")
+```
+
+**Q: why not just fit one regression coefficient per pair of species and be done with it?**
+A: Because in a nonlinear system that single number is a lie by omission — the true effect of $y$ on $x$ isn't constant, it depends on the state you're in. The plot above *is* that dependence, made visible: the "effect of $y$ on $x$" line isn't flat, it swings around zero as the system moves through different parts of its attractor.
+
+## Step 4 — Multiview embedding: letting the data pick the best variables
+
+Everything above used one fixed embedding. **Multiview** asks: what if I don't have to commit to one? Ye and Sugihara's approach is refreshingly simple [@ye_2016]:
+
+-   Build *every* candidate embedding of dimension $E$ you can make out of your observed variables (including different lags).
+-   Rank them by in-sample forecast skill.
+-   Forecast using the top-ranked ones, and average the results.
+
+**Q: doesn't that risk overfitting — cherry-picking whatever worked in-sample?**
+A: A little, which is why you average several good embeddings rather than keeping only the single best one — that's what tames the cherry-picking. Let's check whether it actually beats a plain univariate forecast on the same 3-species system:
+
+```{r multiview}
+uni_out <- Simplex(
+  dataFrame = block_3sp, lib = "1 100", pred = "101 195",
+  E = 3, columns = "x_t", target = "x_t", showPlot = FALSE
+)
+uni_rho <- ComputeError(uni_out$Observations, uni_out$Predictions)$rho
+
+mv_out <- Multiview(
+  dataFrame = block_3sp, lib = "1 100", pred = "101 195",
+  E = 3, columns = species_cols, target = "x_t", showPlot = FALSE
+)
+mv_rho <- ComputeError(mv_out$Predictions$Observations, mv_out$Predictions$Predictions)$rho
+
+tibble(
+  method = c("Univariate Simplex (x only)", "Multiview (x, y, z)"),
+  rho = c(uni_rho, mv_rho)
+)
+```
+
+Multiview comes out ahead, using nothing I hadn't already measured — just letting the data decide which lagged combinations of $x$, $y$ and $z$ are worth listening to, instead of me guessing.
+
 ## Take-home
 
 -   Linear correlation-based methods assume a fixed relationship. Ecological systems often don't have one.
 -   EDM sidesteps that by reconstructing the system's attractor directly from lagged values of a time series (Takens' theorem) — no equations required.
--   **Simplex projection** forecasts by analogy to the nearest neighbours in that reconstruction; sweeping $E$ tells you the reconstruction's dimensionality, and sweeping $T_p$ tells you chaos from noise.
--   **S-map** checks whether a *local, state-dependent* model beats a single global linear one — the diagnostic for nonlinearity.
--   Everything here used one variable at a time. The natural next question is *interaction between* variables — does species $A$ actually drive species $B$? That's what convergent cross mapping is for, next notebook.
+-   **Simplex projection** forecasts by analogy to the nearest neighbours in that reconstruction; sweeping $E$ tells you the reconstruction's dimensionality, and sweeping $T_p$ tells you chaos from noise [@sugihara_may_1990].
+-   **S-map** [@sugihara_1994] checks whether a *local, state-dependent* model beats a single global linear one — the diagnostic for nonlinearity — and its coefficients double as time-varying interaction strengths once you embed more than one variable.
+-   **Multiview** [@ye_2016] lets forecast skill, not intuition, pick which combination of variables and lags to trust.
+-   Everything here used one variable at a time (or, for S-map coefficients and Multiview, a handful measured together). The natural next question is *interaction between* variables — does species $A$ actually drive species $B$? That's what convergent cross mapping is for, next notebook.
 
 ## Further reading
 
 -   @chang_empirical_2017 — a hands-on `rEDM` walkthrough I leaned on heavily here.
 -   [Time Series Analysis Handbook, ch. 5 — Simplex and S-map projections](https://phdinds-aim.github.io/time_series_handbook/05_SimplexandSmapProjections/05_Empirical%20Dynamic%20Modelling%20%28Simplex%20and%20SMap_Projections%29.html) — the Python-flavoured version of everything above, with more detail on multivariate embeddings.
--   @ye_distinguishing_2015 — cited here for completeness; the full story is in the [next notebook](../edm/CCM_example.qmd).
+-   [The official `rEDM` package vignette](https://ha0ye.github.io/rEDM/articles/rEDM.html) — covers the same ground as this notebook (Simplex, S-map, S-map coefficients, Multiview, CCM) using the package's earlier API; a good second reference if you get stuck on syntax.
+-   @sugihara_may_1990 — the founding EDM paper: using nonlinear forecasting to tell chaos from measurement error in real epidemiological time series.
+-   @sugihara_1994 — introduces S-map.
+-   @dixon_1999 — an early, high-stakes real-world validation: forecasting larval reef-fish supply, not just toy chaotic maps.
+-   @sugihara_2012 — introduces Convergent Cross Mapping; the full story is in the [next notebook](../edm/CCM_example.qmd).
+-   @ye_2016 — introduces Multiview embedding.
+-   @ye_distinguishing_2015 — the time-lag extension to CCM, also covered in the [next notebook](../edm/CCM_example.qmd).
