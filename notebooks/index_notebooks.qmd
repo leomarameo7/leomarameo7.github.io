@@ -9,3 +9,5 @@ description: |
 -   [Measurement Error](measurement_error/Measurement_error_simulations.qmd) — I use `brms` to simulate how measurement error in a predictor and/or an outcome distorts a simple regression's coefficients.
 -   [Priors](priors/Visualize_priors.qmd) — I visualize a handful of commonly used priors (Gamma, Exponential, Half-Cauchy, and more) so I can build some intuition about what they imply before I use them.
 -   [Sample Size Planning](sample_size_planning/Sample_Size_Planning.qmd) — I simulate an ecological dataset at increasing sample sizes to show you, concretely, how the number of observations you collect shapes the power and precision of a simple linear `brms` model.
+-   [Empirical Dynamic Modelling: an introduction](edm/EDM_intro.qmd) — I introduce state-space reconstruction, Simplex projection, and S-map using `rEDM`, and show you how to tell a chaotic population from a noisy one.
+-   [Convergent Cross Mapping](edm/CCM_example.qmd) — I use `rEDM` to test causal links between time series, on both a synthetic system and a classic predator-prey dataset, and address whether CCM needs to control for confounders the way regression does.

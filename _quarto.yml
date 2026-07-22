@@ -37,6 +37,10 @@ website:
           href: notebooks/priors/Visualize_priors.qmd
         - text: "Sample Size Planning"
           href: notebooks/sample_size_planning/Sample_Size_Planning.qmd
+        - text: "Empirical Dynamic Modelling: intro"
+          href: notebooks/edm/EDM_intro.qmd
+        - text: "Convergent Cross Mapping"
+          href: notebooks/edm/CCM_example.qmd
 
   page-footer:    
     background: light

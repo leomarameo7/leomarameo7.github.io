@@ -335,9 +335,119 @@
     "href": "notebooks/index_notebooks.html",
     "title": "Notebooks",
     "section": "",
-    "text": "Gaussian Processes — I introduce Gaussian Process regression and the GP-EDM framework, working through the maths and then a few ecological toy examples.\nMeasurement Error — I use brms to simulate how measurement error in a predictor and/or an outcome distorts a simple regression’s coefficients.\nPriors — I visualize a handful of commonly used priors (Gamma, Exponential, Half-Cauchy, and more) so I can build some intuition about what they imply before I use them.\nSample Size Planning — I simulate an ecological dataset at increasing sample sizes to show you, concretely, how the number of observations you collect shapes the power and precision of a simple linear brms model.\n\n\n\n\n Back to top",
+    "text": "Gaussian Processes — I introduce Gaussian Process regression and the GP-EDM framework, working through the maths and then a few ecological toy examples.\nMeasurement Error — I use brms to simulate how measurement error in a predictor and/or an outcome distorts a simple regression’s coefficients.\nPriors — I visualize a handful of commonly used priors (Gamma, Exponential, Half-Cauchy, and more) so I can build some intuition about what they imply before I use them.\nSample Size Planning — I simulate an ecological dataset at increasing sample sizes to show you, concretely, how the number of observations you collect shapes the power and precision of a simple linear brms model.\nEmpirical Dynamic Modelling: an introduction — I introduce state-space reconstruction, Simplex projection, and S-map using rEDM, and show you how to tell a chaotic population from a noisy one.\nConvergent Cross Mapping — I use rEDM to test causal links between time series, on both a synthetic system and a classic predator-prey dataset, and address whether CCM needs to control for confounders the way regression does.\n\n\n\n\n Back to top",
     "crumbs": [
       "Notebooks"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html",
+    "href": "notebooks/edm/CCM_example.html",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "",
+    "text": "Codelibrary(rEDM)\nlibrary(tidyverse)\nThis is the second of two notebooks. The first one covered reconstructing a single variable’s dynamics with Simplex and S-map. Here I ask a different question: given two time series, can I tell whether one actually drives the other?",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#the-question-ccm-answers",
+    "href": "notebooks/edm/CCM_example.html#the-question-ccm-answers",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "The question CCM answers",
+    "text": "The question CCM answers\n\nYou’ve got two time series — say, a nutrient and an algal population, or a predator and its prey.\nThey’re correlated. Q: does that mean one causes the other?\n\nA: Not necessarily — and the usual fixes (Granger causality, adding lags in a regression) assume the variables are separable: that you could, in principle, isolate \\(X\\)’s effect from everything else going on.\nIn a tightly coupled ecological system, that assumption is often false. Convergent Cross Mapping (CCM) was built specifically for non-separable, dynamically coupled variables (Chang et al. 2017).",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#does-ccm-need-to-control-for-other-variables",
+    "href": "notebooks/edm/CCM_example.html#does-ccm-need-to-control-for-other-variables",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "Does CCM need to control for other variables?",
+    "text": "Does CCM need to control for other variables?\nThis is a real question people ask, and the honest answer has two parts.\nPart 1 — no, not the way regression does.\n\nMultiple regression controls for confounders by explicitly adding them as covariates, because it treats each variable’s contribution as separable and additive.\nCCM doesn’t need that: if two variables are part of the same dynamical system, Takens’ theorem guarantees that each variable’s own lagged reconstruction already contains a “shadow” of everything it interacts with — including variables you never measured.\nSo you’re not omitting a confounder by leaving it out of the embedding; its influence is already folded into the variable you did measure.\n\nPart 2 — but CCM has its own failure modes, and they need their own fixes.\n\n\nSynchrony from strong one-way forcing. If \\(X\\) drives \\(Y\\) very strongly, \\(Y\\)’s dynamics can collapse onto \\(X\\)’s so tightly that cross mapping looks bidirectional even though the true influence only runs one way.\n\nShared external drivers. If \\(X\\) and \\(Y\\) don’t interact at all, but both are pushed by the same external cycle (e.g. season), they can still cross-map each other successfully — a real confound, just not one you fix by “adding a covariate.”\n\nYe et al. (2015) give you the actual fix for both: look at cross-map skill as a function of an added time lag, not just at lag zero. I’ll do exactly that below.",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#the-core-mechanic-cross-mapping",
+    "href": "notebooks/edm/CCM_example.html#the-core-mechanic-cross-mapping",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "The core mechanic: cross mapping",
+    "text": "The core mechanic: cross mapping\n\nReconstruct each variable’s own manifold (same lagged-embedding idea as the previous notebook).\nIf \\(X\\) causes \\(Y\\), then information about \\(X\\) gets written into \\(Y\\)’s dynamics — so \\(Y\\)’s manifold should be able to “recover” \\(X\\).\n\nThe direction rule (the confusing part): to ask “does X cause Y?”, you cross-map using Y’s manifold to predict X — not the other way round. High, convergent skill there is your evidence for \\(X \\rightarrow Y\\).\n\nConvergence is the other half of the name: as you give the cross-mapping more library data (longer time series), skill should keep improving if the link is real. A spurious link (e.g. two unrelated series that happen to correlate) won’t converge.",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#step-1-a-sanity-check-where-i-already-know-the-answer",
+    "href": "notebooks/edm/CCM_example.html#step-1-a-sanity-check-where-i-already-know-the-answer",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "Step 1 — a sanity check where I already know the answer",
+    "text": "Step 1 — a sanity check where I already know the answer\nBefore trusting CCM on real data, I want to see it recover a causal link I built in myself. I’ll simulate a nutrient pool driving an algal population strongly, with almost no feedback the other way:\n\nCodeset.seed(42)\nn &lt;- 400\nb_algae_on_nutrients &lt;- 0.02   # algae barely affects nutrients\nb_nutrients_on_algae &lt;- 0.32   # nutrients strongly drive algae -&gt; TRUE causal link: Nutrients -&gt; Algae\n\nNutrients &lt;- numeric(n); Algae &lt;- numeric(n)\nNutrients[1] &lt;- 0.4; Algae[1] &lt;- 0.2\n\nfor (t in 2:n) {\n  Nutrients[t] &lt;- Nutrients[t-1] * (3.8 - 3.8 * Nutrients[t-1] - b_algae_on_nutrients * Algae[t-1])\n  Algae[t]     &lt;- Algae[t-1]     * (3.5 - 3.5 * Algae[t-1]     - b_nutrients_on_algae * Nutrients[t-1])\n  Nutrients[t] &lt;- pmin(pmax(Nutrients[t], 1e-6), 0.9999)\n  Algae[t]     &lt;- pmin(pmax(Algae[t], 1e-6), 0.9999)\n}\n\nsim_data &lt;- tibble(time = 1:n, Nutrients = Nutrients, Algae = Algae)\n\n\nNow I run CCM in both directions and watch whether skill converges as I hand it more data:\n\nCodeccm_sim &lt;- CCM(\n  dataFrame = sim_data, E = 3, columns = \"Nutrients\", target = \"Algae\",\n  libSizes = \"10 300 20\", sample = 100, seed = 1, showPlot = FALSE\n)\n\nccm_sim |&gt;\n  pivot_longer(-LibSize, names_to = \"direction\", values_to = \"rho\") |&gt;\n  mutate(direction = recode(direction,\n    \"Algae:Nutrients\" = \"Algae's manifold predicts Nutrients  -&gt;  evidence Nutrients causes Algae\",\n    \"Nutrients:Algae\" = \"Nutrients's manifold predicts Algae  -&gt;  evidence Algae causes Nutrients\"\n  )) |&gt;\n  ggplot(aes(x = LibSize, y = rho, color = direction)) +\n  geom_line(linewidth = 1) +\n  geom_point(size = 2) +\n  scale_color_manual(values = c(\"#1B7837\", \"grey60\")) +\n  labs(x = \"Library size (L)\", y = expression(rho), color = NULL,\n       title = \"CCM recovers the causal direction I built in\") +\n  theme_bw(base_size = 14) +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\nQ: which curve should win, and does it? A: “Algae’s manifold predicts Nutrients” should climb and convergence — because Nutrients truly drives Algae — while the reverse should stay flat and low. That’s what the plot shows. Good: CCM recovers a direction I already know is right.",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#step-2-real-predator-prey-data",
+    "href": "notebooks/edm/CCM_example.html#step-2-real-predator-prey-data",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "Step 2 — real predator-prey data",
+    "text": "Step 2 — real predator-prey data\nNow the real test: a classic laboratory microcosm, Paramecium (prey) and Didinium (its predator), the same dataset used by Ye et al. (2015).\n\nCodedata(paramecium_didinium)\nparamecium_didinium |&gt; head()\n\n  time paramecium didinium\n1 0.00      15.65     5.76\n2 0.52      53.57     9.05\n3 1.01      73.34    17.26\n4 1.54      93.93    41.97\n5 2.04     115.40    55.97\n6 2.51      76.57    74.91\n\n\n\nCodeccm_real &lt;- CCM(\n  dataFrame = paramecium_didinium, E = 3, columns = \"paramecium\", target = \"didinium\",\n  libSizes = \"10 65 5\", sample = 200, seed = 1, showPlot = FALSE\n)\n\nccm_real |&gt;\n  pivot_longer(-LibSize, names_to = \"direction\", values_to = \"rho\") |&gt;\n  mutate(direction = recode(direction,\n    \"didinium:paramecium\" = \"paramecium  -&gt;  didinium  (prey drives predator)\",\n    \"paramecium:didinium\" = \"didinium  -&gt;  paramecium  (predator drives prey)\"\n  )) |&gt;\n  ggplot(aes(x = LibSize, y = rho, color = direction)) +\n  geom_line(linewidth = 1) +\n  geom_point(size = 2) +\n  scale_color_manual(values = c(\"#1B7837\", \"#762A83\")) +\n  labs(x = \"Library size (L)\", y = expression(rho), color = NULL,\n       title = \"Paramecium & Didinium: who's driving whom?\") +\n  theme_bw(base_size = 14) +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\nQ: what does it mean if both curves converge? A: Real, reciprocal causation — exactly what a predator-prey pair should look like: prey abundance drives predator growth (more food, more offspring) and predator abundance drives prey decline (more mouths, fewer survivors). Unlike the synthetic example, this is genuinely bidirectional, and both curves climbing is the correct result, not a red flag.",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#is-it-real-or-could-65-points-show-this-by-chance",
+    "href": "notebooks/edm/CCM_example.html#is-it-real-or-could-65-points-show-this-by-chance",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "Is it real, or could 65 points show this by chance?",
+    "text": "Is it real, or could 65 points show this by chance?\nConvergence is reassuring, but I can also ask directly: is the observed cross-map skill higher than I’d get from a version of the data with the same basic statistics but no real dynamic link? I scramble one series (destroying its dynamics, keeping its distribution) and rerun CCM many times to build a null distribution:\n\nCodeset.seed(1)\nn_surr &lt;- 100\n\nsurrogates &lt;- SurrogateData(paramecium_didinium$didinium, method = \"random_shuffle\", num_surr = n_surr)\n\nnull_rho &lt;- map_dbl(seq_len(n_surr), function(i) {\n  d &lt;- paramecium_didinium\n  d$didinium &lt;- surrogates[, i]\n  out &lt;- CCM(dataFrame = d, E = 3, columns = \"paramecium\", target = \"didinium\",\n             libSizes = \"65 65 1\", sample = 100, seed = 1, showPlot = FALSE)\n  out$`didinium:paramecium`[1]\n})\n\nobserved_rho &lt;- ccm_real$`didinium:paramecium`[ccm_real$LibSize == max(ccm_real$LibSize)]\n\ntibble(rho = null_rho) |&gt;\n  ggplot(aes(x = rho)) +\n  geom_histogram(bins = 20, fill = \"grey80\", color = \"white\") +\n  geom_vline(xintercept = observed_rho, color = \"#1B7837\", linewidth = 1) +\n  annotate(\"text\", x = observed_rho, y = Inf, label = \"observed\", vjust = 2,\n           hjust = -0.1, color = \"#1B7837\") +\n  labs(x = expression(rho~\"(shuffled surrogates)\"), y = \"Count\",\n       title = \"Observed skill vs. a shuffled-data null distribution\") +\n  theme_bw(base_size = 14)\n\n\n\n\n\n\nCodep_value &lt;- mean(null_rho &gt;= observed_rho)\np_value\n\n[1] 0\n\n\nThe observed skill sits well outside the shuffled-data null distribution (p &lt; 0.01) — this isn’t a pattern 65 noisy points could produce by chance.",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#does-the-direction-hold-up-across-time-lags",
+    "href": "notebooks/edm/CCM_example.html#does-the-direction-hold-up-across-time-lags",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "Does the direction hold up across time lags?",
+    "text": "Does the direction hold up across time lags?\nPer Ye et al. (2015), the sharper test for real (vs. spurious/synchrony-driven) causality is whether cross-map skill peaks at a negative lag in both directions — meaning each variable’s past predicts the other’s future, not the reverse:\n\nCodelags &lt;- -4:4\n\nccm_by_lag &lt;- map_dfr(lags, function(tp) {\n  out &lt;- CCM(dataFrame = paramecium_didinium, E = 3, Tp = tp,\n             columns = \"paramecium\", target = \"didinium\",\n             libSizes = \"65 65 1\", sample = 100, seed = 1, showPlot = FALSE)\n  tibble(Tp = tp,\n         `paramecium -&gt; didinium` = out$`didinium:paramecium`[1],\n         `didinium -&gt; paramecium` = out$`paramecium:didinium`[1])\n})\n\nccm_by_lag |&gt;\n  pivot_longer(-Tp, names_to = \"direction\", values_to = \"rho\") |&gt;\n  ggplot(aes(x = Tp, y = rho, color = direction)) +\n  geom_line(linewidth = 1) +\n  geom_point(size = 2) +\n  geom_vline(xintercept = 0, linetype = \"dashed\", color = \"grey50\") +\n  scale_color_manual(values = c(\"#1B7837\", \"#762A83\")) +\n  labs(x = \"Time lag (Tp)\", y = expression(rho), color = NULL,\n       title = \"Cross-map skill across time lags\") +\n  theme_bw(base_size = 14) +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\nBoth directions peak at negative lags — each species’ past state predicts the other’s future, not the reverse. That’s the signature of genuine bidirectional causation, not one variable being dragged along by strong one-way forcing.",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#take-home",
+    "href": "notebooks/edm/CCM_example.html#take-home",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "Take-home",
+    "text": "Take-home\n\nCCM tests causality between dynamically coupled variables by asking whether one variable’s reconstructed manifold can “recover” the other — and whether that skill converges with more data.\nThe direction is the confusing part: evidence for \\(X \\rightarrow Y\\) comes from \\(Y\\)’s manifold predicting \\(X\\), not the other way round.\nYou don’t need to add covariates the way regression does — coupling is already embedded in each variable’s own dynamics.\nYou do still need to watch for synchrony (strong one-way forcing mimicking bidirectionality) and shared external drivers (like season) — and the fix is checking convergence and lag structure, not adding a covariate list (Ye et al. 2015).\nReal, reciprocal predator-prey coupling (like Paramecium/Didinium) should — and does — show convergent CCM in both directions.",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/CCM_example.html#further-reading",
+    "href": "notebooks/edm/CCM_example.html#further-reading",
+    "title": "Convergent Cross Mapping: does A actually drive B?",
+    "section": "Further reading",
+    "text": "Further reading\n\n\nYe et al. (2015) — the lag-scanning method used above, applied in the original paper to this same predator-prey system plus ice-core CO₂/temperature and sardine/anchovy/SST data.\n\nTime Series Analysis Handbook, ch. 6 — Convergent Cross Mapping — more worked examples, including where CCM correctly finds no causality (e.g. spurious correlations).\n\nDoes convergent cross mapping require you to control for other variables? (CrossValidated) — the discussion this notebook’s “Does CCM need to control for other variables?” section is answering.\n\nChang et al. (2017) — the rEDM walkthrough referenced in the first notebook.",
+    "crumbs": [
+      "Notebooks",
+      "Convergent Cross Mapping"
     ]
   },
   {
@@ -353,6 +463,105 @@
     "title": "Leonardo Capitani",
     "section": "",
     "text": "Antonio Ligabue, Volpe in fuga. 1948. Private Collection.\n\n\n\n\nAnd so an ecologist who begins by asking himself how life works very quickly finds himself asking instead why the natural ecosystems are made up of so many parts and why there are so many of each kind of part. Before he can answer an engineer’s question “how does this work,” he is faced with even more fundamental questions beginning with “why”: Why are there so many different kinds of plants and animals? Why are some common but others rare? Why are some large but others small? Why do they sometimes do such peculiar things?\nPaul Colinvax, 1978. Why big fierce animals are rare? Princeton University Press.\n\n\nAbout\n\n\n\nWell, I am an ecologist. What is an ecologist? An ecologist is someone who finds excitement in the beauty and complexity of nature. I am also a passionate educator and thoroughly enjoy chances to teach and learn with audiences of all levels of prior experience.\n\n\n\n\nNow\n\n\n\n\nScientist, Aquatic Ecology\n\n\nEAWAG, Switzerland\n\n\n\n\nPreviously\n\n\n\n\nPostdoc\n\n\nWSL, Switzerland\n\n\n2023–2025\n\n\n\n\nPh.D. Ecology\n\n\nUFRN, Brazil\n\n\n2017–2021\n\n\n\n\nMaster of Ecology\n\n\nUFRGS, Brazil\n\n\n2015–2017\n\n\n\n\nBachelor in Environmental Sciences\n\n\nUniversity of Barcelona\n\n\n2008–2014\n\n\n\n\n\nCreated by Leonardo Capitani; Updated 22 July 2026\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html",
+    "href": "notebooks/edm/EDM_intro.html",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "",
+    "text": "Codelibrary(rEDM)\nlibrary(tidyverse)",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html#why-not-just-fit-a-regression",
+    "href": "notebooks/edm/EDM_intro.html#why-not-just-fit-a-regression",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "Why not just fit a regression?",
+    "text": "Why not just fit a regression?\nYou’ve got a population time series and you want to know what drives it. The reflex move is a regression, or maybe an ARIMA model. Here’s the problem with that:\n\nRegression assumes a fixed relationship: a 1-unit change in \\(X\\) always buys you the same change in \\(Y\\).\nEcological systems are usually state-dependent: the effect of a predator on its prey can flip sign depending on whether prey are scarce or abundant, whether the system is near a tipping point, and so on.\nThis gives you “mirage correlations” — correlations between two variables that appear, vanish, and reverse over time, even though the two variables are genuinely causally linked the whole time (Chang et al. 2017).\n\nQ: So what do I do instead? A: You stop trying to write down the equations, and instead let the data reconstruct the dynamics for you. That’s Empirical Dynamic Modelling (EDM) — a non-parametric, nonlinear alternative to regression, built for exactly this kind of system (Chang et al. 2017).",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html#the-core-idea-rebuilding-an-attractor-from-one-time-series",
+    "href": "notebooks/edm/EDM_intro.html#the-core-idea-rebuilding-an-attractor-from-one-time-series",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "The core idea: rebuilding an attractor from one time series",
+    "text": "The core idea: rebuilding an attractor from one time series\nHere’s the counterintuitive part.\n\nSay you only measured one species in a multi-species food web. Surely you’ve lost all the information about the other species?\nNot quite: if that species interacts with the rest of the system, its own trajectory carries a “shadow” of everything it interacts with.\n\nTakens’ theorem says you can recover that shadow using nothing but lagged copies of your one time series.\n\nQ: How, mechanically? A: You build an embedding — a vector of \\(E\\) lagged values of your series:\n\\[\n\\vec{x}_t = (x_t,\\ x_{t-\\tau},\\ x_{t-2\\tau},\\ \\dots,\\ x_{t-(E-1)\\tau})\n\\]\n\n\n\\(E\\) = the embedding dimension — how many lags you use.\n\n\\(\\tau\\) = the time delay between lags (I’ll use \\(\\tau=1\\) throughout, one time step).\nPlot these vectors in \\(E\\)-dimensional space and you get a “shadow manifold” — a reconstruction of the system’s attractor that shares its essential shape (topology) with the real thing.\n\nYou never see the real attractor. You don’t need to: the shadow is enough to forecast from.",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html#step-1-simplex-projection-forecasting-by-analogy",
+    "href": "notebooks/edm/EDM_intro.html#step-1-simplex-projection-forecasting-by-analogy",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "Step 1 — Simplex projection: forecasting by analogy",
+    "text": "Step 1 — Simplex projection: forecasting by analogy\nThe simplest EDM forecasting method is Simplex projection, and the logic is just “find what happened last time things looked like this”:\n\nEmbed the series into \\(E\\) dimensions.\nFor the point you want to forecast, find its \\(E+1\\) nearest neighbours in the embedded space (using only points from the past, i.e. your “library”).\nForecast = a distance-weighted average of what those neighbours did next.\n\nThat’s it — no equations, no parameters to fit, just pattern-matching in the reconstructed state space.\nQ: What counts as a good population model to try this on? A: A chaotic one. Robert May showed back in 1976 that ridiculously simple population models (like a discrete logistic map) can produce dynamics so complex they look like noise — but they aren’t. I’ll use TentMap, a textbook chaotic map bundled with rEDM, as a stand-in for a “simple but chaotic” single-species population.\nPicking \\(E\\)\n\nI don’t get to pick \\(E\\) by intuition — I let forecast skill tell me. I split the series into a library (used to search for neighbours) and a prediction set (held out, forecasted), then try a range of \\(E\\) values:\n\nCodelib_range  &lt;- \"1 100\"\npred_range &lt;- \"201 500\"\n\nE_test &lt;- EmbedDimension(\n  dataFrame = TentMap, lib = lib_range, pred = pred_range,\n  columns = \"TentMap\", target = \"TentMap\", showPlot = FALSE\n)\n\nE_test |&gt;\n  ggplot(aes(x = E, y = rho)) +\n  geom_line(color = \"#1B7837\") +\n  geom_point(size = 2, color = \"#1B7837\") +\n  labs(x = \"Embedding dimension (E)\", y = expression(rho~\"(forecast skill)\"),\n       title = \"Simplex forecast skill across embedding dimensions\") +\n  theme_bw(base_size = 14)\n\n\n\n\n\n\nCodebest_E &lt;- E_test$E[which.max(E_test$rho)]\nbest_E\n\n[1] 2\n\n\nQ: What am I looking for in that plot? A: A peak. Too few dimensions and the reconstruction folds different states on top of each other (bad neighbours); too many and I’m fitting noise. The peak — here \\(E = 2\\) — is my best embedding.",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html#is-it-chaos-or-is-it-just-noise",
+    "href": "notebooks/edm/EDM_intro.html#is-it-chaos-or-is-it-just-noise",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "Is it chaos, or is it just noise?",
+    "text": "Is it chaos, or is it just noise?\nHere’s a genuinely useful diagnostic: forecast the series at increasing horizons (\\(T_p = 1, 2, 3, \\dots\\)) and watch what happens to forecast skill.\n\n\nChaotic systems: skill decays smoothly with horizon (small errors compound — the “butterfly effect”).\n\nNoise: skill is already bad at \\(T_p=1\\) and stays flat and low.\n\n\nCodehorizon_chaos &lt;- PredictInterval(\n  dataFrame = TentMap, lib = lib_range, pred = pred_range,\n  E = best_E, columns = \"TentMap\", target = \"TentMap\", showPlot = FALSE\n) |&gt; mutate(series = \"Chaotic (TentMap)\")\n\nhorizon_noise &lt;- PredictInterval(\n  dataFrame = TentMapNoise, lib = lib_range, pred = pred_range,\n  E = best_E, columns = \"TentMap\", target = \"TentMap\", showPlot = FALSE\n) |&gt; mutate(series = \"Noise (TentMapNoise)\")\n\nbind_rows(horizon_chaos, horizon_noise) |&gt;\n  ggplot(aes(x = Tp, y = rho, color = series)) +\n  geom_line(linewidth = 1) +\n  geom_point(size = 2) +\n  scale_color_manual(values = c(\"#1B7837\", \"grey60\")) +\n  labs(x = \"Prediction horizon (Tp, steps ahead)\", y = expression(rho),\n       color = NULL, title = \"Forecast skill vs. prediction horizon\") +\n  theme_bw(base_size = 14)\n\n\n\n\n\n\n\nQ: Why does this matter for a real dataset? A: If your population’s forecast skill degrades gradually like the chaotic curve, you have a deterministic but unpredictable-in-the-long-run system — a completely different management problem than pure noise (where more monitoring effort won’t buy you better forecasts).",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html#step-2-s-map-does-the-rulebook-change-with-the-state-of-the-system",
+    "href": "notebooks/edm/EDM_intro.html#step-2-s-map-does-the-rulebook-change-with-the-state-of-the-system",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "Step 2 — S-map: does the “rulebook” change with the state of the system?",
+    "text": "Step 2 — S-map: does the “rulebook” change with the state of the system?\nSimplex gives you a forecast; S-map (sequential locally weighted global linear map) gives you something more diagnostic: it fits a local linear model around each point, weighting neighbours by\n\\[\nw(d) = \\exp\\!\\left(-\\theta \\frac{d}{\\bar d}\\right)\n\\]\n\n\n\\(d\\) = distance to a neighbour, \\(\\bar d\\) = average distance.\n\n\\(\\theta = 0\\): every point gets equal weight → one global linear model (this is just standard linear autoregression).\n\n\\(\\theta &gt; 0\\): nearby points matter more → the “rules” are allowed to change across the state space (state-dependence, i.e. nonlinearity).\n\nQ: How does this tell me the system is nonlinear? A: If forecast skill improves as \\(\\theta\\) increases above 0, a single fixed rule can’t explain your data — the best-fitting local model changes depending on where you are on the attractor. That is itself evidence of nonlinear, state-dependent dynamics.\n\nCodetheta_test &lt;- PredictNonlinear(\n  dataFrame = TentMap, lib = lib_range, pred = pred_range,\n  E = best_E, columns = \"TentMap\", target = \"TentMap\", showPlot = FALSE\n)\n\ntheta_test |&gt;\n  ggplot(aes(x = Theta, y = rho)) +\n  geom_line(color = \"#1B7837\") +\n  geom_point(size = 2, color = \"#1B7837\") +\n  labs(x = expression(theta~\"(local weighting / nonlinearity)\"), y = expression(rho),\n       title = \"S-map: does nonlinearity improve forecast skill?\") +\n  theme_bw(base_size = 14)\n\n\n\n\n\n\n\nThe peak sits well above \\(\\theta = 0\\): a single global linear rule underfits this system — exactly what I’d expect from a chaotic map, and exactly the pattern you should look for before assuming a linear model is good enough for your own data.",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html#trying-it-on-a-real-population",
+    "href": "notebooks/edm/EDM_intro.html#trying-it-on-a-real-population",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "Trying it on a real population",
+    "text": "Trying it on a real population\nrEDM ships a real dataset I like a lot for this: monthly counts of Thrips imaginis (an insect) in South Australia, alongside rainfall and temperature — a genuine, noisy, real-world ecological time series, not a toy.\n\nCodedata(Thrips)\nThrips |&gt; select(Year, Month, Thrips_imaginis) |&gt; head()\n\n  Year Month Thrips_imaginis\n1 1932     4             4.5\n2 1932     5            23.4\n3 1932     6            17.8\n4 1932     7             4.4\n5 1932     8             3.3\n6 1932     9            34.0\n\n\nQ: Same two questions as before — what E, and is it nonlinear?\n\nCodelib_thrips &lt;- paste(\"1\", nrow(Thrips))\n\nE_thrips &lt;- EmbedDimension(\n  dataFrame = Thrips, lib = lib_thrips, pred = lib_thrips,\n  columns = \"Thrips_imaginis\", target = \"Thrips_imaginis\", showPlot = FALSE\n)\nbest_E_thrips &lt;- E_thrips$E[which.max(E_thrips$rho)]\n\ntheta_thrips &lt;- PredictNonlinear(\n  dataFrame = Thrips, lib = lib_thrips, pred = lib_thrips,\n  E = best_E_thrips, columns = \"Thrips_imaginis\", target = \"Thrips_imaginis\",\n  showPlot = FALSE\n)\n\ntheta_thrips |&gt;\n  ggplot(aes(x = Theta, y = rho)) +\n  geom_line(color = \"#1B7837\") +\n  geom_point(size = 2, color = \"#1B7837\") +\n  labs(x = expression(theta), y = expression(rho),\n       title = paste0(\"Thrips imaginis, E = \", best_E_thrips)) +\n  theme_bw(base_size = 14)\n\n\n\n\n\n\n\nForecast skill is far from perfect (real insect counts are noisy), but it clearly rises above the linear (\\(\\theta=0\\)) baseline — a real population, not a simulation, showing the same nonlinear signature I built into the chaotic toy example above.",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html#take-home",
+    "href": "notebooks/edm/EDM_intro.html#take-home",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "Take-home",
+    "text": "Take-home\n\nLinear correlation-based methods assume a fixed relationship. Ecological systems often don’t have one.\nEDM sidesteps that by reconstructing the system’s attractor directly from lagged values of a time series (Takens’ theorem) — no equations required.\n\nSimplex projection forecasts by analogy to the nearest neighbours in that reconstruction; sweeping \\(E\\) tells you the reconstruction’s dimensionality, and sweeping \\(T_p\\) tells you chaos from noise.\n\nS-map checks whether a local, state-dependent model beats a single global linear one — the diagnostic for nonlinearity.\nEverything here used one variable at a time. The natural next question is interaction between variables — does species \\(A\\) actually drive species \\(B\\)? That’s what convergent cross mapping is for, next notebook.",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
+  },
+  {
+    "objectID": "notebooks/edm/EDM_intro.html#further-reading",
+    "href": "notebooks/edm/EDM_intro.html#further-reading",
+    "title": "Empirical Dynamic Modelling: an introduction",
+    "section": "Further reading",
+    "text": "Further reading\n\n\nChang et al. (2017) — a hands-on rEDM walkthrough I leaned on heavily here.\n\nTime Series Analysis Handbook, ch. 5 — Simplex and S-map projections — the Python-flavoured version of everything above, with more detail on multivariate embeddings.\n\nYe et al. (2015) — cited here for completeness; the full story is in the next notebook.",
+    "crumbs": [
+      "Notebooks",
+      "Empirical Dynamic Modelling: intro"
+    ]
   },
   {
     "objectID": "notebooks/measurement_error/Measurement_error_simulations.html",
