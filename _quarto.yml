@@ -49,7 +49,7 @@ format:
      light: [default, styles.scss]
      dark: [slate, styles.scss]
     light-dark: true
-    include-after-body: _lang-switch-navbar.html
+    include-after-body: _after-body.html
 editor: visual
 
 

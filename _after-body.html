@@ -1,0 +1,35 @@
+<script>
+// Home page only: the profile photo floats and follows the cursor, and the
+// CV link (relocated here instead of the bottom of the about-card links row)
+// trails just below it.
+document.addEventListener("DOMContentLoaded", function () {
+  var cvLink = document.querySelector('a.about-link[href="/cv.pdf"]');
+  var photo = document.querySelector('img.about-image[src="docs/media/LC.jpeg"]');
+  if (!cvLink || !photo) return;
+
+  cvLink.classList.add("cv-link-under-photo");
+  photo.insertAdjacentElement("afterend", cvLink);
+
+  var PHOTO_SIZE = 190;
+  var OFFSET_X = 24;
+  var OFFSET_Y = 24;
+  var GAP = 12;
+  var NAVBAR_HEIGHT = 70;
+
+  function place(x, y) {
+    var maxLeft = window.innerWidth - PHOTO_SIZE - 10;
+    var maxTop = window.innerHeight - PHOTO_SIZE - 10;
+    var left = Math.min(Math.max(x + OFFSET_X, 10), maxLeft);
+    var top = Math.min(Math.max(y + OFFSET_Y, NAVBAR_HEIGHT), maxTop);
+
+    photo.style.left = left + "px";
+    photo.style.top = top + "px";
+    cvLink.style.left = left + "px";
+    cvLink.style.top = (top + PHOTO_SIZE + GAP) + "px";
+  }
+
+  document.addEventListener("mousemove", function (e) {
+    place(e.clientX, e.clientY);
+  });
+});
+</script>

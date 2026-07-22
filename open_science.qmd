@@ -2,9 +2,6 @@
 title: "Open Science"
 ---
 
-::: {.lang-switch}
-🌐 **English** · [Italiano](open_science.it.qmd) · [Español](open_science.es.qmd) · [Português](open_science.pt.qmd) · [Français](open_science.fr.qmd) · [Deutsch](open_science.de.qmd)
-:::
 
 ### Commitment to research transparency and open science
 

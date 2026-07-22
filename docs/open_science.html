@@ -44,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-84b2ca6d88721bb9367114d734cc804f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d46ed9b6c1278dfffb778162e466d429.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-84b2ca6d88721bb9367114d734cc804f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ad06ba4a6478f6f13af5c88b92a608af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0e8b3c9870bf56f1f1c8814c9a101a54.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ad06ba4a6478f6f13af5c88b92a608af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -321,9 +321,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="lang-switch">
-<p>🌐 <strong>English</strong> · <a href="./open_science.it.html">Italiano</a> · <a href="./open_science.es.html">Español</a> · <a href="./open_science.pt.html">Português</a> · <a href="./open_science.fr.html">Français</a> · <a href="./open_science.de.html">Deutsch</a></p>
-</div>
 <section id="commitment-to-research-transparency-and-open-science" class="level3">
 <h3 class="anchored" data-anchor-id="commitment-to-research-transparency-and-open-science">Commitment to research transparency and open science</h3>
 <p><em>When I say open science, I mean it literally: if you make your analysis code and data public — everything behind your research, not just the results — I trust you, and I trust the way you do science.</em></p>
@@ -356,53 +353,6 @@ ul.task-list li input[type="checkbox"] {
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  var switchDiv = document.querySelector(".lang-switch");
-  var tools = document.querySelector(".quarto-navbar-tools");
-  if (!switchDiv || !tools) return;
-
-  var dropdown = document.createElement("div");
-  dropdown.className = "nav-item dropdown lang-switch-dropdown";
-
-  var toggle = document.createElement("a");
-  toggle.href = "";
-  toggle.className = "quarto-navigation-tool px-1 dropdown-toggle";
-  toggle.setAttribute("role", "button");
-  toggle.setAttribute("data-bs-toggle", "dropdown");
-  toggle.setAttribute("aria-expanded", "false");
-  toggle.title = "Change language";
-  toggle.innerHTML = '<i class="bi bi-translate"></i>';
-  toggle.addEventListener("click", function (e) {
-    e.preventDefault();
-  });
-
-  var menu = document.createElement("ul");
-  menu.className = "dropdown-menu dropdown-menu-end";
-
-  switchDiv.querySelectorAll("strong, a").forEach(function (el) {
-    var li = document.createElement("li");
-    if (el.tagName === "A") {
-      var a = document.createElement("a");
-      a.className = "dropdown-item";
-      a.href = el.getAttribute("href");
-      a.textContent = el.textContent;
-      li.appendChild(a);
-    } else {
-      var span = document.createElement("span");
-      span.className = "dropdown-item disabled active";
-      span.textContent = el.textContent;
-      li.appendChild(span);
-    }
-    menu.appendChild(li);
-  });
-
-  dropdown.appendChild(toggle);
-  dropdown.appendChild(menu);
-  tools.insertBefore(dropdown, tools.firstChild);
-
-  switchDiv.style.display = "none";
-});
-
 // Home page only: the profile photo floats and follows the cursor, and the
 // CV link (relocated here instead of the bottom of the about-card links row)
 // trails just below it.

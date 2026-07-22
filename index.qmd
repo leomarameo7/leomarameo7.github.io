@@ -12,9 +12,6 @@ about:
       icon: file-earmark-pdf
 ---
 
-::: lang-switch
-🌐 **English** · [Italiano](index.it.qmd) · [Español](index.es.qmd) · [Português](index.pt.qmd) · [Français](index.fr.qmd) · [Deutsch](index.de.qmd)
-:::
 
 ::: {style="text-align:center;"}
 ![Antonio Ligabue, *Volpe in fuga.* 1948. Private Collection.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center" width="650"}

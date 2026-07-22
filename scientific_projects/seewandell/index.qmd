@@ -17,6 +17,3 @@ listing:
     grid-item-border: true
 ---
 
-::: {.lang-switch}
-🌐 **English** · [Italiano](index.it.qmd) · [Español](index.es.qmd) · [Português](index.pt.qmd) · [Français](index.fr.qmd) · [Deutsch](index.de.qmd)
-:::

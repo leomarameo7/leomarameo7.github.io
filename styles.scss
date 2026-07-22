@@ -232,30 +232,10 @@ blockquote { // style blockquotes (for speech bubbles)
 } 
 
 
-// language switcher line shown under page titles (hidden once moved into the navbar, see below)
-.lang-switch {
-  font-size: 15px;
-  color: $medium-gray1;
-  margin-bottom: 1.5em;
-}
-
-// navbar language switcher (built from .lang-switch by _lang-switch-navbar.html), opens on hover
-.lang-switch-dropdown {
-  display: inline-block;
-
-  .dropdown-menu {
-    margin-top: 0;
-  }
-
-  &:hover .dropdown-menu {
-    display: block;
-  }
-}
-
 /* Floating profile photo that follows the cursor (home page only, matched by
    its src since quarto's about-jolla template gives no hook for a custom
    class). Position (left/top) is driven by mousemove in
-   _lang-switch-navbar.html; the transition here is what gives it a
+   _after-body.html; the transition here is what gives it a
    trailing/floating feel instead of snapping straight to the pointer. */
 img.about-image[src="docs/media/LC.jpeg"] {
   position: fixed;
