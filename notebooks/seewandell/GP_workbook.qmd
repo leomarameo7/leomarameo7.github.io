@@ -14,8 +14,6 @@ format:
           code-tools: true
           code-link: true
           embed-resources: true
-      pdf:
-             keep-tex: true
 editor: visual
 editor_options:
   chunk_output_type: console

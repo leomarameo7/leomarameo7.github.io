@@ -9815,7 +9815,7 @@ window.Quarto = {
 <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#simulate" id="toc-simulate" class="nav-link" data-scroll-target="#simulate">Simulate</a></li>
   <li><a href="#fitting-a-bayesian-regression-with-error-measuraments-on-predictors-x" id="toc-fitting-a-bayesian-regression-with-error-measuraments-on-predictors-x" class="nav-link" data-scroll-target="#fitting-a-bayesian-regression-with-error-measuraments-on-predictors-x">Fitting a Bayesian regression with error measuraments on predictors <span class="math inline">\(x\)</span></a></li>
-  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Measurement_error_simulations.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -9843,7 +9843,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 21, 2026</p>
+      <p class="date-modified">July 25, 2026</p>
     </div>
   </div>
     
@@ -10808,329 +10808,327 @@ document.addEventListener("DOMContentLoaded", function () {
 <span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="co">          code-tools: true</span></span>
 <span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="co">          code-link: true</span></span>
 <span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co">          embed-resources: true</span></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="co">      pdf:</span></span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="co">             keep-tex: true</span></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span></span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
-<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybayes)</span>
-<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
-<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Make random things reproducible</span></span>
-<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Bayes stuff</span></span>
-<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the cmdstanr backend for Stan because it&#39;s faster and more modern than</span></span>
-<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a><span class="co"># the default rstan. You need to install the cmdstanr package first</span></span>
-<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a><span class="co"># (https://mc-stan.org/cmdstanr/) and then run cmdstanr::install_cmdstan() to</span></span>
-<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a><span class="co"># install cmdstan on your computer.</span></span>
-<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">mc.cores =</span> <span class="dv">4</span>,  <span class="co"># Use 4 cores</span></span>
-<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>        <span class="at">brms.backend =</span> <span class="st">&quot;cmdstanr&quot;</span>)</span>
-<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>bayes_seed <span class="ot">&lt;-</span> <span class="dv">1234</span></span>
-<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Colors from MetBrewer</span></span>
-<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>clrs <span class="ot">&lt;-</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">&quot;Java&quot;</span>)</span>
-<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom ggplot themes to make pretty plots</span></span>
-<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Roboto Condensed at https://fonts.google.com/specimen/Roboto+Condensed</span></span>
-<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Roboto Mono at https://fonts.google.com/specimen/Roboto+Mono</span></span>
-<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>theme_pred <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">&quot;Roboto Condensed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>          <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a>          <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>),</span>
-<span id="cb25-62"><a href="#cb25-62" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>),</span>
-<span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>))</span>
-<span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-65"><a href="#cb25-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a>theme_pred_dist <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_pred</span>() <span class="sc">+</span></span>
-<span id="cb25-68"><a href="#cb25-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_markdown</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Condensed&quot;</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
-<span id="cb25-69"><a href="#cb25-69" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Mono&quot;</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.9</span>), <span class="at">hjust =</span> <span class="dv">0</span>),</span>
-<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb25-71"><a href="#cb25-71" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb25-72"><a href="#cb25-72" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb25-73"><a href="#cb25-73" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-75"><a href="#cb25-75" aria-hidden="true" tabindex="-1"></a>theme_pred_range <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb25-76"><a href="#cb25-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_pred</span>() <span class="sc">+</span></span>
-<span id="cb25-77"><a href="#cb25-77" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_markdown</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Condensed&quot;</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
-<span id="cb25-78"><a href="#cb25-78" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Mono&quot;</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.9</span>), <span class="at">hjust =</span> <span class="dv">0</span>),</span>
-<span id="cb25-79"><a href="#cb25-79" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb25-80"><a href="#cb25-80" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-81"><a href="#cb25-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-82"><a href="#cb25-82" aria-hidden="true" tabindex="-1"></a><span class="fu">update_geom_defaults</span>(<span class="st">&quot;text&quot;</span>, <span class="fu">list</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Condensed&quot;</span>, <span class="at">lineheight =</span> <span class="dv">1</span>))</span>
-<span id="cb25-83"><a href="#cb25-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybayes)</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Make random things reproducible</span></span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Bayes stuff</span></span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the cmdstanr backend for Stan because it&#39;s faster and more modern than</span></span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a><span class="co"># the default rstan. You need to install the cmdstanr package first</span></span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a><span class="co"># (https://mc-stan.org/cmdstanr/) and then run cmdstanr::install_cmdstan() to</span></span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a><span class="co"># install cmdstan on your computer.</span></span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">mc.cores =</span> <span class="dv">4</span>,  <span class="co"># Use 4 cores</span></span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>        <span class="at">brms.backend =</span> <span class="st">&quot;cmdstanr&quot;</span>)</span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>bayes_seed <span class="ot">&lt;-</span> <span class="dv">1234</span></span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Colors from MetBrewer</span></span>
+<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>clrs <span class="ot">&lt;-</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">&quot;Java&quot;</span>)</span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom ggplot themes to make pretty plots</span></span>
+<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Roboto Condensed at https://fonts.google.com/specimen/Roboto+Condensed</span></span>
+<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Roboto Mono at https://fonts.google.com/specimen/Roboto+Mono</span></span>
+<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>theme_pred <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">&quot;Roboto Condensed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a>          <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a>          <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb25-62"><a href="#cb25-62" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a>theme_pred_dist <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb25-65"><a href="#cb25-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_pred</span>() <span class="sc">+</span></span>
+<span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_markdown</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Condensed&quot;</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
+<span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Mono&quot;</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.9</span>), <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb25-68"><a href="#cb25-68" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb25-69"><a href="#cb25-69" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb25-71"><a href="#cb25-71" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-72"><a href="#cb25-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-73"><a href="#cb25-73" aria-hidden="true" tabindex="-1"></a>theme_pred_range <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_pred</span>() <span class="sc">+</span></span>
+<span id="cb25-75"><a href="#cb25-75" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_markdown</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Condensed&quot;</span>, <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
+<span id="cb25-76"><a href="#cb25-76" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Mono&quot;</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.9</span>), <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb25-77"><a href="#cb25-77" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb25-78"><a href="#cb25-78" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-79"><a href="#cb25-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-80"><a href="#cb25-80" aria-hidden="true" tabindex="-1"></a><span class="fu">update_geom_defaults</span>(<span class="st">&quot;text&quot;</span>, <span class="fu">list</span>(<span class="at">family =</span> <span class="st">&quot;Roboto Condensed&quot;</span>, <span class="at">lineheight =</span> <span class="dv">1</span>))</span>
+<span id="cb25-81"><a href="#cb25-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-82"><a href="#cb25-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-83"><a href="#cb25-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
 <span id="cb25-84"><a href="#cb25-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a>From Gelman et al. 2020 *Regression and other stories*, p. 458 and Gelman&#39;s blog <span class="co">[</span><span class="ot">post</span><span class="co">](https://statmodeling.stat.columbia.edu/2024/04/14/simulation-to-understand-measurement-error-in-regression/)</span> on 14.04.2024:</span>
 <span id="cb25-86"><a href="#cb25-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-87"><a href="#cb25-87" aria-hidden="true" tabindex="-1"></a>From Gelman et al. 2020 *Regression and other stories*, p. 458 and Gelman&#39;s blog <span class="co">[</span><span class="ot">post</span><span class="co">](https://statmodeling.stat.columbia.edu/2024/04/14/simulation-to-understand-measurement-error-in-regression/)</span> on 14.04.2024:</span>
+<span id="cb25-87"><a href="#cb25-87" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Another form of incomplete data is measurement error. In the linear regression $y = a+bx+error$, measurement error in $y$ does not pose a problem, as it folds right into the error term. Suppose we would like to estimate the “underlying” model $y_i = a + bx_i + e_i$ but $y$ is itself measured with error, so that what we actually observe is $y_i^* = y_i + \eta_i$. In that case, we can combine the two models to get $y_i^* = a + bx_i + e_i + \eta_i$, and if the two error terms are independent and each with mean 0, this reduces to a linear regression of $y^*$ on $x$, which can be fit directly. **So as long as** $e_i$ **is independent of** $\eta_i$ , **you can just combine them into a single error term.**</span></span>
 <span id="cb25-88"><a href="#cb25-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-89"><a href="#cb25-89" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Another form of incomplete data is measurement error. In the linear regression $y = a+bx+error$, measurement error in $y$ does not pose a problem, as it folds right into the error term. Suppose we would like to estimate the “underlying” model $y_i = a + bx_i + e_i$ but $y$ is itself measured with error, so that what we actually observe is $y_i^* = y_i + \eta_i$. In that case, we can combine the two models to get $y_i^* = a + bx_i + e_i + \eta_i$, and if the two error terms are independent and each with mean 0, this reduces to a linear regression of $y^*$ on $x$, which can be fit directly. **So as long as** $e_i$ **is independent of** $\eta_i$ , **you can just combine them into a single error term.**</span></span>
+<span id="cb25-89"><a href="#cb25-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Simulate</span></span>
 <span id="cb25-90"><a href="#cb25-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-91"><a href="#cb25-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Simulate</span></span>
+<span id="cb25-91"><a href="#cb25-91" aria-hidden="true" tabindex="-1"></a>First , we are going to generate fake data, following the linear relationship $y_i = a + bx_i + e_i$ with a priori fixed parameters values:</span>
 <span id="cb25-92"><a href="#cb25-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-93"><a href="#cb25-93" aria-hidden="true" tabindex="-1"></a>First , we are going to generate fake data, following the linear relationship $y_i = a + bx_i + e_i$ with a priori fixed parameters values:</span>
-<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-97"><a href="#cb25-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-98"><a href="#cb25-98" aria-hidden="true" tabindex="-1"></a><span class="co">#simulation for measurement error</span></span>
+<span id="cb25-95"><a href="#cb25-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-96"><a href="#cb25-96" aria-hidden="true" tabindex="-1"></a><span class="co">#simulation for measurement error</span></span>
+<span id="cb25-97"><a href="#cb25-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-98"><a href="#cb25-98" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb25-99"><a href="#cb25-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-100"><a href="#cb25-100" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb25-100"><a href="#cb25-100" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># number of observations</span></span>
 <span id="cb25-101"><a href="#cb25-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-102"><a href="#cb25-102" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># number of observations</span></span>
+<span id="cb25-102"><a href="#cb25-102" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>) <span class="co"># predictor x with mean = 0 and sd = 10</span></span>
 <span id="cb25-103"><a href="#cb25-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-104"><a href="#cb25-104" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>) <span class="co"># predictor x with mean = 0 and sd = 10</span></span>
-<span id="cb25-105"><a href="#cb25-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-106"><a href="#cb25-106" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">0.2</span> <span class="co"># intercept, the mean value when x = 0</span></span>
-<span id="cb25-107"><a href="#cb25-107" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">0.3</span> <span class="co"># influence of x on y</span></span>
-<span id="cb25-108"><a href="#cb25-108" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="co"># also call in our model &quot;e&quot;. It represents to what extent our model is able to predict y.</span></span>
+<span id="cb25-104"><a href="#cb25-104" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">0.2</span> <span class="co"># intercept, the mean value when x = 0</span></span>
+<span id="cb25-105"><a href="#cb25-105" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">0.3</span> <span class="co"># influence of x on y</span></span>
+<span id="cb25-106"><a href="#cb25-106" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="co"># also call in our model &quot;e&quot;. It represents to what extent our model is able to predict y.</span></span>
+<span id="cb25-107"><a href="#cb25-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-108"><a href="#cb25-108" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, a <span class="sc">+</span> b<span class="sc">*</span>x, sigma)</span>
 <span id="cb25-109"><a href="#cb25-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-110"><a href="#cb25-110" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, a <span class="sc">+</span> b<span class="sc">*</span>x, sigma)</span>
-<span id="cb25-111"><a href="#cb25-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-112"><a href="#cb25-112" aria-hidden="true" tabindex="-1"></a>fake <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x,y)</span>
-<span id="cb25-113"><a href="#cb25-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-110"><a href="#cb25-110" aria-hidden="true" tabindex="-1"></a>fake <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x,y)</span>
+<span id="cb25-111"><a href="#cb25-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-112"><a href="#cb25-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-113"><a href="#cb25-113" aria-hidden="true" tabindex="-1"></a>Then fit the linear model $y_i = a + bx_i + e_i$ to the fake data:</span>
 <span id="cb25-114"><a href="#cb25-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-115"><a href="#cb25-115" aria-hidden="true" tabindex="-1"></a>Then fit the linear model $y_i = a + bx_i + e_i$ to the fake data:</span>
-<span id="cb25-116"><a href="#cb25-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-119"><a href="#cb25-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-120"><a href="#cb25-120" aria-hidden="true" tabindex="-1"></a><span class="fu">get_prior</span>(<span class="at">formula =</span> y <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x, <span class="at">data =</span> fake )</span>
-<span id="cb25-121"><a href="#cb25-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-122"><a href="#cb25-122" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">formula =</span> y <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x,</span>
-<span id="cb25-123"><a href="#cb25-123" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> gaussian,</span>
-<span id="cb25-124"><a href="#cb25-124" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> fake,</span>
-<span id="cb25-125"><a href="#cb25-125" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), <span class="at">class =</span> Intercept),</span>
-<span id="cb25-126"><a href="#cb25-126" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b),</span>
-<span id="cb25-127"><a href="#cb25-127" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
-<span id="cb25-128"><a href="#cb25-128" aria-hidden="true" tabindex="-1"></a>             <span class="at">iter =</span> <span class="dv">2000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">cores =</span> <span class="dv">4</span>, <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb25-129"><a href="#cb25-129" aria-hidden="true" tabindex="-1"></a>             <span class="at">backend =</span> <span class="st">&#39;cmdstanr&#39;</span>,</span>
-<span id="cb25-130"><a href="#cb25-130" aria-hidden="true" tabindex="-1"></a>             <span class="at">silent =</span> <span class="dv">2</span>, <span class="at">refresh =</span> <span class="dv">0</span>,</span>
-<span id="cb25-131"><a href="#cb25-131" aria-hidden="true" tabindex="-1"></a>      <span class="at">seed =</span> <span class="dv">15</span>)</span>
-<span id="cb25-132"><a href="#cb25-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-133"><a href="#cb25-133" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_1)</span>
-<span id="cb25-134"><a href="#cb25-134" aria-hidden="true" tabindex="-1"></a><span class="co"># generate posterior predictions</span></span>
-<span id="cb25-135"><a href="#cb25-135" aria-hidden="true" tabindex="-1"></a>pred_1 <span class="ot">&lt;-</span> fit_1 <span class="sc">|&gt;</span></span>
-<span id="cb25-136"><a href="#cb25-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(<span class="at">newdata =</span> fake, <span class="at">ndraws =</span> <span class="dv">100</span>,</span>
-<span id="cb25-137"><a href="#cb25-137" aria-hidden="true" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">12345</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;No Measurement error&quot;</span>)</span>
-<span id="cb25-138"><a href="#cb25-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-139"><a href="#cb25-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-140"><a href="#cb25-140" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb25-141"><a href="#cb25-141" aria-hidden="true" tabindex="-1"></a>**Take home message:**</span>
-<span id="cb25-142"><a href="#cb25-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-143"><a href="#cb25-143" aria-hidden="true" tabindex="-1"></a>The model returns exactly the fixed values we have previously determined.</span>
-<span id="cb25-144"><a href="#cb25-144" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb25-117"><a href="#cb25-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-118"><a href="#cb25-118" aria-hidden="true" tabindex="-1"></a><span class="fu">get_prior</span>(<span class="at">formula =</span> y <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x, <span class="at">data =</span> fake )</span>
+<span id="cb25-119"><a href="#cb25-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-120"><a href="#cb25-120" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">formula =</span> y <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x,</span>
+<span id="cb25-121"><a href="#cb25-121" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> gaussian,</span>
+<span id="cb25-122"><a href="#cb25-122" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> fake,</span>
+<span id="cb25-123"><a href="#cb25-123" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), <span class="at">class =</span> Intercept),</span>
+<span id="cb25-124"><a href="#cb25-124" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b),</span>
+<span id="cb25-125"><a href="#cb25-125" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb25-126"><a href="#cb25-126" aria-hidden="true" tabindex="-1"></a>             <span class="at">iter =</span> <span class="dv">2000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">cores =</span> <span class="dv">4</span>, <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb25-127"><a href="#cb25-127" aria-hidden="true" tabindex="-1"></a>             <span class="at">backend =</span> <span class="st">&#39;cmdstanr&#39;</span>,</span>
+<span id="cb25-128"><a href="#cb25-128" aria-hidden="true" tabindex="-1"></a>             <span class="at">silent =</span> <span class="dv">2</span>, <span class="at">refresh =</span> <span class="dv">0</span>,</span>
+<span id="cb25-129"><a href="#cb25-129" aria-hidden="true" tabindex="-1"></a>      <span class="at">seed =</span> <span class="dv">15</span>)</span>
+<span id="cb25-130"><a href="#cb25-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-131"><a href="#cb25-131" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_1)</span>
+<span id="cb25-132"><a href="#cb25-132" aria-hidden="true" tabindex="-1"></a><span class="co"># generate posterior predictions</span></span>
+<span id="cb25-133"><a href="#cb25-133" aria-hidden="true" tabindex="-1"></a>pred_1 <span class="ot">&lt;-</span> fit_1 <span class="sc">|&gt;</span></span>
+<span id="cb25-134"><a href="#cb25-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(<span class="at">newdata =</span> fake, <span class="at">ndraws =</span> <span class="dv">100</span>,</span>
+<span id="cb25-135"><a href="#cb25-135" aria-hidden="true" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">12345</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;No Measurement error&quot;</span>)</span>
+<span id="cb25-136"><a href="#cb25-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-137"><a href="#cb25-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-138"><a href="#cb25-138" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb25-139"><a href="#cb25-139" aria-hidden="true" tabindex="-1"></a>**Take home message:**</span>
+<span id="cb25-140"><a href="#cb25-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-141"><a href="#cb25-141" aria-hidden="true" tabindex="-1"></a>The model returns exactly the fixed values we have previously determined.</span>
+<span id="cb25-142"><a href="#cb25-142" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb25-143"><a href="#cb25-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-144"><a href="#cb25-144" aria-hidden="true" tabindex="-1"></a>Then we are going to add the error measurement $\eta$ on $y$ , so $y_i^* = y_i + \eta_i$. We fixed de measurement error as $\eta = 1$. Remember that $e = 0.5$.</span>
 <span id="cb25-145"><a href="#cb25-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-146"><a href="#cb25-146" aria-hidden="true" tabindex="-1"></a>Then we are going to add the error measurement $\eta$ on $y$ , so $y_i^* = y_i + \eta_i$. We fixed de measurement error as $\eta = 1$. Remember that $e = 0.5$.</span>
-<span id="cb25-147"><a href="#cb25-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-150"><a href="#cb25-150" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-151"><a href="#cb25-151" aria-hidden="true" tabindex="-1"></a>sigma_y <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb25-152"><a href="#cb25-152" aria-hidden="true" tabindex="-1"></a>fake<span class="sc">$</span>y_star <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, fake<span class="sc">$</span>y, sigma_y)</span>
+<span id="cb25-148"><a href="#cb25-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-149"><a href="#cb25-149" aria-hidden="true" tabindex="-1"></a>sigma_y <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb25-150"><a href="#cb25-150" aria-hidden="true" tabindex="-1"></a>fake<span class="sc">$</span>y_star <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, fake<span class="sc">$</span>y, sigma_y)</span>
+<span id="cb25-151"><a href="#cb25-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-152"><a href="#cb25-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-153"><a href="#cb25-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-154"><a href="#cb25-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-154"><a href="#cb25-154" aria-hidden="true" tabindex="-1"></a>Then we add some error measurement on x, generated $x^*$. We fixed de measurement error as $\tau = 4$.</span>
 <span id="cb25-155"><a href="#cb25-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-156"><a href="#cb25-156" aria-hidden="true" tabindex="-1"></a>Then we add some error measurement on x, generated $x^*$. We fixed de measurement error as $\tau = 4$.</span>
-<span id="cb25-157"><a href="#cb25-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-160"><a href="#cb25-160" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-161"><a href="#cb25-161" aria-hidden="true" tabindex="-1"></a>sigma_x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb25-162"><a href="#cb25-162" aria-hidden="true" tabindex="-1"></a>fake<span class="sc">$</span>x_star <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, fake<span class="sc">$</span>x, sigma_x)</span>
-<span id="cb25-163"><a href="#cb25-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-158"><a href="#cb25-158" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-159"><a href="#cb25-159" aria-hidden="true" tabindex="-1"></a>sigma_x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb25-160"><a href="#cb25-160" aria-hidden="true" tabindex="-1"></a>fake<span class="sc">$</span>x_star <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, fake<span class="sc">$</span>x, sigma_x)</span>
+<span id="cb25-161"><a href="#cb25-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-162"><a href="#cb25-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-163"><a href="#cb25-163" aria-hidden="true" tabindex="-1"></a>Then we fit again the same model, but with error measurement on $y$</span>
 <span id="cb25-164"><a href="#cb25-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-165"><a href="#cb25-165" aria-hidden="true" tabindex="-1"></a>Then we fit again the same model, but with error measurement on $y$</span>
-<span id="cb25-166"><a href="#cb25-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-169"><a href="#cb25-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-170"><a href="#cb25-170" aria-hidden="true" tabindex="-1"></a><span class="fu">get_prior</span>(<span class="at">formula =</span> y_star <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x, <span class="at">data =</span> fake )</span>
-<span id="cb25-171"><a href="#cb25-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-172"><a href="#cb25-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-173"><a href="#cb25-173" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">formula =</span> y_star <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x,</span>
-<span id="cb25-174"><a href="#cb25-174" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> gaussian,</span>
-<span id="cb25-175"><a href="#cb25-175" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> fake,</span>
-<span id="cb25-176"><a href="#cb25-176" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), <span class="at">class =</span> Intercept),</span>
-<span id="cb25-177"><a href="#cb25-177" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b),</span>
-<span id="cb25-178"><a href="#cb25-178" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
-<span id="cb25-179"><a href="#cb25-179" aria-hidden="true" tabindex="-1"></a>             <span class="at">iter =</span> <span class="dv">2000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">cores =</span> <span class="dv">4</span>, <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb25-180"><a href="#cb25-180" aria-hidden="true" tabindex="-1"></a>             <span class="at">backend =</span> <span class="st">&#39;cmdstanr&#39;</span>,</span>
-<span id="cb25-181"><a href="#cb25-181" aria-hidden="true" tabindex="-1"></a>             <span class="at">silent =</span> <span class="dv">2</span>, <span class="at">refresh =</span> <span class="dv">0</span>,</span>
-<span id="cb25-182"><a href="#cb25-182" aria-hidden="true" tabindex="-1"></a>      <span class="at">seed =</span> <span class="dv">15</span>)</span>
-<span id="cb25-183"><a href="#cb25-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-184"><a href="#cb25-184" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_2)</span>
-<span id="cb25-185"><a href="#cb25-185" aria-hidden="true" tabindex="-1"></a><span class="co"># generate posterior predictions</span></span>
-<span id="cb25-186"><a href="#cb25-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-187"><a href="#cb25-187" aria-hidden="true" tabindex="-1"></a>pred_2 <span class="ot">&lt;-</span> fit_2 <span class="sc">|&gt;</span></span>
-<span id="cb25-188"><a href="#cb25-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(<span class="at">newdata =</span> fake, <span class="at">ndraws =</span> <span class="dv">100</span>,</span>
-<span id="cb25-189"><a href="#cb25-189" aria-hidden="true" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">12345</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in y&quot;</span>)</span>
-<span id="cb25-190"><a href="#cb25-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-167"><a href="#cb25-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-168"><a href="#cb25-168" aria-hidden="true" tabindex="-1"></a><span class="fu">get_prior</span>(<span class="at">formula =</span> y_star <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x, <span class="at">data =</span> fake )</span>
+<span id="cb25-169"><a href="#cb25-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-170"><a href="#cb25-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-171"><a href="#cb25-171" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">formula =</span> y_star <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x,</span>
+<span id="cb25-172"><a href="#cb25-172" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> gaussian,</span>
+<span id="cb25-173"><a href="#cb25-173" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> fake,</span>
+<span id="cb25-174"><a href="#cb25-174" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), <span class="at">class =</span> Intercept),</span>
+<span id="cb25-175"><a href="#cb25-175" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b),</span>
+<span id="cb25-176"><a href="#cb25-176" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb25-177"><a href="#cb25-177" aria-hidden="true" tabindex="-1"></a>             <span class="at">iter =</span> <span class="dv">2000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">cores =</span> <span class="dv">4</span>, <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb25-178"><a href="#cb25-178" aria-hidden="true" tabindex="-1"></a>             <span class="at">backend =</span> <span class="st">&#39;cmdstanr&#39;</span>,</span>
+<span id="cb25-179"><a href="#cb25-179" aria-hidden="true" tabindex="-1"></a>             <span class="at">silent =</span> <span class="dv">2</span>, <span class="at">refresh =</span> <span class="dv">0</span>,</span>
+<span id="cb25-180"><a href="#cb25-180" aria-hidden="true" tabindex="-1"></a>      <span class="at">seed =</span> <span class="dv">15</span>)</span>
+<span id="cb25-181"><a href="#cb25-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-182"><a href="#cb25-182" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_2)</span>
+<span id="cb25-183"><a href="#cb25-183" aria-hidden="true" tabindex="-1"></a><span class="co"># generate posterior predictions</span></span>
+<span id="cb25-184"><a href="#cb25-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-185"><a href="#cb25-185" aria-hidden="true" tabindex="-1"></a>pred_2 <span class="ot">&lt;-</span> fit_2 <span class="sc">|&gt;</span></span>
+<span id="cb25-186"><a href="#cb25-186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(<span class="at">newdata =</span> fake, <span class="at">ndraws =</span> <span class="dv">100</span>,</span>
+<span id="cb25-187"><a href="#cb25-187" aria-hidden="true" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">12345</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in y&quot;</span>)</span>
+<span id="cb25-188"><a href="#cb25-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-189"><a href="#cb25-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-190"><a href="#cb25-190" aria-hidden="true" tabindex="-1"></a>Then we fit again the same model, but with error measurement on $x$</span>
 <span id="cb25-191"><a href="#cb25-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-192"><a href="#cb25-192" aria-hidden="true" tabindex="-1"></a>Then we fit again the same model, but with error measurement on $x$</span>
-<span id="cb25-193"><a href="#cb25-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-196"><a href="#cb25-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-197"><a href="#cb25-197" aria-hidden="true" tabindex="-1"></a>fit_3 <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">formula =</span> y <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x_star,</span>
-<span id="cb25-198"><a href="#cb25-198" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> gaussian,</span>
-<span id="cb25-199"><a href="#cb25-199" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> fake,</span>
-<span id="cb25-200"><a href="#cb25-200" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), <span class="at">class =</span> Intercept),</span>
-<span id="cb25-201"><a href="#cb25-201" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b),</span>
-<span id="cb25-202"><a href="#cb25-202" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
-<span id="cb25-203"><a href="#cb25-203" aria-hidden="true" tabindex="-1"></a>             <span class="at">iter =</span> <span class="dv">2000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">cores =</span> <span class="dv">4</span>, <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb25-204"><a href="#cb25-204" aria-hidden="true" tabindex="-1"></a>             <span class="at">backend =</span> <span class="st">&#39;cmdstanr&#39;</span>,</span>
-<span id="cb25-205"><a href="#cb25-205" aria-hidden="true" tabindex="-1"></a>             <span class="at">silent =</span> <span class="dv">2</span>, <span class="at">refresh =</span> <span class="dv">0</span>,</span>
-<span id="cb25-206"><a href="#cb25-206" aria-hidden="true" tabindex="-1"></a>      <span class="at">seed =</span> <span class="dv">15</span>)</span>
-<span id="cb25-207"><a href="#cb25-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-208"><a href="#cb25-208" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_3)</span>
-<span id="cb25-209"><a href="#cb25-209" aria-hidden="true" tabindex="-1"></a><span class="co"># generate posterior predictions</span></span>
-<span id="cb25-210"><a href="#cb25-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-211"><a href="#cb25-211" aria-hidden="true" tabindex="-1"></a>pred_3 <span class="ot">&lt;-</span> fit_3 <span class="sc">|&gt;</span></span>
-<span id="cb25-212"><a href="#cb25-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(<span class="at">newdata =</span> fake, <span class="at">ndraws =</span> <span class="dv">100</span>,</span>
-<span id="cb25-213"><a href="#cb25-213" aria-hidden="true" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">12345</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in x&quot;</span>)</span>
-<span id="cb25-214"><a href="#cb25-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-194"><a href="#cb25-194" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-195"><a href="#cb25-195" aria-hidden="true" tabindex="-1"></a>fit_3 <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">formula =</span> y <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x_star,</span>
+<span id="cb25-196"><a href="#cb25-196" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> gaussian,</span>
+<span id="cb25-197"><a href="#cb25-197" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> fake,</span>
+<span id="cb25-198"><a href="#cb25-198" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), <span class="at">class =</span> Intercept),</span>
+<span id="cb25-199"><a href="#cb25-199" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b),</span>
+<span id="cb25-200"><a href="#cb25-200" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb25-201"><a href="#cb25-201" aria-hidden="true" tabindex="-1"></a>             <span class="at">iter =</span> <span class="dv">2000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">cores =</span> <span class="dv">4</span>, <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb25-202"><a href="#cb25-202" aria-hidden="true" tabindex="-1"></a>             <span class="at">backend =</span> <span class="st">&#39;cmdstanr&#39;</span>,</span>
+<span id="cb25-203"><a href="#cb25-203" aria-hidden="true" tabindex="-1"></a>             <span class="at">silent =</span> <span class="dv">2</span>, <span class="at">refresh =</span> <span class="dv">0</span>,</span>
+<span id="cb25-204"><a href="#cb25-204" aria-hidden="true" tabindex="-1"></a>      <span class="at">seed =</span> <span class="dv">15</span>)</span>
+<span id="cb25-205"><a href="#cb25-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-206"><a href="#cb25-206" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_3)</span>
+<span id="cb25-207"><a href="#cb25-207" aria-hidden="true" tabindex="-1"></a><span class="co"># generate posterior predictions</span></span>
+<span id="cb25-208"><a href="#cb25-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-209"><a href="#cb25-209" aria-hidden="true" tabindex="-1"></a>pred_3 <span class="ot">&lt;-</span> fit_3 <span class="sc">|&gt;</span></span>
+<span id="cb25-210"><a href="#cb25-210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(<span class="at">newdata =</span> fake, <span class="at">ndraws =</span> <span class="dv">100</span>,</span>
+<span id="cb25-211"><a href="#cb25-211" aria-hidden="true" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">12345</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in x&quot;</span>)</span>
+<span id="cb25-212"><a href="#cb25-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-213"><a href="#cb25-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-214"><a href="#cb25-214" aria-hidden="true" tabindex="-1"></a>Then we fit again the same model, but with error measurement on $x^*$ and $y^*$.</span>
 <span id="cb25-215"><a href="#cb25-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-216"><a href="#cb25-216" aria-hidden="true" tabindex="-1"></a>Then we fit again the same model, but with error measurement on $x^*$ and $y^*$.</span>
-<span id="cb25-217"><a href="#cb25-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-220"><a href="#cb25-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-221"><a href="#cb25-221" aria-hidden="true" tabindex="-1"></a>fit_4 <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">formula =</span> y_star <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x_star,</span>
-<span id="cb25-222"><a href="#cb25-222" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> gaussian,</span>
-<span id="cb25-223"><a href="#cb25-223" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> fake,</span>
-<span id="cb25-224"><a href="#cb25-224" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), <span class="at">class =</span> Intercept),</span>
-<span id="cb25-225"><a href="#cb25-225" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b),</span>
-<span id="cb25-226"><a href="#cb25-226" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
-<span id="cb25-227"><a href="#cb25-227" aria-hidden="true" tabindex="-1"></a>             <span class="at">iter =</span> <span class="dv">2000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">cores =</span> <span class="dv">4</span>, <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb25-228"><a href="#cb25-228" aria-hidden="true" tabindex="-1"></a>             <span class="at">backend =</span> <span class="st">&#39;cmdstanr&#39;</span>,</span>
-<span id="cb25-229"><a href="#cb25-229" aria-hidden="true" tabindex="-1"></a>             <span class="at">silent =</span> <span class="dv">2</span>, <span class="at">refresh =</span> <span class="dv">0</span>,</span>
-<span id="cb25-230"><a href="#cb25-230" aria-hidden="true" tabindex="-1"></a>      <span class="at">seed =</span> <span class="dv">15</span>)</span>
+<span id="cb25-218"><a href="#cb25-218" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-219"><a href="#cb25-219" aria-hidden="true" tabindex="-1"></a>fit_4 <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">formula =</span> y_star <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x_star,</span>
+<span id="cb25-220"><a href="#cb25-220" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> gaussian,</span>
+<span id="cb25-221"><a href="#cb25-221" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> fake,</span>
+<span id="cb25-222"><a href="#cb25-222" aria-hidden="true" tabindex="-1"></a>                <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.2</span>), <span class="at">class =</span> Intercept),</span>
+<span id="cb25-223"><a href="#cb25-223" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b),</span>
+<span id="cb25-224"><a href="#cb25-224" aria-hidden="true" tabindex="-1"></a>                <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb25-225"><a href="#cb25-225" aria-hidden="true" tabindex="-1"></a>             <span class="at">iter =</span> <span class="dv">2000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">cores =</span> <span class="dv">4</span>, <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb25-226"><a href="#cb25-226" aria-hidden="true" tabindex="-1"></a>             <span class="at">backend =</span> <span class="st">&#39;cmdstanr&#39;</span>,</span>
+<span id="cb25-227"><a href="#cb25-227" aria-hidden="true" tabindex="-1"></a>             <span class="at">silent =</span> <span class="dv">2</span>, <span class="at">refresh =</span> <span class="dv">0</span>,</span>
+<span id="cb25-228"><a href="#cb25-228" aria-hidden="true" tabindex="-1"></a>      <span class="at">seed =</span> <span class="dv">15</span>)</span>
+<span id="cb25-229"><a href="#cb25-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-230"><a href="#cb25-230" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_4)</span>
 <span id="cb25-231"><a href="#cb25-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-232"><a href="#cb25-232" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_4)</span>
+<span id="cb25-232"><a href="#cb25-232" aria-hidden="true" tabindex="-1"></a><span class="co"># generate posterior predictions</span></span>
 <span id="cb25-233"><a href="#cb25-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-234"><a href="#cb25-234" aria-hidden="true" tabindex="-1"></a><span class="co"># generate posterior predictions</span></span>
-<span id="cb25-235"><a href="#cb25-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-236"><a href="#cb25-236" aria-hidden="true" tabindex="-1"></a>pred_4 <span class="ot">&lt;-</span> fit_4 <span class="sc">|&gt;</span></span>
-<span id="cb25-237"><a href="#cb25-237" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(<span class="at">newdata =</span> fake, <span class="at">ndraws =</span> <span class="dv">100</span>,</span>
-<span id="cb25-238"><a href="#cb25-238" aria-hidden="true" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">12345</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in both x and y&quot;</span>)</span>
-<span id="cb25-239"><a href="#cb25-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-234"><a href="#cb25-234" aria-hidden="true" tabindex="-1"></a>pred_4 <span class="ot">&lt;-</span> fit_4 <span class="sc">|&gt;</span></span>
+<span id="cb25-235"><a href="#cb25-235" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(<span class="at">newdata =</span> fake, <span class="at">ndraws =</span> <span class="dv">100</span>,</span>
+<span id="cb25-236"><a href="#cb25-236" aria-hidden="true" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">12345</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in both x and y&quot;</span>)</span>
+<span id="cb25-237"><a href="#cb25-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-238"><a href="#cb25-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-239"><a href="#cb25-239" aria-hidden="true" tabindex="-1"></a>Merge the four data frames with model&#39;s predictions</span>
 <span id="cb25-240"><a href="#cb25-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-241"><a href="#cb25-241" aria-hidden="true" tabindex="-1"></a>Merge the four data frames with model&#39;s predictions</span>
-<span id="cb25-242"><a href="#cb25-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-245"><a href="#cb25-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-246"><a href="#cb25-246" aria-hidden="true" tabindex="-1"></a>merg <span class="ot">&lt;-</span>  <span class="fu">rbind</span>(pred_1,pred_2,pred_3,pred_4)</span>
-<span id="cb25-247"><a href="#cb25-247" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-243"><a href="#cb25-243" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-244"><a href="#cb25-244" aria-hidden="true" tabindex="-1"></a>merg <span class="ot">&lt;-</span>  <span class="fu">rbind</span>(pred_1,pred_2,pred_3,pred_4)</span>
+<span id="cb25-245"><a href="#cb25-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-246"><a href="#cb25-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-247"><a href="#cb25-247" aria-hidden="true" tabindex="-1"></a>Then we plot:</span>
 <span id="cb25-248"><a href="#cb25-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-249"><a href="#cb25-249" aria-hidden="true" tabindex="-1"></a>Then we plot:</span>
-<span id="cb25-250"><a href="#cb25-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-253"><a href="#cb25-253" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-254"><a href="#cb25-254" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pred_1, <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb25-255"><a href="#cb25-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-256"><a href="#cb25-256" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_lineribbon</span>(<span class="fu">aes</span>(<span class="at">y =</span> .prediction), <span class="at">.width =</span> <span class="fl">0.95</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#D1D3D5&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-257"><a href="#cb25-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fake, <span class="fu">aes</span>(<span class="at">y =</span> y), <span class="at">shape =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb25-258"><a href="#cb25-258" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">20</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">2.5</span>))<span class="sc">+</span></span>
-<span id="cb25-259"><a href="#cb25-259" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">6</span>))<span class="sc">+</span></span>
-<span id="cb25-260"><a href="#cb25-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="st">&quot;y&quot;</span>, <span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
-<span id="cb25-261"><a href="#cb25-261" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;No measurement error&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-262"><a href="#cb25-262" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
-<span id="cb25-263"><a href="#cb25-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-251"><a href="#cb25-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-252"><a href="#cb25-252" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pred_1, <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb25-253"><a href="#cb25-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-254"><a href="#cb25-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_lineribbon</span>(<span class="fu">aes</span>(<span class="at">y =</span> .prediction), <span class="at">.width =</span> <span class="fl">0.95</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#D1D3D5&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-255"><a href="#cb25-255" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fake, <span class="fu">aes</span>(<span class="at">y =</span> y), <span class="at">shape =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb25-256"><a href="#cb25-256" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">20</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">2.5</span>))<span class="sc">+</span></span>
+<span id="cb25-257"><a href="#cb25-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">6</span>))<span class="sc">+</span></span>
+<span id="cb25-258"><a href="#cb25-258" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="st">&quot;y&quot;</span>, <span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
+<span id="cb25-259"><a href="#cb25-259" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;No measurement error&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-260"><a href="#cb25-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
+<span id="cb25-261"><a href="#cb25-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-262"><a href="#cb25-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-263"><a href="#cb25-263" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pred_2, <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
 <span id="cb25-264"><a href="#cb25-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-265"><a href="#cb25-265" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pred_2, <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb25-266"><a href="#cb25-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-267"><a href="#cb25-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_lineribbon</span>(<span class="fu">aes</span>(<span class="at">y =</span> .prediction), <span class="at">.width =</span> <span class="fl">0.95</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#D1D3D5&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-268"><a href="#cb25-268" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fake, <span class="fu">aes</span>(<span class="at">y =</span> y_star), <span class="at">shape =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb25-269"><a href="#cb25-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="fu">expression</span>(y<span class="sc">^</span><span class="st">&quot;*&quot;</span>),<span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
-<span id="cb25-270"><a href="#cb25-270" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Measurement error on y&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-271"><a href="#cb25-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">20</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">2.5</span>))<span class="sc">+</span></span>
-<span id="cb25-272"><a href="#cb25-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">6</span>))<span class="sc">+</span></span>
-<span id="cb25-273"><a href="#cb25-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
+<span id="cb25-265"><a href="#cb25-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_lineribbon</span>(<span class="fu">aes</span>(<span class="at">y =</span> .prediction), <span class="at">.width =</span> <span class="fl">0.95</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#D1D3D5&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-266"><a href="#cb25-266" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fake, <span class="fu">aes</span>(<span class="at">y =</span> y_star), <span class="at">shape =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb25-267"><a href="#cb25-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="fu">expression</span>(y<span class="sc">^</span><span class="st">&quot;*&quot;</span>),<span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
+<span id="cb25-268"><a href="#cb25-268" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Measurement error on y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-269"><a href="#cb25-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">20</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">2.5</span>))<span class="sc">+</span></span>
+<span id="cb25-270"><a href="#cb25-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">6</span>))<span class="sc">+</span></span>
+<span id="cb25-271"><a href="#cb25-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
+<span id="cb25-272"><a href="#cb25-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-273"><a href="#cb25-273" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pred_3, <span class="fu">aes</span>(<span class="at">x =</span> x_star)) <span class="sc">+</span></span>
 <span id="cb25-274"><a href="#cb25-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-275"><a href="#cb25-275" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pred_3, <span class="fu">aes</span>(<span class="at">x =</span> x_star)) <span class="sc">+</span></span>
-<span id="cb25-276"><a href="#cb25-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-277"><a href="#cb25-277" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_lineribbon</span>(<span class="fu">aes</span>(<span class="at">y =</span> .prediction), <span class="at">.width =</span> <span class="fl">0.95</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#D1D3D5&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-278"><a href="#cb25-278" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fake, <span class="fu">aes</span>(<span class="at">y =</span> y), <span class="at">shape =</span> <span class="dv">1</span>,<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb25-279"><a href="#cb25-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(x<span class="sc">^</span><span class="st">&quot;*&quot;</span>), <span class="at">y =</span> <span class="st">&quot;y&quot;</span>,<span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
-<span id="cb25-280"><a href="#cb25-280" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Measurement error on x&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-281"><a href="#cb25-281" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">20</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">2.5</span>))<span class="sc">+</span></span>
-<span id="cb25-282"><a href="#cb25-282" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">6</span>))<span class="sc">+</span></span>
-<span id="cb25-283"><a href="#cb25-283" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
+<span id="cb25-275"><a href="#cb25-275" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_lineribbon</span>(<span class="fu">aes</span>(<span class="at">y =</span> .prediction), <span class="at">.width =</span> <span class="fl">0.95</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#D1D3D5&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-276"><a href="#cb25-276" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fake, <span class="fu">aes</span>(<span class="at">y =</span> y), <span class="at">shape =</span> <span class="dv">1</span>,<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb25-277"><a href="#cb25-277" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(x<span class="sc">^</span><span class="st">&quot;*&quot;</span>), <span class="at">y =</span> <span class="st">&quot;y&quot;</span>,<span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
+<span id="cb25-278"><a href="#cb25-278" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Measurement error on x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-279"><a href="#cb25-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">20</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">2.5</span>))<span class="sc">+</span></span>
+<span id="cb25-280"><a href="#cb25-280" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">6</span>))<span class="sc">+</span></span>
+<span id="cb25-281"><a href="#cb25-281" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
+<span id="cb25-282"><a href="#cb25-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-283"><a href="#cb25-283" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pred_4, <span class="fu">aes</span>(<span class="at">x =</span> x_star)) <span class="sc">+</span></span>
 <span id="cb25-284"><a href="#cb25-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-285"><a href="#cb25-285" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pred_4, <span class="fu">aes</span>(<span class="at">x =</span> x_star)) <span class="sc">+</span></span>
-<span id="cb25-286"><a href="#cb25-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-287"><a href="#cb25-287" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_lineribbon</span>(<span class="fu">aes</span>(<span class="at">y =</span> .prediction), , <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill=</span> <span class="st">&quot;#D1D3D5&quot;</span>, <span class="at">.width =</span> <span class="fl">0.95</span>) <span class="sc">+</span></span>
-<span id="cb25-288"><a href="#cb25-288" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fake, <span class="fu">aes</span>(<span class="at">y =</span> y_star),<span class="at">shape =</span> <span class="dv">1</span>,  <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb25-289"><a href="#cb25-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(x<span class="sc">^</span><span class="st">&quot;*&quot;</span>), <span class="at">y =</span><span class="fu">expression</span>(y<span class="sc">^</span><span class="st">&quot;*&quot;</span>),<span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
-<span id="cb25-290"><a href="#cb25-290" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Measurement error in both x and y&quot;</span>) <span class="sc">+</span></span>
-<span id="cb25-291"><a href="#cb25-291" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">20</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">2.5</span>))<span class="sc">+</span></span>
-<span id="cb25-292"><a href="#cb25-292" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">6</span>))<span class="sc">+</span></span>
-<span id="cb25-293"><a href="#cb25-293" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
-<span id="cb25-294"><a href="#cb25-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-285"><a href="#cb25-285" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_lineribbon</span>(<span class="fu">aes</span>(<span class="at">y =</span> .prediction), , <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill=</span> <span class="st">&quot;#D1D3D5&quot;</span>, <span class="at">.width =</span> <span class="fl">0.95</span>) <span class="sc">+</span></span>
+<span id="cb25-286"><a href="#cb25-286" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fake, <span class="fu">aes</span>(<span class="at">y =</span> y_star),<span class="at">shape =</span> <span class="dv">1</span>,  <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb25-287"><a href="#cb25-287" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(x<span class="sc">^</span><span class="st">&quot;*&quot;</span>), <span class="at">y =</span><span class="fu">expression</span>(y<span class="sc">^</span><span class="st">&quot;*&quot;</span>),<span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
+<span id="cb25-288"><a href="#cb25-288" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Measurement error in both x and y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-289"><a href="#cb25-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">20</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">2.5</span>))<span class="sc">+</span></span>
+<span id="cb25-290"><a href="#cb25-290" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">6</span>))<span class="sc">+</span></span>
+<span id="cb25-291"><a href="#cb25-291" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
+<span id="cb25-292"><a href="#cb25-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-293"><a href="#cb25-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-294"><a href="#cb25-294" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarrange</span>(p1, p2, p3, p4,</span>
 <span id="cb25-295"><a href="#cb25-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-296"><a href="#cb25-296" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarrange</span>(p1, p2, p3, p4,</span>
+<span id="cb25-296"><a href="#cb25-296" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
 <span id="cb25-297"><a href="#cb25-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-298"><a href="#cb25-298" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
-<span id="cb25-299"><a href="#cb25-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-298"><a href="#cb25-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-299"><a href="#cb25-299" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-300"><a href="#cb25-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-301"><a href="#cb25-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-301"><a href="#cb25-301" aria-hidden="true" tabindex="-1"></a>We can compare the regression coefficients:</span>
 <span id="cb25-302"><a href="#cb25-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-303"><a href="#cb25-303" aria-hidden="true" tabindex="-1"></a>We can compare the regression coefficients:</span>
-<span id="cb25-304"><a href="#cb25-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-307"><a href="#cb25-307" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-308"><a href="#cb25-308" aria-hidden="true" tabindex="-1"></a>tidy_inter_1 <span class="ot">&lt;-</span>  bayesplot<span class="sc">::</span><span class="fu">mcmc_intervals_data</span>(fit_1,</span>
-<span id="cb25-309"><a href="#cb25-309" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob =</span> <span class="fl">0.66</span>, <span class="co"># 66% intervals</span></span>
-<span id="cb25-310"><a href="#cb25-310" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob_outer =</span> <span class="fl">0.95</span>,<span class="co">#95% intervals</span></span>
-<span id="cb25-311"><a href="#cb25-311" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">&quot;prior_&quot;</span>, <span class="st">&quot;lprior&quot;</span>, <span class="st">&quot;lp__&quot;</span>)))) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;No Measurement error&quot;</span>)</span>
-<span id="cb25-312"><a href="#cb25-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-313"><a href="#cb25-313" aria-hidden="true" tabindex="-1"></a>tidy_inter_2 <span class="ot">&lt;-</span>  bayesplot<span class="sc">::</span><span class="fu">mcmc_intervals_data</span>(fit_2,</span>
-<span id="cb25-314"><a href="#cb25-314" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob =</span> <span class="fl">0.66</span>, <span class="co"># 66% intervals</span></span>
-<span id="cb25-315"><a href="#cb25-315" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob_outer =</span> <span class="fl">0.95</span>,<span class="co">#95% intervals</span></span>
-<span id="cb25-316"><a href="#cb25-316" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">&quot;prior_&quot;</span>, <span class="st">&quot;lprior&quot;</span>, <span class="st">&quot;lp__&quot;</span>)))) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in y&quot;</span>)</span>
-<span id="cb25-317"><a href="#cb25-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-318"><a href="#cb25-318" aria-hidden="true" tabindex="-1"></a>tidy_inter_3 <span class="ot">&lt;-</span>  bayesplot<span class="sc">::</span><span class="fu">mcmc_intervals_data</span>(fit_3,</span>
-<span id="cb25-319"><a href="#cb25-319" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob =</span> <span class="fl">0.66</span>, <span class="co"># 66% intervals</span></span>
-<span id="cb25-320"><a href="#cb25-320" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob_outer =</span> <span class="fl">0.95</span>,<span class="co">#95% intervals</span></span>
-<span id="cb25-321"><a href="#cb25-321" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">&quot;prior_&quot;</span>, <span class="st">&quot;lprior&quot;</span>, <span class="st">&quot;lp__&quot;</span>)))) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in x&quot;</span>)</span>
-<span id="cb25-322"><a href="#cb25-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-323"><a href="#cb25-323" aria-hidden="true" tabindex="-1"></a>tidy_inter_4 <span class="ot">&lt;-</span>  bayesplot<span class="sc">::</span><span class="fu">mcmc_intervals_data</span>(fit_4,</span>
-<span id="cb25-324"><a href="#cb25-324" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob =</span> <span class="fl">0.66</span>, <span class="co"># 66% intervals</span></span>
-<span id="cb25-325"><a href="#cb25-325" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob_outer =</span> <span class="fl">0.95</span>,<span class="co">#95% intervals</span></span>
-<span id="cb25-326"><a href="#cb25-326" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">&quot;prior_&quot;</span>, <span class="st">&quot;lprior&quot;</span>, <span class="st">&quot;lp__&quot;</span>)))) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in both x and y&quot;</span>)</span>
-<span id="cb25-327"><a href="#cb25-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-305"><a href="#cb25-305" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-306"><a href="#cb25-306" aria-hidden="true" tabindex="-1"></a>tidy_inter_1 <span class="ot">&lt;-</span>  bayesplot<span class="sc">::</span><span class="fu">mcmc_intervals_data</span>(fit_1,</span>
+<span id="cb25-307"><a href="#cb25-307" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob =</span> <span class="fl">0.66</span>, <span class="co"># 66% intervals</span></span>
+<span id="cb25-308"><a href="#cb25-308" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob_outer =</span> <span class="fl">0.95</span>,<span class="co">#95% intervals</span></span>
+<span id="cb25-309"><a href="#cb25-309" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">&quot;prior_&quot;</span>, <span class="st">&quot;lprior&quot;</span>, <span class="st">&quot;lp__&quot;</span>)))) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;No Measurement error&quot;</span>)</span>
+<span id="cb25-310"><a href="#cb25-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-311"><a href="#cb25-311" aria-hidden="true" tabindex="-1"></a>tidy_inter_2 <span class="ot">&lt;-</span>  bayesplot<span class="sc">::</span><span class="fu">mcmc_intervals_data</span>(fit_2,</span>
+<span id="cb25-312"><a href="#cb25-312" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob =</span> <span class="fl">0.66</span>, <span class="co"># 66% intervals</span></span>
+<span id="cb25-313"><a href="#cb25-313" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob_outer =</span> <span class="fl">0.95</span>,<span class="co">#95% intervals</span></span>
+<span id="cb25-314"><a href="#cb25-314" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">&quot;prior_&quot;</span>, <span class="st">&quot;lprior&quot;</span>, <span class="st">&quot;lp__&quot;</span>)))) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in y&quot;</span>)</span>
+<span id="cb25-315"><a href="#cb25-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-316"><a href="#cb25-316" aria-hidden="true" tabindex="-1"></a>tidy_inter_3 <span class="ot">&lt;-</span>  bayesplot<span class="sc">::</span><span class="fu">mcmc_intervals_data</span>(fit_3,</span>
+<span id="cb25-317"><a href="#cb25-317" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob =</span> <span class="fl">0.66</span>, <span class="co"># 66% intervals</span></span>
+<span id="cb25-318"><a href="#cb25-318" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob_outer =</span> <span class="fl">0.95</span>,<span class="co">#95% intervals</span></span>
+<span id="cb25-319"><a href="#cb25-319" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">&quot;prior_&quot;</span>, <span class="st">&quot;lprior&quot;</span>, <span class="st">&quot;lp__&quot;</span>)))) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in x&quot;</span>)</span>
+<span id="cb25-320"><a href="#cb25-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-321"><a href="#cb25-321" aria-hidden="true" tabindex="-1"></a>tidy_inter_4 <span class="ot">&lt;-</span>  bayesplot<span class="sc">::</span><span class="fu">mcmc_intervals_data</span>(fit_4,</span>
+<span id="cb25-322"><a href="#cb25-322" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob =</span> <span class="fl">0.66</span>, <span class="co"># 66% intervals</span></span>
+<span id="cb25-323"><a href="#cb25-323" aria-hidden="true" tabindex="-1"></a>              <span class="at">prob_outer =</span> <span class="fl">0.95</span>,<span class="co">#95% intervals</span></span>
+<span id="cb25-324"><a href="#cb25-324" aria-hidden="true" tabindex="-1"></a>           <span class="at">pars =</span> <span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">&quot;prior_&quot;</span>, <span class="st">&quot;lprior&quot;</span>, <span class="st">&quot;lp__&quot;</span>)))) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">model =</span> <span class="st">&quot;Measurement error in both x and y&quot;</span>)</span>
+<span id="cb25-325"><a href="#cb25-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-326"><a href="#cb25-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-327"><a href="#cb25-327" aria-hidden="true" tabindex="-1"></a>me <span class="ot">&lt;-</span> <span class="fu">rbind</span>(tidy_inter_1, tidy_inter_2 , tidy_inter_3, tidy_inter_4) <span class="sc">|&gt;</span> <span class="fu">filter</span>(parameter <span class="sc">!=</span> <span class="st">&quot;Intercept&quot;</span>)</span>
 <span id="cb25-328"><a href="#cb25-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-329"><a href="#cb25-329" aria-hidden="true" tabindex="-1"></a>me <span class="ot">&lt;-</span> <span class="fu">rbind</span>(tidy_inter_1, tidy_inter_2 , tidy_inter_3, tidy_inter_4) <span class="sc">|&gt;</span> <span class="fu">filter</span>(parameter <span class="sc">!=</span> <span class="st">&quot;Intercept&quot;</span>)</span>
+<span id="cb25-329"><a href="#cb25-329" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(me<span class="sc">$</span>parameter)[<span class="fu">levels</span>(me<span class="sc">$</span>parameter) <span class="sc">==</span> <span class="st">&quot;b_x_star&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;b_x&quot;</span> <span class="co"># rename the b parameter where we use x_star</span></span>
 <span id="cb25-330"><a href="#cb25-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-331"><a href="#cb25-331" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(me<span class="sc">$</span>parameter)[<span class="fu">levels</span>(me<span class="sc">$</span>parameter) <span class="sc">==</span> <span class="st">&quot;b_x_star&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;b_x&quot;</span> <span class="co"># rename the b parameter where we use x_star</span></span>
-<span id="cb25-332"><a href="#cb25-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-333"><a href="#cb25-333" aria-hidden="true" tabindex="-1"></a>pos <span class="ot">&lt;-</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="fu">case_when</span>(me<span class="sc">$</span>model <span class="sc">==</span> <span class="st">&quot;No Measurement error&quot;</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
-<span id="cb25-334"><a href="#cb25-334" aria-hidden="true" tabindex="-1"></a>                                 me<span class="sc">$</span>model  <span class="sc">==</span> <span class="st">&quot;Measurement error in y&quot;</span> <span class="sc">~</span> <span class="fl">0.05</span>,</span>
-<span id="cb25-335"><a href="#cb25-335" aria-hidden="true" tabindex="-1"></a>                                  me<span class="sc">$</span>model  <span class="sc">==</span> <span class="st">&quot;Measurement error in x&quot;</span> <span class="sc">~</span> <span class="fl">0.1</span>,</span>
-<span id="cb25-336"><a href="#cb25-336" aria-hidden="true" tabindex="-1"></a>                                    me<span class="sc">$</span>model  <span class="sc">==</span> <span class="st">&quot;Measurement error in both x and y&quot;</span> <span class="sc">~</span> <span class="fl">0.15</span>))</span>
-<span id="cb25-337"><a href="#cb25-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-338"><a href="#cb25-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-339"><a href="#cb25-339" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(me, <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> <span class="fu">factor</span>(parameter), <span class="at">color =</span> model)) <span class="sc">+</span></span>
-<span id="cb25-340"><a href="#cb25-340" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_pointinterval</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> l, <span class="at">xmax =</span> h), <span class="at">position =</span> pos, <span class="at">size =</span> <span class="dv">8</span>)<span class="sc">+</span></span>
-<span id="cb25-341"><a href="#cb25-341" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_pointinterval</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> ll, <span class="at">xmax =</span> hh), <span class="at">position =</span> pos, <span class="at">size =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb25-342"><a href="#cb25-342" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>( <span class="at">position =</span> pos, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb25-343"><a href="#cb25-343" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
-<span id="cb25-344"><a href="#cb25-344" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)<span class="sc">+</span></span>
-<span id="cb25-345"><a href="#cb25-345" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
-<span id="cb25-346"><a href="#cb25-346" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.15</span>))</span>
+<span id="cb25-331"><a href="#cb25-331" aria-hidden="true" tabindex="-1"></a>pos <span class="ot">&lt;-</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="fu">case_when</span>(me<span class="sc">$</span>model <span class="sc">==</span> <span class="st">&quot;No Measurement error&quot;</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb25-332"><a href="#cb25-332" aria-hidden="true" tabindex="-1"></a>                                 me<span class="sc">$</span>model  <span class="sc">==</span> <span class="st">&quot;Measurement error in y&quot;</span> <span class="sc">~</span> <span class="fl">0.05</span>,</span>
+<span id="cb25-333"><a href="#cb25-333" aria-hidden="true" tabindex="-1"></a>                                  me<span class="sc">$</span>model  <span class="sc">==</span> <span class="st">&quot;Measurement error in x&quot;</span> <span class="sc">~</span> <span class="fl">0.1</span>,</span>
+<span id="cb25-334"><a href="#cb25-334" aria-hidden="true" tabindex="-1"></a>                                    me<span class="sc">$</span>model  <span class="sc">==</span> <span class="st">&quot;Measurement error in both x and y&quot;</span> <span class="sc">~</span> <span class="fl">0.15</span>))</span>
+<span id="cb25-335"><a href="#cb25-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-336"><a href="#cb25-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-337"><a href="#cb25-337" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(me, <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> <span class="fu">factor</span>(parameter), <span class="at">color =</span> model)) <span class="sc">+</span></span>
+<span id="cb25-338"><a href="#cb25-338" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_pointinterval</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> l, <span class="at">xmax =</span> h), <span class="at">position =</span> pos, <span class="at">size =</span> <span class="dv">8</span>)<span class="sc">+</span></span>
+<span id="cb25-339"><a href="#cb25-339" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_pointinterval</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> ll, <span class="at">xmax =</span> hh), <span class="at">position =</span> pos, <span class="at">size =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb25-340"><a href="#cb25-340" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>( <span class="at">position =</span> pos, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb25-341"><a href="#cb25-341" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
+<span id="cb25-342"><a href="#cb25-342" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)<span class="sc">+</span></span>
+<span id="cb25-343"><a href="#cb25-343" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
+<span id="cb25-344"><a href="#cb25-344" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.15</span>))</span>
+<span id="cb25-345"><a href="#cb25-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-346"><a href="#cb25-346" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-347"><a href="#cb25-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-348"><a href="#cb25-348" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-349"><a href="#cb25-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-350"><a href="#cb25-350" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
-<span id="cb25-351"><a href="#cb25-351" aria-hidden="true" tabindex="-1"></a><span class="fu">## Take home messages:</span></span>
+<span id="cb25-348"><a href="#cb25-348" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
+<span id="cb25-349"><a href="#cb25-349" aria-hidden="true" tabindex="-1"></a><span class="fu">## Take home messages:</span></span>
+<span id="cb25-350"><a href="#cb25-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-351"><a href="#cb25-351" aria-hidden="true" tabindex="-1"></a>**The slope** $b$ **changes with measurement error in** $x$ **but not in** $y$**.**</span>
 <span id="cb25-352"><a href="#cb25-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-353"><a href="#cb25-353" aria-hidden="true" tabindex="-1"></a>**The slope** $b$ **changes with measurement error in** $x$ **but not in** $y$**.**</span>
+<span id="cb25-353"><a href="#cb25-353" aria-hidden="true" tabindex="-1"></a>When you have measurement error in $x$, two things happen to attenuate $b$—that is, to pull the regression coefficient toward zero.</span>
 <span id="cb25-354"><a href="#cb25-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-355"><a href="#cb25-355" aria-hidden="true" tabindex="-1"></a>When you have measurement error in $x$, two things happen to attenuate $b$—that is, to pull the regression coefficient toward zero.</span>
-<span id="cb25-356"><a href="#cb25-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-357"><a href="#cb25-357" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>First, if you spreading out $x$ but keep $y$ unchanged, this will reduce the slope $b$ of $y$ on $x$.</span>
-<span id="cb25-358"><a href="#cb25-358" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Second, when you add noise to $x$ you’re changing the ordering of the data, which will reduce the strength of the relationship.</span>
-<span id="cb25-359"><a href="#cb25-359" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb25-355"><a href="#cb25-355" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>First, if you spreading out $x$ but keep $y$ unchanged, this will reduce the slope $b$ of $y$ on $x$.</span>
+<span id="cb25-356"><a href="#cb25-356" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Second, when you add noise to $x$ you’re changing the ordering of the data, which will reduce the strength of the relationship.</span>
+<span id="cb25-357"><a href="#cb25-357" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb25-358"><a href="#cb25-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-359"><a href="#cb25-359" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fitting a Bayesian regression with error measuraments on predictors $x$</span></span>
 <span id="cb25-360"><a href="#cb25-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-361"><a href="#cb25-361" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fitting a Bayesian regression with error measuraments on predictors $x$</span></span>
-<span id="cb25-362"><a href="#cb25-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-363"><a href="#cb25-363" aria-hidden="true" tabindex="-1"></a>Please see <span class="co">[</span><span class="ot">here</span><span class="co">](https://mbjoseph.github.io/posts/2018-12-25-errors-in-variables-models-in-stan/)</span>.</span>
+<span id="cb25-361"><a href="#cb25-361" aria-hidden="true" tabindex="-1"></a>Please see <span class="co">[</span><span class="ot">here</span><span class="co">](https://mbjoseph.github.io/posts/2018-12-25-errors-in-variables-models-in-stan/)</span>.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
