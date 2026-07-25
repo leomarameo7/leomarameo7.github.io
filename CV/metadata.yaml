@@ -9,8 +9,13 @@ personal:
     email:
       username: leocapi07@gmail.com
       icon: paper-plane
-      set: fa 
+      set: fa
       prefix: "mailto:"
+    phone:
+      username: "+41 77 40 78 378"
+      icon: phone
+      set: fa
+      prefix: "tel:"
     homepage:
       username: leomarameo7.github.io
       icon: globe
