@@ -1,0 +1,53 @@
+---
+title: "Amazonian river food webs, deforestation and small-scale fisheries"
+description: |
+  My Master's research in Ecology (UFRGS, Brazil): food-web modeling of the Tapajós River to anticipate the impacts of deforestation and fishing pressure in the Brazilian Amazon.
+categories: [project, master, Amazon]
+about:
+  id: heading
+  template: jolla
+  image-shape: round
+  image-width: 500px
+---
+
+
+::: {#heading}
+This was my Master's research project in Ecology at the [Universidade Federal do Rio Grande do Sul (UFRGS)](https://www.ufrgs.br/), Brazil, carried out at the **Laboratório de Ecologia Humana e Etnoecologia ([LEHPE](https://www.ufrgs.br/etnoecologia/))** under the supervision of Prof. Dr. [Renato A. M. Silvano](https://scholar.google.com/citations?user=e_RmXEsAAAAJ&hl=pt-BR) and Prof. Dr. Ronaldo Angelini.
+:::
+
+## Project description
+
+Large Amazonian rivers sustain some of the most productive inland small-scale fisheries in the world, but they are increasingly pressured by deforestation of their catchments and by rising fishing effort. My Master's project used **ecosystem food-web modeling** (Ecopath with Ecosim) of the **Tapajós River**, combining fishers' ecological knowledge and field data, to anticipate how these two drivers may reshape the river's food web and the fisheries that depend on it.
+
+This work was a sub-project of the international project **["Linking sustainability of small-scale fisheries, fishers' knowledge, conservation and co-management of biodiversity in large rivers of the Brazilian Amazon"](https://sites.nationalacademies.org/PGA/PEER/PEERscience/PGA_168062)** (PEER — Partnerships for Enhanced Engagement in Research).
+
+::: {.callout-important appearance="minimal" icon="false"}
+## Open questions addressed:
+
+-   How is the Tapajós River food web structured, and which species and fisheries are most central to it?
+
+-   How might increasing deforestation and fishing pressure propagate through the food web?
+
+-   What do these projections imply for the sustainable co-management of Amazonian small-scale fisheries?
+:::
+
+## Research paper associated:
+
+**Capitani, L.**, Angelini, R., Keppeler, F. W., Hallwass, G., & Silvano, R. A. M. (2021). Food web modeling indicates the potential impacts of increasing deforestation and fishing pressure in the Tapajós River, Brazilian Amazon. *Regional Environmental Change, 21*(2), 42. [https://doi.org/10.1007/s10113-021-01777-z](https://link.springer.com/article/10.1007/s10113-021-01777-z)
+
+## My role
+
+I was the principal investigator of this sub-project: I built and analysed the food-web models and led the writing of the resulting paper, as part of my M.Sc. dissertation.
+
+## Core collaborators
+
+### Renato A. M. Silvano
+
+-   Master's supervisor · research group leader, LEHPE
+-   🏦 Federal University of Rio Grande do Sul (UFRGS), Brazil
+-   [🔗 Google Scholar](https://scholar.google.com/citations?user=e_RmXEsAAAAJ&hl=pt-BR)
+
+### Ronaldo Angelini
+
+-   Co-supervisor · food-web modeling
+-   🏦 Federal University of Rio Grande do Norte (UFRN), Brazil

@@ -17,9 +17,10 @@ listing:
     max-description-length: 500
     image-height: 100px
     fields: [image, title, description]
-    contents: 
+    contents:
       - RocasAtoll/index.qmd
-    sort: "false" 
+      - AmazonTapajos/index.qmd
+    sort: "false"
     type: grid
     grid-item-border: false
 ---

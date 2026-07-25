@@ -139,5 +139,8 @@
   "notebooks/edm/CCM_example.qmd": {
     "CCM_example.html": "a7192071",
     "CCM_example.tex": "a085554f"
+  },
+  "scientific_projects/AmazonTapajos/index.qmd": {
+    "index.html": "0eff7786"
   }
 }

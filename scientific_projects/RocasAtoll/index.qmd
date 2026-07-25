@@ -7,14 +7,6 @@ about:
   template: jolla
   image-shape: round
   image-width: 500px
-listing: 
-  - id: blogs
-    max-description-length: 500
-    fields: [title, description]
-    contents: "blog"
-    sort: "date desc" 
-    type: grid
-    grid-item-border: true
 ---
 
 
@@ -64,8 +56,11 @@ I was the principal investigator of the project.
 
 ## In the media
 
-::: {#blogs}
-:::
+-   [*Cientistas temem que crise climática transforme recifes brasileiros em "cidades-fantasma"*](https://wilder.pt/historias/cientistas-temem-que-crise-climatica-transforme-recifes-brasileiros-em-cidades-fantasma) — **Wilder** (Portugal). Feature on how ocean warming could strip Brazilian reefs of their fish and turn them into ecological "ghost cities."
+
+-   [*Recifes de coral viram "cidades-fantasma" com crise climática*](https://abori.com.br/ambiente/recifes-de-coral-viram-cidades-fantasma-com-crise-climatica/) — **Abori** (Brazil). Coverage of our projections that warming will simplify reef food webs and reduce their standing biomass.
+
+-   [*Crise climática pode transformar recifes brasileiros em "cidades-fantasma", diz estudo*](https://oglobo.globo.com/um-so-planeta/crise-climatica-pode-transformar-recifes-brasileiros-em-cidades-fantasma-diz-estudo-25159825) — **O Globo** (Brazil). National-newspaper report on the study and its implications for reef conservation.
 
 ## Core collaborators
 
@@ -80,11 +75,3 @@ I was the principal investigator of the project.
 -   Research group leader
 
 -   🏦 Federal University of Rio Grande do Norte, Brazil
-
-### Irena Šímová <img src="https://www.cts.cuni.cz/img/people/%C5%A0%C3%ADmov%C3%A1.jpg" align="right" width="120"/>
-
--   Researcher
--   🏦Charles University, Czech Republic
--   📬email: simova(at)cts.cuni.cz
--   [![ORCID](https://img.shields.io/badge/orcid-0000--0002--9474--569X-brightgreen.svg)](https://orcid.org/0000-0002-9474-569X)
--   [🔗personal webiste](https://www.cts.cuni.cz/en/simova.html)
