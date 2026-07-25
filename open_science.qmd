@@ -15,9 +15,25 @@ As a researcher living through a period of growing distrust in scientific practi
 
 -   **Since 2021** — Voluntary member of the [Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology (SORTEE)](https://www.sortee.org/).
 
-[![Logo of SORTEE (Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology)](docs/media/sortee_logo.png){width="220px"}](https://www.sortee.org/)
+[![](docs/media/sortee_logo.png){width="220px" fig-alt="SORTEE logo"}](https://www.sortee.org/)
 
-### Links
+### Open code and data behind my papers
 
--   [SORTEE](https://www.sortee.org/) — Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology
--   [GitHub](https://github.com/leomarameo7)
+I don't just endorse open science — I practise it. For my published work, the analysis code and, wherever licensing allows, the underlying data are public on GitHub, so anyone can inspect, rerun, and build on exactly what produced the results:
+
+-   **[Capitani et al. 2022](https://doi.org/10.1007/s10021-021-00674-3)**, *Ocean warming will reduce standing biomass in a tropical western Atlantic reef ecosystem* (Ecosystems) — food-web model and code: [`Atoll_Rocas_project`](https://github.com/leomarameo7/Atoll_Rocas_project).
+-   **[Capitani et al. 2021](https://doi.org/10.1111/oik.08511)**, *Resource-to-consumer ratio determines the functional response of an herbivorous fish in a field experiment* (Oikos) — data and functional-response analysis: [`FR_herbivore_fish`](https://github.com/leomarameo7/FR_herbivore_fish).
+-   **[Artana et al. 2025](https://doi.org/10.1111/1365-2656.14173)**, *Food web trophic control modulates tropical Atlantic reef ecosystems response to marine heat wave intensity and duration* (Journal of Animal Ecology) — raw data and code: [`MHW_trophic_interactions`](https://github.com/leomarameo7/MHW_trophic_interactions).
+-   **[Schenone et al. 2025](https://doi.org/10.1016/j.envpol.2025.126252)**, *Microbial plankton uptake enhances the degradation of a biodegradable microplastic* (Environmental Pollution) — code: [`PLGA`](https://github.com/leomarameo7/PLGA).
+
+I also release the methods I develop, not only the paper-specific pipelines — for example [`NLA`](https://github.com/leomarameo7/NLA), a Gaussian-Process / Empirical Dynamic Modelling toolkit, and the reproducible [notebooks](notebooks/index_notebooks.qmd) on this site. Ongoing work, such as the Lake Constance plankton analyses ([`see_plankton_change`](https://github.com/leomarameo7/see_plankton_change)), is developed in the open from the start. The full list is on my [GitHub profile](https://github.com/leomarameo7).
+
+### Transparency about AI assistance
+
+I use AI tools such as [Claude](https://www.anthropic.com/claude) in parts of my coding and writing workflow, and I believe openness about *how* research is produced now has to include openness about AI use. I follow the framework Lars Schöbitz sets out in [*Who wrote this? Scientific integrity at ETH Zurich in the age of AI*](https://ghe.ethz.ch/ghe-blog-news/2026/07/blog-who-wrote-this-scientific-integrity-at-eth-zurich-in-the-age-of-ai.html): rather than treating AI disclosure as an afterthought, I make it a byproduct of how I already work —
+
+-   **Version control with Git/GitHub**, so every project keeps a complete, inspectable history of who (or what) changed what.
+-   **Detailed commit messages** that document each change and its source, human- or AI-assisted.
+-   **Quarto notebooks** (this entire website included) that keep analysis, code, and prose reproducible and traceable.
+
+Together these leave an auditable trail of my research process, which is exactly the point: open science should make it possible to see not only *what* I found, but *how* I got there.
