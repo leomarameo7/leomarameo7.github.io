@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 400" width="920" height="400" font-family="Lato, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11"
+            markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="ahR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="13" markerHeight="13"
+            markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b91c1c"/>
+    </marker>
+    <marker id="ahG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="13" markerHeight="13"
+            markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#15803d"/>
+    </marker>
+    <marker id="ahB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="13" markerHeight="13"
+            markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="920" height="400" rx="10" fill="#f8fafc"/>
+
+  <!-- ============ PANEL A ============ -->
+  <text x="34" y="40" font-size="19" font-weight="700" fill="#0f172a">A</text>
+  <text x="56" y="40" font-size="16" fill="#334155">Two domains of attraction</text>
+
+  <rect x="40" y="60" width="185" height="248" fill="#3b82f6" opacity="0.10"/>
+  <rect x="225" y="60" width="185" height="248" fill="#22c55e" opacity="0.12"/>
+
+  <path d="M 40,140 C 80,140 100,248 130,248 C 160,248 195,150 225,150 C 255,150 290,268 320,268 C 350,268 380,158 410,150"
+        fill="none" stroke="#334155" stroke-width="3.5" stroke-linecap="round"/>
+
+  <circle cx="130" cy="234" r="13" fill="#1d4ed8"/>
+
+  <path d="M 152,216 C 195,148 245,150 300,232" fill="none" stroke="#475569" stroke-width="2.2"
+        stroke-dasharray="6 5" marker-end="url(#ah)"/>
+  <text x="225" y="128" font-size="13" fill="#475569" text-anchor="middle">regime shift</text>
+
+  <line x1="40" y1="308" x2="410" y2="308" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="132" y="332" font-size="13.5" font-weight="600" fill="#1d4ed8" text-anchor="middle">clear water</text>
+  <text x="132" y="350" font-size="12" fill="#475569" text-anchor="middle">plants dominate</text>
+  <text x="318" y="332" font-size="13.5" font-weight="600" fill="#15803d" text-anchor="middle">turbid water</text>
+  <text x="318" y="350" font-size="12" fill="#475569" text-anchor="middle">plants absent</text>
+  <text x="24" y="184" font-size="12" fill="#64748b" text-anchor="middle" transform="rotate(-90 24 184)">stability</text>
+
+  <!-- ============ PANEL B ============ -->
+  <line x1="452" y1="50" x2="452" y2="360" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="482" y="40" font-size="19" font-weight="700" fill="#0f172a">B</text>
+  <text x="504" y="40" font-size="16" fill="#334155">The balance of feedbacks that drives the shift</text>
+
+  <!-- D1 : damping feedback holding the clear state -->
+  <path d="M 588.3,126.3 A 44,44 0 1 1 552.4,116.7" fill="none" stroke="#b91c1c" stroke-width="5.5"
+        stroke-linecap="round" marker-end="url(#ahR)"/>
+  <text x="560" y="167" font-size="19" font-weight="700" fill="#b91c1c" text-anchor="middle">D1</text>
+  <text x="560" y="234" font-size="12.5" fill="#475569" text-anchor="middle">damping —</text>
+  <text x="560" y="251" font-size="12.5" fill="#475569" text-anchor="middle">holds the clear state</text>
+  <text x="560" y="273" font-size="12.5" font-style="italic" font-weight="600" fill="#b91c1c" text-anchor="middle">weakens</text>
+
+  <!-- A : amplifying feedback -->
+  <path d="M 728.3,126.3 A 44,44 0 1 1 692.4,116.7" fill="none" stroke="#15803d" stroke-width="5.5"
+        stroke-linecap="round" marker-end="url(#ahG)"/>
+  <text x="700" y="167" font-size="19" font-weight="700" fill="#15803d" text-anchor="middle">A</text>
+  <text x="700" y="234" font-size="12.5" fill="#475569" text-anchor="middle">amplifying —</text>
+  <text x="700" y="251" font-size="12.5" fill="#475569" text-anchor="middle">pushes the system over</text>
+  <text x="700" y="273" font-size="12.5" font-style="italic" font-weight="600" fill="#15803d" text-anchor="middle">takes over</text>
+
+  <!-- D2 : damping feedback locking the turbid state -->
+  <path d="M 868.3,126.3 A 44,44 0 1 1 832.4,116.7" fill="none" stroke="#1d4ed8" stroke-width="5.5"
+        stroke-linecap="round" marker-end="url(#ahB)"/>
+  <text x="840" y="167" font-size="19" font-weight="700" fill="#1d4ed8" text-anchor="middle">D2</text>
+  <text x="840" y="234" font-size="12.5" fill="#475569" text-anchor="middle">damping —</text>
+  <text x="840" y="251" font-size="12.5" fill="#475569" text-anchor="middle">locks the turbid state in</text>
+  <text x="840" y="273" font-size="12.5" font-style="italic" font-weight="600" fill="#1d4ed8" text-anchor="middle">new attractor</text>
+
+  <line x1="486" y1="308" x2="884" y2="308" stroke="#475569" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="486" y="332" font-size="13" fill="#334155">nutrient loading and warming</text>
+  <text x="884" y="332" font-size="13" fill="#334155" text-anchor="end">time</text>
+</svg>

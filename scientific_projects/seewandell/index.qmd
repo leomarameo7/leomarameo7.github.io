@@ -7,13 +7,48 @@ about:
   template: jolla
   image-shape: round
   image-width: 250px
-listing: 
-  - id: blogs
-    max-description-length: 500
-    fields: [title, description]
-    contents: "blog"
-    sort: "date desc" 
-    type: grid
-    grid-item-border: true
 ---
 
+::: {#heading}
+This is my current postdoctoral research at [Eawag](https://www.eawag.ch/), the Swiss Federal Institute of Aquatic Science and Technology, within [**SeeWandel-Klima**](https://seewandel-klima.org/en/start-en/) — *Modelling the consequences of climate change and neobiota for Lake Constance* (July 2023 – December 2027), the successor to the SeeWandel project (2018–2023). The programme brings together research groups around Lake Constance to deliver up-to-date projections of how climate change and invasive species will reshape the lake, and what that means for managing it.
+:::
+
+## Project description
+
+Climate warming and nutrient change are reorganising ecological networks and can drive **regime shifts**: abrupt, persistent, hard-to-reverse reorganisations of community structure. How a regime shift spreads through a community, and whether that pathway can predict it, is not established; early-warning indicators have proved unreliable.
+
+::: {.callout-important appearance="minimal" icon="false"}
+## Open question addressed:
+
+-   If, why and how does a regime shift in one component of an ecological community affect the occurrence of a regime shift in another component of the same community?
+:::
+
+Lake Constance is an unusually good place to ask this. It has been monitored monthly for four decades, across both the abiotic components of the system (temperature, nutrients, stratification) and the biotic ones (phytoplankton, zooplankton, fish), while passing through a large, well-documented nutrient trajectory — eutrophication and then re-oligotrophication — on top of steady warming. That gives us a long, closely observed record of a community that has demonstrably reorganised, rather than a system where we have to argue about whether anything happened at all.
+
+Using these four decades of monthly records from peri-alpine lakes, we
+
+1.  **detect** regime shifts in the abiotic and biotic components of the lake,
+2.  **reconstruct the pathway** along which those shifts propagate from one component to another, and
+3.  **test whether we can predict** the shifts that already happened — the honest test of any early-warning claim, since we know the answer in advance and cannot tune our way to it.
+
+![The concept behind a regime shift. **A)** A community can sit in more than one domain of attraction — here a clear-water, plant-dominated state and a turbid, plant-free one. **B)** The shift happens when the balance of feedbacks changes: the damping feedback D1 that holds the clear state weakens as nutrients and temperature rise, the amplifying feedback A takes over and pushes the system across, and a second damping feedback D2 then locks the new turbid state in — which is why the shift is so hard to reverse. Figure redrawn after Biggs et al. 2012, following the presentation in [Rocha, *Regime Shifts*](https://zahachtah.github.io/ItSS/systems/Regime-Shifts/).](images/regime_shift_concept.svg){fig-align="center" width="100%"}
+
+## My role
+
+I am the postdoctoral researcher carrying out the analysis: assembling and harmonising the long-term monitoring series, detecting the shifts in each component, and building the models that reconstruct and test their propagation. The work is developed in the open from the start — the code lives in [`see_plankton_change`](https://github.com/leomarameo7/see_plankton_change), and the methods I develop along the way, such as the Gaussian-Process / Empirical Dynamic Modelling toolkit [`NLA`](https://github.com/leomarameo7/NLA), are released separately.
+
+## Project leader
+
+-   **Dr. [Francesco Pomati](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/)** — group leader, Department of Aquatic Ecology, Eawag, Switzerland; lecturer at the Institute of Integrative Biology, ETH Zürich.
+
+## Collaborators
+
+-   **Dr. [Luis J. Gilarranz](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es)** — Department of Aquatic Ecology, Eawag, Switzerland. Expertise in regime shift detection and propagation in ecological networks.
+
+-   **Dr. [Stephan B. Munch](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ)** — NOAA Fisheries and University of California, Santa Cruz, USA. Expertise in nonlinear population dynamics, ecosystem forecasting, and Gaussian-Process methods.
+
+-   **Dr. [Tanya L. Rogers](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ)** — NOAA Fisheries and University of California, Santa Cruz, USA. Expertise in community ecology and empirical dynamic modelling of population time series.
+
+-   **Dr. [Marta Reyes](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/marta-reyes/show/)** — research technician, Department of Aquatic Ecology, Eawag, Switzerland. Expertise in food-web interactions and plankton responses to environmental change.
+
+-   **[Stefanie Eyring](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/)** — research assistant, Plankton Ecology group, Department of Aquatic Ecology, Eawag, Switzerland.
