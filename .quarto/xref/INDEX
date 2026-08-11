@@ -142,5 +142,8 @@
   },
   "scientific_projects/AmazonTapajos/index.qmd": {
     "index.html": "0eff7786"
+  },
+  "notebooks/registered_reports/Registered_Reports.qmd": {
+    "Registered_Reports.html": "4fb731c4"
   }
 }

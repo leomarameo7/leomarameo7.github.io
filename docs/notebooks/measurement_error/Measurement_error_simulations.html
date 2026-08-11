@@ -9804,6 +9804,12 @@ window.Quarto = {
  <span class="menu-text">Convergent Cross Mapping</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notebooks/registered_reports/Registered_Reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Registered Reports: what are they?</span></a>
+  </div>
+</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -9938,14 +9944,14 @@ window.Quarto = {
 <details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://paulbuerkner.com/brms/reference/default_prior.html">get_prior</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="fl">1</span> <span class="op">+</span> <span class="va">x</span>, data <span class="op">=</span> <span class="va">fake</span> <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>                  prior     class coef group resp dpar nlpar lb ub tag
+ student_t(3, 1.7, 2.5) Intercept                                     
                  (flat)         b                                     
                  (flat)         b    x                                
- student_t(3, 1.7, 2.5) Intercept                                     
    student_t(3, 0, 2.5)     sigma                             0       
        source
       default
- (vectorized)
       default
+ (vectorized)
       default</code></pre>
 </div>
 <details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://paulbuerkner.com/brms/reference/brm.html">brm</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="fl">1</span> <span class="op">+</span> <span class="va">x</span>,</span>
@@ -10018,14 +10024,14 @@ Note
 <details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://paulbuerkner.com/brms/reference/default_prior.html">get_prior</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y_star</span> <span class="op">~</span> <span class="fl">1</span> <span class="op">+</span> <span class="va">x</span>, data <span class="op">=</span> <span class="va">fake</span> <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>                  prior     class coef group resp dpar nlpar lb ub tag
+ student_t(3, 1.7, 2.5) Intercept                                     
                  (flat)         b                                     
                  (flat)         b    x                                
- student_t(3, 1.7, 2.5) Intercept                                     
    student_t(3, 0, 2.5)     sigma                             0       
        source
       default
- (vectorized)
       default
+ (vectorized)
       default</code></pre>
 </div>
 <details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://paulbuerkner.com/brms/reference/brm.html">brm</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y_star</span> <span class="op">~</span> <span class="fl">1</span> <span class="op">+</span> <span class="va">x</span>,</span>

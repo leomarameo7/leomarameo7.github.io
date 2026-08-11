@@ -1,0 +1,70 @@
+---
+title: "Registered Reports: what are they?"
+author: "Leonardo Capitani"
+date: "08/11/2026"
+date-modified: last-modified
+format:
+      html:
+          toc: true
+          embed-resources: true
+editor: visual
+---
+
+## The idea in one paragraph
+
+A **Registered Report (RR)** is a publication format in which the study is peer-reviewed *before the data are collected or analysed*. You submit the introduction, hypotheses, methods, and planned analyses; reviewers and editors judge the question and the design rather than the results. If the plan is sound, the journal grants **in-principle acceptance (IPA)**: the paper will be published once the study is carried out as registered, regardless of whether the findings are positive, negative, or ambiguous.
+
+This inverts the usual incentives. Because the decision to publish no longer depends on how the results turn out, the format removes the pressure to fish for significance, to reframe exploratory findings as confirmatory ones, or to quietly file away a null result.
+
+## The two stages
+
+**Stage 1 — the plan.** Introduction, hypotheses, sampling and design, sample-size justification (a power analysis or a simulation-based design analysis), and a fully specified analysis plan, including how you will handle exclusions, missing data, and model failures. Reviewers can still ask for changes — the point is that the changes happen *before* the data exist. The outcome is in-principle acceptance.
+
+**Stage 2 — the completed study.** The same manuscript with results and discussion added. Review at this point checks that you followed the registered protocol, that any deviations are declared and justified, and that the conclusions follow from the data. Exploratory analyses are entirely allowed; they are simply labelled as exploratory and kept separate from the registered, confirmatory tests.
+
+::: callout-note
+A Registered Report is not the same thing as a **preregistration**. A preregistration is a time-stamped, public plan (typically on [OSF](https://osf.io/)) that is not peer-reviewed and carries no publication commitment. A Registered Report *is* peer-reviewed and *does* carry one. Both serve the same underlying purpose: separating prediction from postdiction.
+:::
+
+## Why this matters in ecology
+
+Ecological studies are often expensive, seasonal, and unrepeatable — a field season, an experimental mesocosm run, a long-term monitoring window. That makes the cost of a badly designed study very high, and it makes the incentive to salvage something publishable out of a null result very strong. Getting design critique *before* the field season is worth far more than getting it two years later, and an in-principle acceptance means an honest null result is still a publication.
+
+## Where to find real examples
+
+### British Ecological Society journals
+
+The BES journals publish RRs and expose them as searchable article categories:
+
+-   [Stage 1 Registered Reports](https://besjournals.onlinelibrary.wiley.com/action/doSearch?AllField=registered+report&SeriesKey=26888319&startPage=&ContentItemCategory=REGISTERED%20REPORT%20STAGE%201) — accepted plans, before data collection.
+-   [Stage 2 Registered Reports](https://besjournals.onlinelibrary.wiley.com/action/doSearch?AllField=registered+report&SeriesKey=26888319&startPage=&ContentItemCategory=REGISTERED%20REPORT%20STAGE%202) — the completed studies.
+
+Reading a Stage 1 and its matching Stage 2 side by side is the fastest way to understand what the format actually demands of you.
+
+### A community-curated library
+
+The [Registered Reports Zotero group library](https://www.zotero.org/groups/5937153/registered_reports/library) collects the ecology and evolution RRs the community is aware of. It is maintained by hand, so treat it as a good starting point rather than an exhaustive index — there are certainly papers it has missed.
+
+### The editorial that explains the format
+
+[*Registered Reports in ecology and evolution*](https://onlinelibrary.wiley.com/doi/10.1002/ece3.10023) (Ecology and Evolution) describes how the format works in practice and explicitly welcomes submissions. It is the single best thing to read before writing your first Stage 1.
+
+### PCI RR
+
+**PCI** stands for **Peer Community In** — a set of non-profit, community-run platforms where researchers organise the peer review of preprints for free, publish the reviews and editorial decisions openly, and issue a public recommendation. Nothing sits behind a paywall, and no publisher is involved. [**PCI Registered Reports (PCI RR)**](https://rr.peercommunityin.org/) applies that model to Registered Reports: it reviews and recommends Stage 1 and Stage 2 RRs independently of any journal, and a large number of journals have committed in advance to accepting PCI RR–recommended work. Recommended ecology RRs include:
+
+-   [Recommendation #200](https://rr.peercommunityin.org/articles/rec?id=200)
+-   [Recommendation #594](https://rr.peercommunityin.org/articles/rec?id=594)
+-   [Recommendation #925](https://rr.peercommunityin.org/articles/rec?id=925)
+-   [Recommendation #995](https://rr.peercommunityin.org/articles/rec?id=995)
+
+### Preregistrations as a proxy
+
+Because preregistrations serve much the same purpose, the [OSF registry](https://osf.io/search?search=ecology&tab=3) is a useful place to search for keywords in your own subfield and see how other people specify hypotheses and analysis plans in advance.
+
+## Practical starting point
+
+1.  Read the [Ecology and Evolution editorial](https://onlinelibrary.wiley.com/doi/10.1002/ece3.10023).
+2.  Read one BES Stage 1 together with its Stage 2.
+3.  Write your own Stage 1 for a study you have not yet run — most of the effort goes into the sample-size justification and into deciding, in advance, exactly which analysis answers which hypothesis.
+4.  Submit it to a journal offering the format, or to PCI RR, before you collect the data.

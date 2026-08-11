@@ -15,6 +15,8 @@ As a researcher living through a period of growing distrust in scientific practi
 
 -   **Since 2021** — Voluntary member of the [Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology (SORTEE)](https://www.sortee.org/).
 
+-   **Webinar host (SORTEE)** — I hosted the SORTEE webinar *["Lotteries and innovations in research funding allocation"](https://www.youtube.com/watch?v=z4W6pzQRNVA)*, given by Dr. [Rachel Heyard](http://rachelheyard.com) (Centre for Reproducible Science and Research Synthesis, Zurich, Switzerland). The [recording is openly available on YouTube](https://www.youtube.com/watch?v=z4W6pzQRNVA).
+
 -   My **Ph.D. thesis defense** is openly available as a [recorded seminar on YouTube](https://www.youtube.com/watch?v=dkR0iu_k-ME&t=1575s) — the full argument, questions, and discussion, not just the published papers.
 
 [![](docs/media/sortee_logo.png){width="220px" fig-alt="SORTEE logo"}](https://www.sortee.org/)

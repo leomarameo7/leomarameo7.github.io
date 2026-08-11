@@ -36,7 +36,7 @@ about:
 <ul class="timeline">
 <li><div class="t-role">Postdoc</div><div class="t-where">WSL, Switzerland</div><div class="t-proj">2023–2025</div></li>
 <li><div class="t-role">Ph.D. Ecology</div><div class="t-where">UFRN, Brazil</div><div class="t-proj">2017–2021</div></li>
-<li><div class="t-role">Master of Ecology</div><div class="t-where">UFRGS, Brazil</div><div class="t-proj">2015–2017</div></li>
+<li><div class="t-role">Master in Ecology</div><div class="t-where">UFRGS, Brazil</div><div class="t-proj">2015–2017</div></li>
 <li><div class="t-role">Bachelor in Environmental Sciences</div><div class="t-where">University of Barcelona</div><div class="t-proj">2008–2014</div></li>
 </ul>
 </div>

@@ -41,6 +41,8 @@ website:
           href: notebooks/edm/EDM_intro.qmd
         - text: "Convergent Cross Mapping"
           href: notebooks/edm/CCM_example.qmd
+        - text: "Registered Reports: what are they?"
+          href: notebooks/registered_reports/Registered_Reports.qmd
 
   page-footer:    
     background: light
