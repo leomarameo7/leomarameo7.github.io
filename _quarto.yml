@@ -17,6 +17,8 @@ website:
         href: notebooks/index_notebooks.qmd
       - text: "Open Science"
         href: open_science.qmd
+      - text: "Science Communication"
+        href: science_communication.qmd
       - text: "Contact"
         href: contact.qmd
       - icon: github

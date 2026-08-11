@@ -145,5 +145,8 @@
   },
   "notebooks/registered_reports/Registered_Reports.qmd": {
     "Registered_Reports.html": "4fb731c4"
+  },
+  "science_communication.qmd": {
+    "science_communication.html": "25c239cc"
   }
 }

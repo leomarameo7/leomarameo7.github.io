@@ -62,6 +62,11 @@ The [Registered Reports Zotero group library](https://www.zotero.org/groups/5937
 
 Because preregistrations serve much the same purpose, the [OSF registry](https://osf.io/search?search=ecology&tab=3) is a useful place to search for keywords in your own subfield and see how other people specify hypotheses and analysis plans in advance.
 
+The Center for Open Science also publishes a [one-page list of example preregistrations](https://www.cos.io/initiatives/prereg) from its Preregistration Challenge, sorted by discipline and study type. Two things in it are worth noticing:
+
+-   It covers **experiments, observational studies, and meta-analyses** alike — preregistration is not only for controlled experiments. The ecology entry, *"Local conditions explain variation in plant phenology within species"*, is an observational study.
+-   Each entry records **what the registration came before**: for most studies that is the *creation* of the data, but for others it is the *analysis* of already-existing data, or simply *any human observation* of it. This is the practical rule for observational and archival work in ecology, where the data may already exist: register before you have looked at the data you are about to test your hypothesis on. What matters is that the prediction is fixed before you can be influenced by the outcome.
+
 ## Practical starting point
 
 1.  Read the [Ecology and Evolution editorial](https://onlinelibrary.wiley.com/doi/10.1002/ece3.10023).

@@ -1,0 +1,17 @@
+---
+title: "Science Communication"
+---
+
+### Talks and presentations
+
+Presentations I have given during my academic career, most recent first. Slides are shared openly whenever I am free to do so.
+
+------------------------------------------------------------------------
+
+#### December 2022 — *Aquecimento do mar e o Atol das Rocas*
+
+**Universidade Federal do Rio Grande do Norte (UFRN), Brazil.** Guest lecture on how ocean warming and marine heatwaves affect the food web of the Rocas Atoll, covering the thermal niches of the species involved, the long-term monitoring behind the work (PELD ILOC), and the modelling results and methods.
+
+*The presentation is in Portuguese.*
+
+[{{< fa file-pdf >}} Download the slides (PDF)](slides/2022-12_ufrn_aquecimento_atol_das_rocas.pdf)
