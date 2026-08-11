@@ -1,6 +1,6 @@
 ---
 title: "Atlantic reef ecosystems and sea warming"
-categories: [project, GACR]
+categories: [project, PhD, Atlantic reefs]
 image: "Atol_das_Rocas.png"
 about:
   id: heading

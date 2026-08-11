@@ -1,6 +1,6 @@
 ---
-title: "seewandel Klima"
-categories: [project, GACR]
+title: "SeeWandel-Klima"
+categories: [project, postdoc, Lake Constance]
 image: "images/seewandel_logo.png"
 about:
   id: heading
