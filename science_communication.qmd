@@ -8,6 +8,16 @@ Presentations I have given during my academic career, most recent first. Slides 
 
 ------------------------------------------------------------------------
 
+#### 25 June 2025 — *Microbial plankton uptake enhances the degradation of a biodegradable microplastic*
+
+**Flash talk, Ecology Department.** Main results on how marine microbial plankton interact with PLGA (poly lactic-co-glycolic acid), a biodegradable microplastic: to what extent and in which size ranges ciliate and nanoflagellate communities take the particles up, and whether their grazing accelerates the polymer's degradation in seawater. Work carried out under the [AQUACOSM-plus](https://www.aquacosm.eu/) umbrella, in collaboration with Dr. Luca Schenone and Ulises Lora.
+
+Published as **[Schenone et al. 2025](https://doi.org/10.1016/j.envpol.2025.126252)**, *Microbial plankton uptake enhances the degradation of a biodegradable microplastic* (Environmental Pollution) — code and data on [Zenodo](https://zenodo.org/records/14186093).
+
+[{{< fa file-pdf >}} Download the slides (PDF)](slides/2025-06_ecology-department_flash-talk_plga_plankton.pdf)
+
+------------------------------------------------------------------------
+
 #### 14 March 2024 — *Beavers influence stream dissolved organic carbon by coupling terrestrial–aquatic ecosystems*
 
 **[13th Workshop on Floodplain Ecology](https://www.wsl.ch/en/events-and-courses/auenoekologischer-workshop-1-1/), Swiss Federal Institute for Forest, Snow and Landscape Research (WSL), Switzerland.** Talk on whether beaver ponds act as a source or a sink of dissolved organic carbon in Swiss streams, based on 16 sites sampled in 2021–2022. I present the causal hypothesis as a directed acyclic graph, the upstream–downstream sampling design behind the delta-DOC outcome, and the roles of aquatic primary production, terrestrial inputs, and pond age.
