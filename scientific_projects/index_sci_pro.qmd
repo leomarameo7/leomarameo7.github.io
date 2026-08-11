@@ -6,7 +6,7 @@ listing:
   - id: active
     max-description-length: 500
     image-height: 100px
-    fields: [image, title, description]
+    fields: [image, title, subtitle, description]
     contents: 
       - seewandell/index.qmd
     sort: "false" 
@@ -16,8 +16,9 @@ listing:
   - id: past
     max-description-length: 500
     image-height: 100px
-    fields: [image, title, description]
+    fields: [image, title, subtitle, description]
     contents:
+      - Beavers/index.qmd
       - RocasAtoll/index.qmd
       - AmazonTapajos/index.qmd
     sort: "false"

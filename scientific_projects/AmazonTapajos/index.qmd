@@ -1,6 +1,7 @@
 ---
 title: "Amazonian river food webs, deforestation and small-scale fisheries"
 description: "Food-web modelling of the Tapajós River to anticipate how deforestation and fishing pressure may reshape Amazonian small-scale fisheries."
+subtitle: "2015–2017"
 categories: [project, master, Amazon]
 image: "images/tapajos_flooded_channel.jpg"
 about:

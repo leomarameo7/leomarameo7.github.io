@@ -151,5 +151,8 @@
   },
   "notebooks/ecopath/Ecopath_with_Ecosim.qmd": {
     "Ecopath_with_Ecosim.html": "2f322a28"
+  },
+  "scientific_projects/Beavers/index.qmd": {
+    "index.html": "264a592d"
   }
 }

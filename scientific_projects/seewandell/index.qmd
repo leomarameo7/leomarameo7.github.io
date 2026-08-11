@@ -1,13 +1,14 @@
 ---
 title: "SeeWandel-Klima"
 description: "Using four decades of Lake Constance monitoring to test whether a regime shift in one part of a community can predict a shift in another."
+subtitle: "2025–2027"
 categories: [project, postdoc, Lake Constance]
 image: "images/seewandel_logo.png"
 about:
   id: heading
   template: jolla
-  image-shape: round
-  image-width: 250px
+  image-shape: rectangle
+  image-width: 320px
 ---
 
 ::: {#heading}
@@ -40,16 +41,40 @@ I am the postdoctoral researcher carrying out the analysis: assembling and harmo
 
 ## Project leader
 
--   **Dr. [Francesco Pomati](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/)** — group leader, Department of Aquatic Ecology, Eawag, Switzerland; lecturer at the Institute of Integrative Biology, ETH Zürich.
+### Francesco Pomati ![](images/francesco-pomati.jpg){align="right" width="130" fig-alt="Portrait of Francesco Pomati"}
+
+-   Project leader · group leader, Department of Aquatic Ecology
+-   🏦 Eawag, Switzerland · lecturer, Institute of Integrative Biology, ETH Zürich
+-   [🔗 Profile](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/)
 
 ## Collaborators
 
--   **Dr. [Luis J. Gilarranz](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es)** — Department of Aquatic Ecology, Eawag, Switzerland. Expertise in regime shift detection and propagation in ecological networks.
+### Luis J. Gilarranz
 
--   **Dr. [Stephan B. Munch](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ)** — NOAA Fisheries and University of California, Santa Cruz, USA. Expertise in nonlinear population dynamics, ecosystem forecasting, and Gaussian-Process methods.
+-   Regime shift detection and propagation in ecological networks
+-   🏦 Department of Aquatic Ecology, Eawag, Switzerland
+-   [🔗 Google Scholar](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es)
 
--   **Dr. [Tanya L. Rogers](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ)** — NOAA Fisheries and University of California, Santa Cruz, USA. Expertise in community ecology and empirical dynamic modelling of population time series.
+### Stephan B. Munch
 
--   **Dr. [Marta Reyes](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/marta-reyes/show/)** — research technician, Department of Aquatic Ecology, Eawag, Switzerland. Expertise in food-web interactions and plankton responses to environmental change.
+-   Nonlinear population dynamics, ecosystem forecasting, Gaussian-Process methods
+-   🏦 NOAA Fisheries and University of California, Santa Cruz, USA
+-   [🔗 Google Scholar](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ)
 
--   **[Stefanie Eyring](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/)** — research assistant, Plankton Ecology group, Department of Aquatic Ecology, Eawag, Switzerland.
+### Tanya L. Rogers
+
+-   Community ecology and empirical dynamic modelling of population time series
+-   🏦 NOAA Fisheries and University of California, Santa Cruz, USA
+-   [🔗 Google Scholar](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ)
+
+### Marta Reyes ![](images/marta-reyes.jpg){align="right" width="130" fig-alt="Portrait of Marta Reyes"}
+
+-   Food-web interactions and plankton responses to environmental change
+-   🏦 Research technician, Department of Aquatic Ecology, Eawag, Switzerland
+-   [🔗 Profile](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/marta-reyes/show/)
+
+### Stefanie Eyring ![](images/stefanie-eyring.jpg){align="right" width="130" fig-alt="Portrait of Stefanie Eyring"}
+
+-   Research assistant, Plankton Ecology group
+-   🏦 Department of Aquatic Ecology, Eawag, Switzerland
+-   [🔗 Profile](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/)
