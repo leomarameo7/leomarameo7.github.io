@@ -8,6 +8,14 @@ Presentations I have given during my academic career, most recent first. Slides 
 
 ------------------------------------------------------------------------
 
+#### 14 March 2024 — *Beavers influence stream dissolved organic carbon by coupling terrestrial–aquatic ecosystems*
+
+**[13th Workshop on Floodplain Ecology](https://www.wsl.ch/en/events-and-courses/auenoekologischer-workshop-1-1/), Swiss Federal Institute for Forest, Snow and Landscape Research (WSL), Switzerland.** Talk on whether beaver ponds act as a source or a sink of dissolved organic carbon in Swiss streams, based on 16 sites sampled in 2021–2022. I present the causal hypothesis as a directed acyclic graph, the upstream–downstream sampling design behind the delta-DOC outcome, and the roles of aquatic primary production, terrestrial inputs, and pond age.
+
+[{{< fa file-pdf >}} Download the slides (PDF)](slides/2024-03_wsl_floodplain_workshop_beavers_doc.pdf)
+
+------------------------------------------------------------------------
+
 #### December 2022 — *Aquecimento do mar e o Atol das Rocas*
 
 **Universidade Federal do Rio Grande do Norte (UFRN), Brazil.** Guest lecture on how ocean warming and marine heatwaves affect the food web of the Rocas Atoll, covering the thermal niches of the species involved, the long-term monitoring behind the work (PELD ILOC), and the modelling results and methods.
