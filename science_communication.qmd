@@ -10,7 +10,7 @@ Presentations I have given during my academic career, most recent first. Slides 
 
 #### 25 June 2025 — *Microbial plankton uptake enhances the degradation of a biodegradable microplastic*
 
-**Flash talk, Ecology Department.** Main results on how marine microbial plankton interact with PLGA (poly lactic-co-glycolic acid), a biodegradable microplastic: to what extent and in which size ranges ciliate and nanoflagellate communities take the particles up, and whether their grazing accelerates the polymer's degradation in seawater. Work carried out under the [AQUACOSM-plus](https://www.aquacosm.eu/) umbrella, in collaboration with Dr. Luca Schenone and Ulises Lora.
+**Flash talk, Department of Aquatic Ecology, Eawag, Switzerland.** Main results on how marine microbial plankton interact with PLGA (poly lactic-co-glycolic acid), a biodegradable microplastic: to what extent and in which size ranges ciliate and nanoflagellate communities take the particles up, and whether their grazing accelerates the polymer's degradation in seawater. Work carried out under the [AQUACOSM-plus](https://www.aquacosm.eu/) umbrella, in collaboration with Dr. Luca Schenone and [Ulises Lora](https://emm.icm.csic.es/ulises-lora/).
 
 Published as **[Schenone et al. 2025](https://doi.org/10.1016/j.envpol.2025.126252)**, *Microbial plankton uptake enhances the degradation of a biodegradable microplastic* (Environmental Pollution) — code and data on [Zenodo](https://zenodo.org/records/14186093).
 
