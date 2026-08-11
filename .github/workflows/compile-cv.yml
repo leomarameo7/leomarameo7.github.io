@@ -6,6 +6,10 @@ on:
       - main
     paths:
       - "CV/**"
+  # Recompile daily so the date printed on the CV (datetime.today() in
+  # CV/src/lib.typ) stays current, not frozen at the last CV/ push.
+  schedule:
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 permissions:
