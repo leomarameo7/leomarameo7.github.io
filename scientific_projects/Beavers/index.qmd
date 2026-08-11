@@ -3,7 +3,7 @@ title: "Beavers and their influence on terrestrial–aquatic ecosystems"
 description: "How beaver engineering reshapes species interactions and carbon cycling across the land–water boundary of Swiss streams."
 subtitle: "2023–2025"
 categories: [project, postdoc, beavers]
-image: "images/beaver_tinner.jpg"
+image: "images/beaver_dam_tegel.jpg"
 about:
   id: heading
   template: jolla
@@ -12,14 +12,18 @@ about:
 ---
 
 ::: {#heading}
-My postdoctoral research at the [Swiss Federal Institute for Forest, Snow and Landscape Research (WSL)](https://www.wsl.ch/) and [Eawag](https://www.eawag.ch/), the Swiss Federal Institute of Aquatic Science and Technology, within the project [**Species interactions in beaver-engineered habitats link land–water ecosystem processes**](https://www.wsl.ch/en/about-wsl/organisation/programmes-and-initiatives/completed-programmes-and-large-projects/blue-green-biodiversity-research-initiative/species-interactions-in-beaver-engineered-habitats-link-land-water-ecosystem-processes/) , funded by the **Blue-Green Biodiversity Research Initiative**, a joint Eawag–WSL programme on the interface between aquatic and terrestrial biodiversity. The project ran from 2021 to 2025; I joined it in 2023.
+My postdoctoral research at the [Swiss Federal Institute for Forest, Snow and Landscape Research (WSL)](https://www.wsl.ch/) and [Eawag](https://www.eawag.ch/), the Swiss Federal Institute of Aquatic Science and Technology, within the project [**Species interactions in beaver-engineered habitats link land–water ecosystem processes**](https://www.wsl.ch/en/about-wsl/organisation/programmes-and-initiatives/completed-programmes-and-large-projects/blue-green-biodiversity-research-initiative/species-interactions-in-beaver-engineered-habitats-link-land-water-ecosystem-processes/), funded by the **Blue-Green Biodiversity Research Initiative**, a joint Eawag–WSL programme on the interface between aquatic and terrestrial biodiversity. The project ran from 2021 to 2025; I joined it in 2023.
 :::
 
 ## Project description
 
-![The Eurasian beaver, *Castor fiber*, at work on a Swiss stream. Photo credit: [Dominic Tinner](https://dominictinner.pro).](images/beaver_tinner.jpg){fig-align="center" width="85%"}
+![A beaver dam in a confined stream in an urban setting, at the Tegel sampling site. Photo credit: Valentin Moser.](images/beaver_dam_tegel.jpg){fig-align="center" width="90%"}
 
 Beavers are the textbook ecosystem engineer. By felling trees and building dams they convert a fast, narrow, shaded stream into a mosaic of ponds, wetland and open canopy — and in doing so they redraw the boundary between the land and the water. Fallen wood and leaf litter enter the channel, water slows down and warms, light reaches the water surface, and the flooded margins turn terrestrial soil into aquatic habitat.
+
+![In a forest setting the same engineering floods the surrounding area, generating the spatial heterogeneity that a single dam can create across the land–water boundary.](images/beaver_flooded_forest.jpg){fig-align="center" width="90%"}
+
+![The Eurasian beaver, *Castor fiber*, at work on a Swiss stream. Photo credit: [Dominic Tinner](https://dominictinner.pro).](images/beaver_tinner.jpg){fig-align="center" width="85%"}
 
 The project asked what that engineering does to the *interactions* between organisms on either side of that boundary, and what those altered interactions mean for how the ecosystem functions.
 
@@ -37,7 +41,7 @@ The design compares streams and their surrounding riparian areas **with and with
 
 ## My role
 
-I was the postdoctoral researcher on the biogeochemical side of the project, affiliated with **WSL and Eawag**. My own work asks **to what extent, and when, beavers influence dissolved organic carbon (DOC) and nutrient concentrations in streams** — that is, whether a beaver-engineered reach acts as a source or a sink of carbon and nutrients, and which conditions decide which of the two it is. It uses a paired design: water is sampled immediately upstream and immediately downstream of each beaver-engineered reach, and the difference between the two is the outcome.
+I was the postdoctoral researcher on the project, affiliated with **WSL and Eawag**. My own work asks **to what extent, and when, beavers influence dissolved organic carbon (DOC) and nutrient concentrations in streams** — that is, whether a beaver-engineered reach acts as a source or a sink of carbon and nutrients, and which conditions decide which of the two it is. It uses a paired design: water is sampled immediately upstream and immediately downstream of each beaver-engineered reach, and the difference between the two is the outcome.
 
 I also **co-advise the Ph.D. student [Valentin Moser](https://vamoser.ch/)** (WSL & Eawag) on the project, and contributed the statistical analysis to the biodiversity papers listed below.
 
@@ -49,7 +53,35 @@ This study is **currently under review**. The description and figure below refle
 
 Framing it as a difference rather than an absolute concentration matters: it removes the catchment the stream happens to drain, and isolates what the beaver does. The same paired logic applies to the nutrients.
 
+Within the Blue-Green Biodiversity initiative itself we sampled **16 sites**. Through the collaboration with **Annegret Larsen**, **Joshua R. Larsen** and **Christof Angst**, we then raised the sample size to **176 sites**, which gives nutrient concentration data over a far broader spatial range — enough to ask whether the beaver effect holds across very different catchments, land uses and stream types, rather than only at the handful of streams one project can visit.
+
 The full account of this work, and the reference for everything described above, is the talk I gave at the **13th Workshop on Floodplain Ecology** at WSL on 14 March 2024: [*Beavers influence stream dissolved organic carbon by coupling terrestrial–aquatic ecosystems*](../../slides/2024-03_wsl_floodplain_workshop_beavers_doc.pdf) (PDF), also listed on my [Science Communication](../../science_communication.qmd) page.
+
+## Ongoing: do beavers reshape the arthropod size spectrum?
+
+A second strand of my work on the project — **still in progress** — asks what beaver damming does to the **individual size distribution (ISD)** of the arthropod community, on both sides of the land–water boundary.
+
+The ISD, known in the aquatic literature as the size spectrum, is the relationship between an individual's body mass and how common that mass is in the community. It is usually described by a power law, $f(M) \propto M^{\lambda}$, where the exponent $\lambda$ measures how steeply abundance falls from small to large individuals. That exponent is not just a descriptive statistic: a flatter $\lambda$ means energy is passing more efficiently from small, low-trophic-position individuals up to large ones, so it is a compact summary of how the food web is working.
+
+::: {.callout-important appearance="minimal" icon="false"}
+## Open questions addressed:
+
+-   Does beaver damming influence the individual size distribution of arthropods?
+
+-   Does the surrounding anthropogenic land area mediate that beaver effect?
+
+-   Do aquatic and terrestrial arthropod communities respond in the same way?
+:::
+
+![The causal hypothesis. Position along the stream — control, inflow, pond, outflow — is expected to shape the size distribution, while human impact acts both on the size distribution directly and on the beaver effect itself.](images/isd_dag.png){fig-align="center" width="60%"}
+
+The design compares four positions in each of 16 Swiss streams: a **control** reach 500 m away from any beaver influence, the **inflow** where the stream slows into the pond, the **pond** itself, and the **outflow** 25 m below the dam. Arthropods were collected with three complementary methods — kick-net, suction sampling and emergence traps — so that the aquatic and terrestrial parts of the community are both represented.
+
+![Schematic of the study design: sampling positions relative to the beaver dam, with light blue marking lotic (fast-flowing) and dark blue lentic (standing) conditions. Credits and copyright: Dominic Tinner.](images/isd_sampling_design.png){fig-align="center" width="85%"}
+
+![The 16 sampled lowland streams across Switzerland; panels A and B zoom on the western and eastern clusters. Credits and copyright: Dominic Tinner.](images/isd_study_sites.png){fig-align="center" width="90%"}
+
+Rather than binning body masses into arbitrary size classes — which is known to bias the estimated exponent — I estimate $\lambda$ directly from the individual body sizes with a **truncated Pareto likelihood in a Bayesian hierarchical model**, using the [`isdbayes`](https://github.com/jswesner/isdbayes) package built on `brms`. This part of the work is developed in collaboration with [Jeff S. Wesner](https://scholar.google.com/citations?hl=en&user=1J-5_yUAAAAJ) (University of South Dakota) and [Justin P. F. Pomeranz](https://jfpomeranz.wixsite.com/ecologist) (Colorado Mesa University), whose methodological work underpins the approach.
 
 ## Research papers associated:
 
