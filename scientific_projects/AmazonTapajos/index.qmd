@@ -1,8 +1,8 @@
 ---
 title: "Amazonian river food webs, deforestation and small-scale fisheries"
-description: |
-  My Master's research in Ecology (UFRGS, Brazil): food-web modeling of the Tapajós River to anticipate the impacts of deforestation and fishing pressure in the Brazilian Amazon.
+description: "Food-web modelling of the Tapajós River to anticipate how deforestation and fishing pressure may reshape Amazonian small-scale fisheries."
 categories: [project, master, Amazon]
+image: "images/tapajos_flooded_channel.jpg"
 about:
   id: heading
   template: jolla
@@ -19,6 +19,16 @@ This was my Master's research project in Ecology at the [Universidade Federal do
 
 Large Amazonian rivers sustain some of the most productive inland small-scale fisheries in the world, but they are increasingly pressured by deforestation of their catchments and by rising fishing effort. My Master's project used **ecosystem food-web modeling** (Ecopath with Ecosim) of the **Tapajós River**, combining fishers' ecological knowledge and field data, to anticipate how these two drivers may reshape the river's food web and the fisheries that depend on it.
 
+![The study area: the lower 150-km section of the Tapajós River, between its mouth on the Amazon and the upstream limit of the fisheries we surveyed. RESEX is the Tapajós–Arapiuns Extractive Reserve and FLONA the Tapajós National Forest; black dots are the fishing communities sampled, and red marks deforested land. Figure 1 from [Capitani et al. 2021, *Regional Environmental Change*](https://doi.org/10.1007/s10113-021-01777-z), reproduced here by the first author.](images/tapajos_study_area_map.png){fig-align="center" width="80%"}
+
+Much of the fieldwork happens in the **várzea**, the seasonally flooded forest along the river. When the water rises, fish move into the trees to feed — which is precisely why a food web here cannot be understood from the open channel alone.
+
+![Inundated forest in the lower Tapajós River during the high-water season.](images/tapajos_inundated_forest.jpg){fig-align="center" width="85%"}
+
+Building the food web starts with knowing who is in it, so a large part of the fieldwork is simply registering the ichthyofauna of the river — identifying, measuring and recording the species that the fisheries and the web are built on.
+
+![Registering the ichthyofauna of the lower Tapajós River. The red-eye piranha, *Serrasalmus rhombeus*. Photo credit: Renato Azevedo Matias Silvano.](images/tapajos_piranha.jpg){fig-align="center" width="80%"}
+
 This work was a sub-project of the international project **["Linking sustainability of small-scale fisheries, fishers' knowledge, conservation and co-management of biodiversity in large rivers of the Brazilian Amazon"](https://sites.nationalacademies.org/PGA/PEER/PEERscience/PGA_168062)** (PEER — Partnerships for Enhanced Engagement in Research).
 
 ::: {.callout-important appearance="minimal" icon="false"}
@@ -31,6 +41,14 @@ This work was a sub-project of the international project **["Linking sustainabil
 -   What do these projections imply for the sustainable co-management of Amazonian small-scale fisheries?
 :::
 
+## The expedition
+
+![The younger members of the expedition team, from left to right: Leonardo Capitani, Junior Chuctaya and Pedro Nitschke.](images/tapajos_team.jpg){fig-align="center" width="85%"}
+
+![Taking notes on water characteristics — temperature and pH — from the boat during the Tapajós survey.](images/tapajos_water_sampling.jpg){fig-align="center" width="55%"}
+
+*Photographs on this page are by Leonardo Capitani, except where credited otherwise.*
+
 ## Research paper associated:
 
 **Capitani, L.**, Angelini, R., Keppeler, F. W., Hallwass, G., & Silvano, R. A. M. (2021). Food web modeling indicates the potential impacts of increasing deforestation and fishing pressure in the Tapajós River, Brazilian Amazon. *Regional Environmental Change, 21*(2), 42. [https://doi.org/10.1007/s10113-021-01777-z](https://link.springer.com/article/10.1007/s10113-021-01777-z)
@@ -41,13 +59,13 @@ I was the principal investigator of this sub-project: I built and analysed the f
 
 ## Core collaborators
 
-### Renato A. M. Silvano
+### Renato A. M. Silvano ![](images/renato-silvano.jpg){align="right" width="130" fig-alt="Portrait of Renato A. M. Silvano"}
 
 -   Master's supervisor · research group leader, LEHPE
 -   🏦 Federal University of Rio Grande do Sul (UFRGS), Brazil
 -   [🔗 Google Scholar](https://scholar.google.com/citations?user=e_RmXEsAAAAJ&hl=pt-BR)
 
-### Ronaldo Angelini
+### Ronaldo Angelini ![](images/ronaldo-angelini.webp){align="right" width="130" fig-alt="Portrait of Ronaldo Angelini"}
 
 -   Co-supervisor · food-web modeling
 -   🏦 Federal University of Rio Grande do Norte (UFRN), Brazil

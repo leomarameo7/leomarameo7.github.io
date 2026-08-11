@@ -1,5 +1,6 @@
 ---
 title: "Atlantic reef ecosystems and sea warming"
+description: "Food-web modelling and field experiments at Rocas Atoll to project how ocean warming will reshape a near-pristine tropical reef."
 categories: [project, PhD, Atlantic reefs]
 image: "Atol_das_Rocas.png"
 about:

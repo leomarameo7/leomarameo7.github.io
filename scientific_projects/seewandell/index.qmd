@@ -1,5 +1,6 @@
 ---
 title: "SeeWandel-Klima"
+description: "Using four decades of Lake Constance monitoring to test whether a regime shift in one part of a community can predict a shift in another."
 categories: [project, postdoc, Lake Constance]
 image: "images/seewandel_logo.png"
 about:
