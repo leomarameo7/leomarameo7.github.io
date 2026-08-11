@@ -1,14 +1,21 @@
 ---
-title: "Notebooks"
+title: "Learning"
 description: |
   Notebooks made with quarto + R code. These are personal study material: I wrote them myself to learn and practice, sometimes adapting or copy-pasting pieces from other people's work along the way. I share them here as drafts, in case they're useful to scientific collaborators or students too.
 ---
 
+### Open Science
 
--   [Gaussian Processes](seewandell/GP_workbook.qmd) — I introduce Gaussian Process regression and the GP-EDM framework, working through the maths and then a few ecological toy examples.
--   [Measurement Error](measurement_error/Measurement_error_simulations.qmd) — I use `brms` to simulate how measurement error in a predictor and/or an outcome distorts a simple regression's coefficients.
--   [Priors](priors/Visualize_priors.qmd) — I visualize a handful of commonly used priors (Gamma, Exponential, Half-Cauchy, and more) so I can build some intuition about what they imply before I use them.
--   [Sample Size Planning](sample_size_planning/Sample_Size_Planning.qmd) — I simulate an ecological dataset at increasing sample sizes to show you, concretely, how the number of observations you collect shapes the power and precision of a simple linear `brms` model.
+-   [Registered Reports: what are they?](registered_reports/Registered_Reports.qmd) — I explain the two-stage Registered Report format, how it differs from a preregistration, and where to find real Stage 1 and Stage 2 examples in ecology.
+
+### Ecological Modelling
+
 -   [Empirical Dynamic Modelling: an introduction](edm/EDM_intro.qmd) — I introduce state-space reconstruction, Simplex projection, and S-map using `rEDM`, and show you how to tell a chaotic population from a noisy one.
 -   [Convergent Cross Mapping](edm/CCM_example.qmd) — I use `rEDM` to test causal links between time series, on both a synthetic system and a classic predator-prey dataset, and address whether CCM needs to control for confounders the way regression does.
--   [Registered Reports: what are they?](registered_reports/Registered_Reports.qmd) — I explain the two-stage Registered Report format, how it differs from a preregistration, and where to find real Stage 1 and Stage 2 examples in ecology.
+-   [Gaussian Processes](seewandell/GP_workbook.qmd) — I introduce Gaussian Process regression and the GP-EDM framework, working through the maths and then a few ecological toy examples.
+
+### Statistics
+
+-   [Priors](priors/Visualize_priors.qmd) — I visualize a handful of commonly used priors (Gamma, Exponential, Half-Cauchy, and more) so I can build some intuition about what they imply before I use them.
+-   [Measurement Error](measurement_error/Measurement_error_simulations.qmd) — I use `brms` to simulate how measurement error in a predictor and/or an outcome distorts a simple regression's coefficients.
+-   [Sample Size Planning](sample_size_planning/Sample_Size_Planning.qmd) — I simulate an ecological dataset at increasing sample sizes to show you, concretely, how the number of observations you collect shapes the power and precision of a simple linear `brms` model.

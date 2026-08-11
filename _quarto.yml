@@ -13,7 +13,7 @@ website:
         text: Home
       - text: "Research Projects"
         href: scientific_projects/index_sci_pro.qmd
-      - text: "Notebooks"
+      - text: "Learning"
         href: notebooks/index_notebooks.qmd
       - text: "Open Science"
         href: open_science.qmd
@@ -26,25 +26,31 @@ website:
       - icon: envelope
         href: mailto:leocapi07@gmail.com
   sidebar:
-    - title: "Notebooks"
+    - title: "Learning"
       style: "docked"
       contents:
-        - text: "Notebooks"
+        - text: "All notebooks"
           href: notebooks/index_notebooks.qmd
-        - text: "Gaussian Processes"
-          href: notebooks/seewandell/GP_workbook.qmd
-        - text: "Measurement Error"
-          href: notebooks/measurement_error/Measurement_error_simulations.qmd
-        - text: "Priors"
-          href: notebooks/priors/Visualize_priors.qmd
-        - text: "Sample Size Planning"
-          href: notebooks/sample_size_planning/Sample_Size_Planning.qmd
-        - text: "Empirical Dynamic Modelling: intro"
-          href: notebooks/edm/EDM_intro.qmd
-        - text: "Convergent Cross Mapping"
-          href: notebooks/edm/CCM_example.qmd
-        - text: "Registered Reports: what are they?"
-          href: notebooks/registered_reports/Registered_Reports.qmd
+        - section: "Open Science"
+          contents:
+            - text: "Registered Reports: what are they?"
+              href: notebooks/registered_reports/Registered_Reports.qmd
+        - section: "Ecological Modelling"
+          contents:
+            - text: "Empirical Dynamic Modelling: intro"
+              href: notebooks/edm/EDM_intro.qmd
+            - text: "Convergent Cross Mapping"
+              href: notebooks/edm/CCM_example.qmd
+            - text: "Gaussian Processes"
+              href: notebooks/seewandell/GP_workbook.qmd
+        - section: "Statistics"
+          contents:
+            - text: "Priors"
+              href: notebooks/priors/Visualize_priors.qmd
+            - text: "Measurement Error"
+              href: notebooks/measurement_error/Measurement_error_simulations.qmd
+            - text: "Sample Size Planning"
+              href: notebooks/sample_size_planning/Sample_Size_Planning.qmd
 
   page-footer:    
     background: light
