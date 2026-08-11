@@ -43,6 +43,8 @@ website:
               href: notebooks/edm/CCM_example.qmd
             - text: "Gaussian Processes"
               href: notebooks/seewandell/GP_workbook.qmd
+            - text: "Ecopath with Ecosim (Rpath)"
+              href: notebooks/ecopath/Ecopath_with_Ecosim.qmd
         - section: "Statistics"
           contents:
             - text: "Priors"

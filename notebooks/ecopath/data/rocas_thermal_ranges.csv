@@ -1,0 +1,131 @@
+Species,temperature,class
+Negaprion brevirostris,12.66,min
+Negaprion brevirostris,23.28,perc10
+Negaprion brevirostris,28.03,perc90
+Negaprion brevirostris,25.66,opti
+Negaprion brevirostris,32.23,max
+Ginglymostoma cirratum,14.74,min
+Ginglymostoma cirratum,25.3,perc10
+Ginglymostoma cirratum,27.95,perc90
+Ginglymostoma cirratum,26.63,opti
+Ginglymostoma cirratum,29.83,max
+Lutjanus jocu,10.9,min
+Lutjanus jocu,24.26,perc10
+Lutjanus jocu,28.08,perc90
+Lutjanus jocu,26.17,opti
+Lutjanus jocu,32.28,max
+Cephalopholis fulva,22.9,min
+Cephalopholis fulva,25.33,perc10
+Cephalopholis fulva,28.06,perc90
+Cephalopholis fulva,26.7,opti
+Cephalopholis fulva,32.26,max
+Carangidae,11.03,min
+Carangidae,22.84,perc10
+Carangidae,28.01,perc90
+Carangidae,25,opti
+Carangidae,32.04,max
+Acanthurus spp.,10.91,min
+Acanthurus spp.,23.96,perc10
+Acanthurus spp.,28.04,perc90
+Acanthurus spp.,26.0046,opti
+Acanthurus spp.,29.061,max
+Stegastes rocasensis,26.76,min
+Stegastes rocasensis,27.26,perc10
+Stegastes rocasensis,27.43,perc90
+Stegastes rocasensis,27.4,opti
+Stegastes rocasensis,31.63,max
+Thalassoma noronhanum,22.46,min
+Thalassoma noronhanum,23.59,perc10
+Thalassoma noronhanum,27.47,perc90
+Thalassoma noronhanum,25.53,opti
+Thalassoma noronhanum,31.67,max
+Abudefduf saxatilis,11.55,min
+Abudefduf saxatilis,20.67,perc10
+Abudefduf saxatilis,28.16,perc90
+Abudefduf saxatilis,24.42,opti
+Abudefduf saxatilis,32.36,max
+Sparisoma spp.,19.82,min
+Sparisoma spp.,23.16,perc10
+Sparisoma spp.,27.45,perc90
+Sparisoma spp.,25.3,opti
+Sparisoma spp.,31.6535,max
+Melichthys niger,20.98,min
+Melichthys niger,24.69,perc10
+Melichthys niger,28.63,perc90
+Melichthys niger,26.66,opti
+Melichthys niger,32.83,max
+Kyphosus spp.,13.96,min
+Kyphosus spp.,24.21,perc10
+Kyphosus spp.,27.9,perc90
+Kyphosus spp.,26.06,opti
+Kyphosus spp.,32.1,max
+Mulloidichthys martinicus,21.1,min
+Mulloidichthys martinicus,24.11,perc10
+Mulloidichthys martinicus,28.04,perc90
+Mulloidichthys martinicus,26.08,opti
+Mulloidichthys martinicus,32.24,max
+Holocentrus adscensionis,21.19,min
+Holocentrus adscensionis,24.33,perc10
+Holocentrus adscensionis,27.95,perc90
+Holocentrus adscensionis,26.14,opti
+Holocentrus adscensionis,32.15,max
+Haemulidae,22.58,min
+Haemulidae,26.39,perc10
+Haemulidae,28.04,perc90
+Haemulidae,27.1955,opti
+Haemulidae,32.2785,max
+Cryptobenthic reef fishes,18.53,min
+Cryptobenthic reef fishes,23.89,perc10
+Cryptobenthic reef fishes,28.11,perc90
+Cryptobenthic reef fishes,26.283,opti
+Cryptobenthic reef fishes,32.337,max
+Turtles,10.36,min
+Turtles,17.21,perc10
+Turtles,28.83,perc90
+Turtles,25.26,opti
+Turtles,33.04,max
+Cephalopoda,6.67,min
+Cephalopoda,11.66,perc10
+Cephalopoda,27.99,perc90
+Cephalopoda,21.955,opti
+Cephalopoda,32.175,max
+Panulirus spp.,18.665,min
+Panulirus spp.,21.03,perc10
+Panulirus spp.,27.28,perc90
+Panulirus spp.,25.325,opti
+Panulirus spp.,31.81,max
+Benthic macroinvert.,21.6,min
+Benthic macroinvert.,22.5,perc10
+Benthic macroinvert.,30,perc90
+Benthic macroinvert.,27.5,opti
+Benthic macroinvert.,31,max
+Benthic microinvert.,20.9,min
+Benthic microinvert.,22,perc10
+Benthic microinvert.,29,perc90
+Benthic microinvert.,27.5,opti
+Benthic microinvert.,30,max
+Siderastrea stellata,12,min
+Siderastrea stellata,12.9,perc10
+Siderastrea stellata,27.5,perc90
+Siderastrea stellata,27.18,opti
+Siderastrea stellata,28.8,max
+Zooplankton,20,min
+Zooplankton,21.2,perc10
+Zooplankton,33,perc90
+Zooplankton,27.5,opti
+Zooplankton,34.4,max
+Phytoplankton,18,min
+Phytoplankton,20,perc10
+Phytoplankton,32.5,perc90
+Phytoplankton,27,opti
+Phytoplankton,33,max
+Digenea simplex,18,min
+Digenea simplex,19.8,perc10
+Digenea simplex,31.5,perc90
+Digenea simplex,27,opti
+Digenea simplex,33,max
+Algal turf,15,min
+Algal turf,17.3,perc10
+Algal turf,32,perc90
+Algal turf,27.5,opti
+Algal turf,34.5,max

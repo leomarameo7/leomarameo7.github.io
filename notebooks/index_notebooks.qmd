@@ -12,6 +12,7 @@ description: |
 
 -   [Empirical Dynamic Modelling: an introduction](edm/EDM_intro.qmd) — I introduce state-space reconstruction, Simplex projection, and S-map using `rEDM`, and show you how to tell a chaotic population from a noisy one.
 -   [Convergent Cross Mapping](edm/CCM_example.qmd) — I use `rEDM` to test causal links between time series, on both a synthetic system and a classic predator-prey dataset, and address whether CCM needs to control for confounders the way regression does.
+-   [Ecopath with Ecosim, and its R counterpart Rpath](ecopath/Ecopath_with_Ecosim.qmd) — I introduce the EwE mass-balance framework, then rebuild my published Rocas Atoll food-web model in `Rpath` and run it forward under warming scenarios — including where the model stops being believable.
 -   [Gaussian Processes](seewandell/GP_workbook.qmd) — I introduce Gaussian Process regression and the GP-EDM framework, working through the maths and then a few ecological toy examples.
 
 ### Statistics
