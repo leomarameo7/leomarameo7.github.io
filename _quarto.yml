@@ -19,6 +19,8 @@ website:
         href: open_science.qmd
       - text: "Science Communication"
         href: science_communication.qmd
+      - text: "Consulting"
+        href: consulting.qmd
       - text: "Contact"
         href: contact.qmd
       - icon: github

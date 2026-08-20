@@ -1,0 +1,63 @@
+---
+title: "Consulting"
+---
+
+### Ecological modelling and data analysis
+
+I work as an **external consultant in ecological modelling and data analysis** for [**limu.eco**](https://www.limu.eco) (Mettmenstetten, Switzerland), a company that turns aquatic plant biomass harvested from local waterways into additives for biodegradable materials.
+
+I am available for consulting work beyond that engagement. If you have an ecological question, a monitoring dataset, or an environmental claim that needs defensible quantitative support, [get in touch](contact.qmd).
+
+### What I do
+
+-   **Ecological assessment of biodiversity** — designing and analysing surveys and monitoring programmes for aquatic and terrestrial communities, from species composition and traits to whole food webs.
+
+-   **Statistical modelling** — Bayesian hierarchical models, generalised linear and non-linear models, time-series and state-space models, all fitted with uncertainty carried through to the answer rather than discarded at the end.
+
+-   **Causal inference** — separating "these two things move together" from "changing this one changes the other". I make assumptions explicit as directed acyclic graphs (DAGs) before fitting anything, so that a model estimates the effect you actually asked about.
+
+-   **Ecosystem and food-web modelling** — Ecopath with Ecosim / [`Rpath`](notebooks/ecopath/Ecopath_with_Ecosim.qmd), empirical dynamic modelling and Gaussian-Process approaches for forecasting how communities respond to warming, nutrients and exploitation.
+
+-   **Study design before data collection** — sample-size and power analysis by simulation, so you know in advance whether a planned survey can detect the effect that matters. This is usually the cheapest thing you will ever pay a statistician for.
+
+-   **Reproducible analysis and reporting** — every project delivered as version-controlled code and a Quarto report that reruns end to end, so your analysis can be audited, reused and defended years later.
+
+### Tools
+
+`R` · `Stan` / `brms` · `Rpath` · `rEDM` · `isdbayes` · `tidyverse` · `Quarto` · `Git` / `GitHub` · `Python`
+
+### How I report results
+
+I report findings in **probabilistic language**. Most statistical results are not a yes or a no; they are a statement about how strongly the data support a conclusion, and pretending otherwise hides risk from whoever has to make the decision.
+
+::: {.callout-note appearance="simple"}
+## An example
+
+Suppose we test whether a new additive speeds up the degradation of a biodegradable plastic in lake water. A conventional report says:
+
+> *"The treatment effect was statistically significant (p = 0.03)."*
+
+That sentence does not tell you how much faster, nor how certain we are. My report says instead:
+
+> *"The additive increased the degradation rate by **18% on average (95% credible interval: 6% to 31%)**. Given the data and our assumptions, there is a **97% probability that the additive speeds up degradation at all**, and an **82% probability that it does so by more than 10%** — the threshold your process requires."*
+
+The second version answers the question you actually have: not "is there an effect?" but "how big is it, how sure are we, and is it big enough to matter for my decision?"
+:::
+
+This matters most when the answer is inconvenient. A result that is genuinely uncertain gets reported as uncertain — with the range of values the data support, and what further data would narrow it. You get an honest basis for a decision, not a number engineered to look conclusive.
+
+### Working principles
+
+-   **Assumptions first.** Before any model is fitted, I write down what is assumed about how the system works and how the data were generated. If those assumptions are wrong, the result is wrong however sophisticated the model.
+
+-   **Uncertainty is part of the answer**, not a footnote to it.
+
+-   **Reproducibility by default.** Code and analysis are delivered so that someone else — a regulator, a reviewer, a future employee — can rerun them and get the same numbers. See my [Open Science](open_science.qmd) page.
+
+-   **I will tell you when the data cannot answer the question.** That is a legitimate and often valuable finding.
+
+### Background
+
+I hold a Ph.D. in Ecology and work as a postdoctoral researcher at [Eawag](https://www.eawag.ch/), the Swiss Federal Institute of Aquatic Science and Technology. My published work spans tropical reef food webs, Amazonian river fisheries, beaver-engineered streams and Lake Constance plankton — see [Research Projects](scientific_projects/index_sci_pro.qmd) for detail, and the [Learning](notebooks/index_notebooks.qmd) notebooks for worked examples of the methods above.
+
+[**Get in touch**](contact.qmd) to discuss a project.
