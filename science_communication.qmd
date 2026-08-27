@@ -2,9 +2,23 @@
 title: "Science Communication"
 ---
 
-### Talks and presentations
+### Talks, presentations and workshops
 
-Presentations I have given during my academic career, most recent first. Slides are shared openly whenever I am free to do so.
+Talks I have given and workshops I have organised during my academic career, most recent first. Slides are shared openly whenever I am free to do so.
+
+------------------------------------------------------------------------
+
+#### 25–27 August 2026 — *Workshop on Advanced Empirical Dynamic Modelling (EDM)*
+
+**Eawag, Dübendorf, Switzerland.** A three-day workshop I organised, bringing together participants interested in **detecting causal relationships between variables without assuming a fixed model structure**, and in **forecasting how populations, communities and interactions respond to change over time**. Participants were expected to arrive with a basic familiarity with dynamical systems, nonparametric regression, multivariable calculus and linear algebra.
+
+Organised jointly by the [Pomati lab](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/) and the **Machine Learning & Complex Systems group** of [Marco Baity-Jesi](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/marco-baity-jesi/show/) at Eawag, with the support and funding of the [Biodiversity Center WSL–Eawag](https://biodiversitycenter.wsl.ch/en/?show=13).
+
+::: {layout-ncol="2"}
+![Working through the EDM theory during the workshop.](images/workshops/edm_workshop_classroom.jpg){fig-alt="Participants at the EDM workshop following a lecture at Eawag"}
+
+![Participants and organisers of the workshop at Eawag, Dübendorf.](images/workshops/edm_workshop_group.jpg){fig-alt="Group photograph of the EDM workshop participants outside the Eawag building"}
+:::
 
 ------------------------------------------------------------------------
 
