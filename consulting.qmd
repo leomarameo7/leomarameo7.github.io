@@ -2,11 +2,7 @@
 title: "Consulting"
 ---
 
-### Ecological modelling and data analysis
-
-I work as an **external consultant in ecological modelling and data analysis** for [**limu.eco**](https://www.limu.eco) (Mettmenstetten, Switzerland), a company that turns aquatic plant biomass harvested from local waterways into additives for biodegradable materials.
-
-I am available for consulting work beyond that engagement. If you have an ecological question, a monitoring dataset, or an environmental claim that needs defensible quantitative support, [get in touch](contact.qmd).
+I take on **ecological modelling and data analysis** work for organisations that need defensible quantitative answers: an ecological question, a monitoring dataset, or an environmental claim that has to stand up to scrutiny.
 
 ### What I do
 
@@ -55,6 +51,10 @@ This matters most when the answer is inconvenient. A result that is genuinely un
 -   **Reproducibility by default.** Code and analysis are delivered so that someone else — a regulator, a reviewer, a future employee — can rerun them and get the same numbers. See my [Open Science](open_science.qmd) page.
 
 -   **I will tell you when the data cannot answer the question.** That is a legitimate and often valuable finding.
+
+### How the work is arranged
+
+This is a **paid service on a per-assignment basis**: you bring a specific question, we agree the scope and the fee for that piece of work, and I deliver it. There is no retainer and no ongoing commitment on either side — each assignment stands on its own.
 
 ### Background
 

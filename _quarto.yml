@@ -3,6 +3,12 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
+
+# Re-execute a document's code only when that document changes.
+# Results are cached in _freeze/ (committed), so editing a plain page
+# no longer re-runs the notebooks' models.
+execute:
+  freeze: auto
 website:
   title: "Leonardo Capitani"
   page-navigation: true
