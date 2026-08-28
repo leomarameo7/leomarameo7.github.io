@@ -6,7 +6,6 @@ date-modified: last-modified
 format:
       html:
           toc: true
-          embed-resources: true
 editor: visual
 ---
 

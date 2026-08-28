@@ -13,7 +13,6 @@ format:
           code-fold: true
           code-tools: true
           code-link: true
-          embed-resources: true
 bibliography: references.bib
 editor: visual
 editor_options:
