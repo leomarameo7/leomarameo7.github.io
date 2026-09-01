@@ -37,7 +37,7 @@ about:
 <li><div class="t-role">Postdoc</div><div class="t-where"><a href="https://www.wsl.ch/en/">WSL</a>, Switzerland</div><div class="t-proj">2023–2025</div></li>
 <li><div class="t-role">Ph.D. Ecology</div><div class="t-where"><a href="https://posgraduacao.ufrn.br/4846/programa/apresentacao">UFRN</a>, Brazil</div><div class="t-proj">2017–2021</div></li>
 <li><div class="t-role">Master in Ecology</div><div class="t-where"><a href="https://www.ufrgs.br/ppgecologia/">UFRGS</a>, Brazil</div><div class="t-proj">2015–2017</div></li>
-<li><div class="t-role">Bachelor in Environmental Sciences</div><div class="t-where">University of Barcelona</div><div class="t-proj">2008–2014</div></li>
+<li><div class="t-role">Bachelor in Environmental Sciences</div><div class="t-where"><a href="https://web.ub.edu/en/web/facultat-biologia">University of Barcelona</a></div><div class="t-proj">2008–2014</div></li>
 </ul>
 </div>
 </div>
