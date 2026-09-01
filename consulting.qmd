@@ -4,6 +4,8 @@ title: "Consulting"
 
 I take on **ecological modelling and data analysis** work for organisations that need defensible quantitative answers: an ecological question, a monitoring dataset, or an environmental claim that has to stand up to scrutiny.
 
+I consider myself an ecologist with expertise as **data steward** and in **research software engineering**: I am part of the [Data Stewardship Network](https://www.lib4ri.ch/data-stewardship-network) and an active member of the [Research Software Engineering community of Switzerland](https://rse.swiss/about/). This means the analyses I deliver come with the data management and software craft to keep them usable after the project ends.
+
 ### What I do
 
 -   **Ecological assessment of biodiversity** — designing and analysing surveys and monitoring programmes for aquatic and terrestrial communities, from species composition and traits to whole food webs.
@@ -12,7 +14,9 @@ I take on **ecological modelling and data analysis** work for organisations that
 
 -   **Causal inference** — separating "these two things move together" from "changing this one changes the other". I make assumptions explicit as directed acyclic graphs (DAGs) before fitting anything, so that a model estimates the effect you actually asked about.
 
--   **Ecosystem and food-web modelling** — Ecopath with Ecosim / [`Rpath`](notebooks/ecopath/Ecopath_with_Ecosim.qmd), empirical dynamic modelling and Gaussian-Process approaches for forecasting how communities respond to warming, nutrients and exploitation.
+-   **Ecosystem and food-web modelling** — Ecopath with Ecosim / [`Rpath`](notebooks/ecopath/Ecopath_with_Ecosim.qmd) for modelling how communities respond to warming, nutrients and exploitation.
+
+-   **Ecological forecasting** — predicting how populations, communities and ecosystem variables will evolve, with the uncertainty of each forecast stated. I routinely forecast using [empirical dynamic modelling](notebooks/edm/EDM_intro.qmd), autocorrelation structures, and nonlinear trends and seasonality with GAMs and/or [Gaussian processes](https://en.wikipedia.org/wiki/Gaussian_process).
 
 -   **Study design before data collection** — sample-size and power analysis by simulation, so you know in advance whether a planned survey can detect the effect that matters. This is usually the cheapest thing you will ever pay a statistician for.
 
