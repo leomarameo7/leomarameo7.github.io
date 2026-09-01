@@ -13,6 +13,8 @@ As a researcher living through a period of growing distrust in scientific practi
 
 -   **Since 2021** — Voluntary member of the [Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology (SORTEE)](https://www.sortee.org/).
 
+![Representing SORTEE at the Swiss Reproducibility Conference (10–11 June 2024, [reproducibility.ch](https://www.reproducibility.ch)).](images/workshops/sortee_swiss_repro_conf_2024.jpg){fig-align="center" width="60%"}
+
 -   Member of the Swiss [Data Stewardship Network](https://www.lib4ri.ch/data-stewardship-network), the network of data stewards across the four Swiss research institutes of the ETH domain.
 
 -   Active member of the [**Research Software Engineering (RSE) community of Switzerland**](https://rse.swiss/about/). I attended the Swiss RSE Annual Conference 2026 at ETH Zürich (31 August 2026), which brings together RSEs from academia, research, and industry.
