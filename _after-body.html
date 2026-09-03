@@ -5,10 +5,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   var cvLink = document.querySelector('a.about-link[href="/cv.pdf"]');
   var photo = document.querySelector('img.about-image[src="docs/media/LC.jpeg"]');
-  if (!cvLink || !photo) return;
+  if (!photo) return;
 
-  cvLink.classList.add("cv-link-under-photo");
-  photo.insertAdjacentElement("afterend", cvLink);
+  if (cvLink) {
+    cvLink.classList.add("cv-link-under-photo");
+    photo.insertAdjacentElement("afterend", cvLink);
+  }
 
   var PHOTO_SIZE = 190;
   var OFFSET_X = 24;
@@ -24,8 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     photo.style.left = left + "px";
     photo.style.top = top + "px";
-    cvLink.style.left = left + "px";
-    cvLink.style.top = (top + PHOTO_SIZE + GAP) + "px";
+    if (cvLink) {
+      cvLink.style.left = left + "px";
+      cvLink.style.top = (top + PHOTO_SIZE + GAP) + "px";
+    }
   }
 
   document.addEventListener("mousemove", function (e) {

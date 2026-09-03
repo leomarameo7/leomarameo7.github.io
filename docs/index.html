@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ad06ba4a6478f6f13af5c88b92a608af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0e8b3c9870bf56f1f1c8814c9a101a54.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ad06ba4a6478f6f13af5c88b92a608af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5b89f0046beffa25f9bcbf1cfeec7fe7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-cd2497f31b4dcbd4c133f2c37a7300d0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5b89f0046beffa25f9bcbf1cfeec7fe7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -410,22 +410,14 @@ Bachelor in Environmental Sciences
 </ul>
 </div>
 </div>
+<div class="home-actions">
+<p><a class="btn btn-outline-dark btn-lg" href="mailto:leocapi07@gmail.com"><i class="fa-solid fa-envelope" aria-label="envelope"></i>&nbsp; Email</a> <a class="btn btn-outline-dark btn-lg" href="cv.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i>&nbsp; CV</a></p>
+</div>
 <p>Created by Leonardo Capitani; Updated 03 September 2026</p>
 
 
 </section>
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="mailto:leocapi07@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope-fill"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="/cv.pdf" class="about-link" rel="" target="">
-    <i class="bi bi-file-earmark-pdf"></i>
-     <span class="about-link-text">CV</span>
-  </a>
-</div>
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main>  
 </div>
  <!-- /main -->
 <script>
@@ -435,10 +427,12 @@ Bachelor in Environmental Sciences
 document.addEventListener("DOMContentLoaded", function () {
   var cvLink = document.querySelector('a.about-link[href="/cv.pdf"]');
   var photo = document.querySelector('img.about-image[src="docs/media/LC.jpeg"]');
-  if (!cvLink || !photo) return;
+  if (!photo) return;
 
-  cvLink.classList.add("cv-link-under-photo");
-  photo.insertAdjacentElement("afterend", cvLink);
+  if (cvLink) {
+    cvLink.classList.add("cv-link-under-photo");
+    photo.insertAdjacentElement("afterend", cvLink);
+  }
 
   var PHOTO_SIZE = 190;
   var OFFSET_X = 24;
@@ -454,8 +448,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     photo.style.left = left + "px";
     photo.style.top = top + "px";
-    cvLink.style.left = left + "px";
-    cvLink.style.top = (top + PHOTO_SIZE + GAP) + "px";
+    if (cvLink) {
+      cvLink.style.left = left + "px";
+      cvLink.style.top = (top + PHOTO_SIZE + GAP) + "px";
+    }
   }
 
   document.addEventListener("mousemove", function (e) {

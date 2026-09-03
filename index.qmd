@@ -3,13 +3,6 @@ title: "<span style = 'display:none;'>Leonardo Capitani</span>"
 about: 
  template: jolla
  image: docs/media/LC.jpeg
- links:
-    - href: mailto:leocapi07@gmail.com
-      text: Email
-      icon: envelope-fill
-    - href: cv.pdf
-      text: CV
-      icon: file-earmark-pdf
 ---
 
 
@@ -42,6 +35,11 @@ about:
 </ul>
 </div>
 </div>
+
+::: {.home-actions}
+<a class="btn btn-outline-dark btn-lg" href="mailto:leocapi07@gmail.com">{{< fa envelope >}}&nbsp; Email</a>
+<a class="btn btn-outline-dark btn-lg" href="cv.pdf">{{< fa file-pdf >}}&nbsp; CV</a>
+:::
 
 ```{r}
 #| include: false
