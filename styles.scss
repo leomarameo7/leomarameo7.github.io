@@ -355,7 +355,8 @@ img.about-image[src="docs/media/LC.jpeg"] {
 /* Email / CV buttons under the About section (home page) */
 .home-actions {
   display: flex;
-  gap: 14px;
-  justify-content: center;
-  margin: 28px 0 10px;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 6px 0 0;
 }
