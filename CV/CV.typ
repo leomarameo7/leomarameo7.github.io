@@ -1,5 +1,6 @@
-//#import "modern-acad-cv.typ": *
-#import "@preview/modern-acad-cv:0.1.5": *
+// local copy of modern-acad-cv (edit src/lib.typ to tweak layout)
+#import "src/lib.typ": *
+//#import "@preview/modern-acad-cv:0.1.5": *
 
 
 

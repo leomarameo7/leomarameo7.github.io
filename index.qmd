@@ -17,9 +17,10 @@ about:
 ![Antonio Ligabue, *Volpe in fuga.* 1948. Private Collection.](docs/media/ligabue_volpe_in_fuga.jpg){fig-align="center" width="900"}
 :::
 
-> “Life itself is the most wonderful fairytale.”
->
-> Hans Christian Andersen
+::: {style="text-align:center; margin: 1.2em 0 1.6em 0;"}
+<p style="font-size: 1.6em; font-style: italic; font-weight: 600; margin-bottom: 0.2em;">“Life itself is the most wonderful fairytale.”</p>
+<p style="font-size: 1.05em; letter-spacing: 0.04em;">— Hans Christian Andersen</p>
+:::
 
 ### About
 

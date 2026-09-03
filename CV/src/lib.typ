@@ -351,8 +351,8 @@
   set page(
     paper: "a4",
     margin: (
-      top: 2.5cm,
-      bottom: 2.5cm,
+      top: 1.2cm,
+      bottom: 1.1cm,
       left: 1.5cm,
       right: 1.5cm,
     ),
@@ -382,6 +382,7 @@
     font: font,
     lang: lang,
   )
+  set par(leading: 0.58em)
 
   // Define how to show headings (default level)
   show heading: it => {
@@ -1203,10 +1204,13 @@
         // Handle the 'location' field
 if type(subset.at("location")) == dictionary {
   let loc = subset.location.at(lang)
-
-  location = link(loc.url)[loc.text]
-  if "country" in loc.keys() {
-    location += [, loc.country]
+  if type(loc) == dictionary {
+    location = link(loc.url)[#loc.text]
+    if "country" in loc.keys() {
+      location += [, #loc.country]
+    }
+  } else {
+    location = loc
   }
 } else {
   location = subset.location
@@ -1575,22 +1579,19 @@ if type(subset.at("location")) == dictionary {
         table.hline(start: 1, stroke: (paint: gray_color, thickness: 1.25pt, dash: "dotted")),
       )
     },
-    // Add legends for skill levels
+    // Add legends for skill levels (single compact row)
     table.cell(""),
     table.cell(colspan: 2)[
       #level-icons(1)
       #text(skills-leg1, size: 0.7em)
-    ],
-    table.cell(colspan: 2)[
-      #level-icons(3)
-      #text(skills-leg3, size: 0.7em)
-    ],
-    table.cell(""),
-    table.cell(colspan: 2)[
+      #h(0.5em)
       #level-icons(2)
       #text(skills-leg2, size: 0.7em)
     ],
     table.cell(colspan: 2)[
+      #level-icons(3)
+      #text(skills-leg3, size: 0.7em)
+      #h(0.5em)
       #level-icons(4)
       #text(skills-leg4, size: 0.7em)
     ],
