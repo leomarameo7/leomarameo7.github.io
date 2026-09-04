@@ -232,11 +232,9 @@ blockquote { // style blockquotes (for speech bubbles)
 } 
 
 
-/* Floating profile photo that follows the cursor (home page only, matched by
+/* Profile photo pinned to the upper-left corner (home page only, matched by
    its src since quarto's about-jolla template gives no hook for a custom
-   class). Position (left/top) is driven by mousemove in
-   _after-body.html; the transition here is what gives it a
-   trailing/floating feel instead of snapping straight to the pointer. */
+   class). */
 img.about-image[src="docs/media/LC.jpeg"] {
   position: fixed;
   top: 90px;
@@ -246,22 +244,8 @@ img.about-image[src="docs/media/LC.jpeg"] {
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   z-index: 999;
-  pointer-events: none;
-  transition: left 0.35s ease-out, top 0.35s ease-out;
 }
 
-/* CV link, kept just under the floating photo by the same mousemove handler */
-.cv-link-under-photo {
-  position: fixed;
-  top: 290px;
-  left: 20px;
-  z-index: 999;
-  background: $white;
-  padding: 4px 12px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: left 0.35s ease-out, top 0.35s ease-out;
-}
 
 /* About section: two-column prose + career timeline, modeled after
    https://github.com/EIvimeyCook/EIvimeyCook.github.io */
