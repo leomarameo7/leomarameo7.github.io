@@ -61,17 +61,17 @@ languages:
       pt: 
   german:
     name: German
-    level: 1
+    level: 2
     description:
       de: 
-      en: A1.3
+      en: A2.2
       pt: 
   english:
     name: English
     level: 3
     description:
       de: 
-      en: 
+      en: C1
       pt: 
   portugues:
     name: Portuguese
@@ -86,4 +86,11 @@ languages:
     description:
       de: 
       en: C1
+      pt: 
+  french:
+    name: French
+    level: 1
+    description:
+      de: 
+      en: A1.1
       pt: 
