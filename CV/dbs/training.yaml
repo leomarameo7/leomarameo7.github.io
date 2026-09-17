@@ -12,7 +12,7 @@ methods:
     location: Università della Svizzera italiana, Lugano
     left: "2024"
   course3b:
-    title: Species distribution modelling with R and INLA
+    title: Joint species distribution modelling with R-package Hmsc
     location: ISEC, Swansea, UK
     left: "2024"
   course3:
