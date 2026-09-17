@@ -15,6 +15,10 @@ methods:
     title: Spatial-temporal data analysis with R-INLA 
     location: Highlands Statistics
     left: "2023"
+  course3b:
+    title: Species distribution modelling with R and INLA
+    location: Highland Statistics Ltd.
+    left: "2023"
   course2: 
     title: Quantitative methods for population dynamics modelling
     location: Online
