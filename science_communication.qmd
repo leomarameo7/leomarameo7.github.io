@@ -8,6 +8,18 @@ Talks I have given and workshops I have organised during my academic career, mos
 
 ------------------------------------------------------------------------
 
+#### 18 September 2026 — *Propagation and predictability of regime shifts in lakes*
+
+**Poster, Eawag Symposium, Dübendorf, Switzerland.** Poster presenting the [SeeWandel-Klima](scientific_projects/seewandell/index.qmd) project's central question — can we detect, explain, and predict abrupt shifts in lake plankton communities? — using four decades of monthly monitoring on Lake Constance. With [Luis J. Gilarranz](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es), [Stefanie Eyring](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/), [Stephan B. Munch](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ), [Tanya L. Rogers](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ) and [Francesco Pomati](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/).
+
+[{{< fa file-pdf >}} Download the poster (PDF)](posters/2026-09-18_eawag-symposium_regime-shift-propagation-poster.pdf)
+
+::: {style="text-align:center; margin-top: 0.5em;"}
+![Scan to download the poster.](images/workshops/eawag_symposium_2026_poster_qr.png){width="180px" fig-alt="QR code linking to the poster PDF"}
+:::
+
+------------------------------------------------------------------------
+
 #### 25–27 August 2026 — *Advanced time series analysis using empirical dynamic modelling (EDM)*
 
 Eawag, Dübendorf, Switzerland. A three-day workshop I co-organised, bringing together participants interested in detecting causal relationships between variables without assuming a fixed model structure, and in forecasting how populations, communities and interactions respond to change over time. Participants were expected to arrive with a basic familiarity with dynamical systems, nonparametric regression, multivariable calculus and linear algebra.
