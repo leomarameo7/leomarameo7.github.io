@@ -14,10 +14,6 @@ Talks I have given and workshops I have organised during my academic career, mos
 
 [{{< fa file-pdf >}} Download the poster (PDF)](posters/2026-09-18_eawag-symposium_regime-shift-propagation-poster.pdf)
 
-::: {style="text-align:center; margin-top: 0.5em;"}
-![Scan to download the poster.](images/workshops/eawag_symposium_2026_poster_qr.png){width="180px" fig-alt="QR code linking to the poster PDF"}
-:::
-
 ------------------------------------------------------------------------
 
 #### 25–27 August 2026 — *Advanced time series analysis using empirical dynamic modelling (EDM)*
