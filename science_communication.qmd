@@ -4,13 +4,54 @@ title: "Science Communication"
 
 ### Talks, presentations and workshops
 
-Talks I have given and workshops I have organised during my academic career, most recent first. Slides are shared openly whenever I am free to do so.
+Talks I have given or am about to give, and workshops I have organised during my academic career, most recent first. Slides are shared openly whenever I am free to do so.
+
+------------------------------------------------------------------------
+
+#### 21 October 2026 — *Presentation at the FOREMA StatisticsLab Colloquium @ WSL, Birmensdorf, Switzerland*
+
+:::: {style="display:flex; flex-wrap:wrap; gap:1.5em; align-items:flex-start; justify-content:space-between;"}
+
+::: {style="flex:1 1 30em;"}
+FOREMA StatisticsLab Colloquium “Understanding Change Between Observations”. My presentation: AQUASCOPE: Integrating high resolution monitoring and trait-based modelling to understand and predict phytoplankton dynamics.
+
+How do we reconstruct processes when observations are incomplete, irregular or separated across time or space? This colloquium explores methods for estimating what happens between measurements and understanding how different approaches to “filling the gaps” shape the conclusions we ultimately draw.
+
+October 21st 2026, 14.00–16.00 with following Apéro, in the Englersaal, at WSL Birmensdorf.
+:::
+
+::: {style="flex:0 0 auto; background:#ffffff; padding:12px; border-radius:10px; line-height:0; margin-bottom:0.8em;"}
+![](images/workshops/wsl_logo.svg){width="84px" fig-alt="WSL logo"}
+:::
+
+::::
+
+Program:
+
+-   Introduction: Understanding change between NFI measurements, Gina Morano (WSL)
+-   Data fusion for space-time data: chances and pitfalls, Reinhard Furrer (UZH)
+-   A modular, multi-tier deep learning pipeline for gap-filling and virtual reconstruction of coupled forest micro-environmental time series, Mirko Lukovic (WSL)
+-   AQUASCOPE: Integrating high resolution monitoring and trait-based modelling to understand and predict phytoplankton dynamics, Leonardo Capitani (Eawag)
+-   Apéro
+
+[Online participation via Microsoft Teams](https://teams.microsoft.com/meet/325545047970391?p=XqrLQk0Rdc7gJc2cGy)\
+Meeting ID: 325 545 047 970 391; Passcode: an73bW76
+
+Contact: Roman Flury & Jonas Stillhard ([roman.flury@wsl.ch](mailto:roman.flury@wsl.ch), [jonas.stillhard@wsl.ch](mailto:jonas.stillhard@wsl.ch))
+
+:::: {style="display:flex; flex-wrap:wrap; gap:1.2em; align-items:center; margin:1em 0 1.5em 0;"}
+
+![](images/workshops/wsl_colloquium_2026_registration_qr.png){width="140px" fig-alt="QR code linking to the colloquium registration form"}
+
+Register: scan the QR code or use the link to the [registration form](https://forms.cloud.microsoft/e/20fwkRSB6m).
+
+::::
 
 ------------------------------------------------------------------------
 
 #### 18 September 2026 — *Propagation and predictability of regime shifts in lakes*
 
-**Poster, Eawag Symposium, Dübendorf, Switzerland.** Poster presenting the [SeeWandel-Klima](scientific_projects/seewandell/index.qmd) project's central question — can we detect, explain, and predict abrupt shifts in lake plankton communities? — using four decades of monthly monitoring on Lake Constance. With [Luis J. Gilarranz](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es), [Stefanie Eyring](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/), [Stephan B. Munch](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ), [Tanya L. Rogers](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ) and [Francesco Pomati](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/).
+Poster, Eawag Symposium, Dübendorf, Switzerland. Poster presenting the [SeeWandel-Klima](scientific_projects/seewandell/index.qmd) project's central question — can we detect, explain, and predict abrupt shifts in lake plankton communities? — using four decades of monthly monitoring on Lake Constance. With [Luis J. Gilarranz](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es), [Stefanie Eyring](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/), [Stephan B. Munch](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ), [Tanya L. Rogers](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ) and [Francesco Pomati](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/).
 
 [{{< fa file-pdf >}} Download the poster (PDF)](posters/2026-09-18_eawag-symposium_regime-shift-propagation-poster.pdf)
 
