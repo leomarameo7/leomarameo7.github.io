@@ -19,7 +19,7 @@ October 21st 2026, 14.00–16.00 with following Apéro, in the Englersaal, at WS
 :::
 
 ::: {style="flex:0 0 auto; background:#ffffff; padding:12px; border-radius:10px; line-height:0; margin-bottom:0.8em;"}
-![](images/workshops/wsl_logo.svg){width="84px" fig-alt="WSL logo"}
+![](images/workshops/wsl_logo_teal.png){width="84px" fig-alt="WSL logo"}
 :::
 
 ::::
