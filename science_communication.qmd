@@ -15,8 +15,6 @@ Talks I have given or am about to give, and workshops I have organised during my
 ::: {style="flex:1 1 30em;"}
 FOREMA StatisticsLab Colloquium “Understanding Change Between Observations”. My presentation: AQUASCOPE: Integrating high resolution monitoring and trait-based modelling to understand and predict phytoplankton dynamics.
 
-How do we reconstruct processes when observations are incomplete, irregular or separated across time or space? This colloquium explores methods for estimating what happens between measurements and understanding how different approaches to “filling the gaps” shape the conclusions we ultimately draw.
-
 October 21st 2026, 14.00–16.00 with following Apéro, in the Englersaal, at WSL Birmensdorf.
 :::
 
@@ -31,13 +29,7 @@ Meeting ID: 325 545 047 970 391; Passcode: an73bW76
 
 Contact: Roman Flury & Jonas Stillhard ([roman.flury@wsl.ch](mailto:roman.flury@wsl.ch), [jonas.stillhard@wsl.ch](mailto:jonas.stillhard@wsl.ch))
 
-:::: {style="display:flex; flex-wrap:wrap; gap:1.2em; align-items:center; margin:1em 0 1.5em 0;"}
-
-![](images/workshops/wsl_colloquium_2026_registration_qr.png){width="140px" fig-alt="QR code linking to the colloquium registration form"}
-
-Register: scan the QR code or use the link to the [registration form](https://forms.cloud.microsoft/e/20fwkRSB6m).
-
-::::
+Use the link to the [registration form](https://forms.cloud.microsoft/e/20fwkRSB6m).
 
 ------------------------------------------------------------------------
 
