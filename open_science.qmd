@@ -17,7 +17,7 @@ As a researcher living through a period of growing distrust in scientific practi
 
 -   Active member of the working group on [Research Assessment and Incentives](https://www.swissrn.org/contents/activities/research%20assessments%20and%20incentives/) of the Swiss Reproducibility Network, [SwissRN](https://www.swissrn.org). ![](images/workshops/swissrn_logo.png){width="70px" fig-alt="SwissRN logo" style="vertical-align: middle; margin-left: 0.6em;"}
 
--   Member of the Swiss [Data Stewardship Network](https://www.lib4ri.ch/data-stewardship-network), the network of data stewards across the four Swiss research institutes of the ETH domain.
+-   Member of the Swiss [Data Stewardship Network](https://www.lib4ri.ch/data-stewardship-network), the network of data stewards across the four Swiss research institutes of the ETH domain. ![](images/workshops/data_stewardship_network_logo.png){width="52px" fig-alt="Data Stewardship Network logo" style="vertical-align: middle; margin-left: 0.6em;"}
 
 -   Active member of the [**Research Software Engineering (RSE) community of Switzerland**](https://rse.swiss/about/). I attended the Swiss RSE Annual Conference 2026 at ETH Zürich (31 August 2026), which brings together RSEs from academia, research, and industry.
 
