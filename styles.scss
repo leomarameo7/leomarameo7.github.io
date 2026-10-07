@@ -344,3 +344,22 @@ img.about-image[src="docs/media/LC.jpeg"] {
   justify-content: flex-start;
   margin: 6px 0 0;
 }
+
+
+/* Science Communication: every event shows what (heading), when and where (meta line), then the description */
+.event-type {
+  color: #38a7bb;
+  margin-right: 0.3em;
+}
+.event-meta p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em 1.8em;
+  margin: 0.1em 0 0.9em;
+  padding-left: 0.8em;
+  border-left: 3px solid #38a7bb;
+}
+.event-meta i {
+  margin-right: 0.45em;
+  color: #38a7bb;
+}

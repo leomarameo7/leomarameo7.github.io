@@ -2,20 +2,36 @@
 title: "Science Communication"
 ---
 
-### Presentations, workshops, conferences and symposiums
+### Oral presentations, workshops, conferences and symposiums
 
-Presentations I have given or am about to give, and workshops, conferences and symposiums I have organised or taken part in during my academic career, most recent first. Slides are shared openly whenever I am free to do so.
+Presentations I have given or am about to give, and workshops, conferences and symposiums I have organised or taken part in during my academic career, most recent first. Slides, posters and course materials are shared openly whenever I am free to do so.
 
 ------------------------------------------------------------------------
 
-#### 21 October 2026 — *Presentation at the FOREMA StatisticsLab Colloquium @ WSL, Birmensdorf, Switzerland*
+#### [Presentation:]{.event-type} The Beaver as an Ecosystem Engineer – Effects on Water Quality and Freshwater Ecosystems
+
+::: {.event-meta}
+[{{< fa calendar-days >}} 23 October 2026, 09:15–17:15]{.event-when}
+[{{< fa location-dot >}} Aqua Viva conference “Clean Water – Challenges and Solutions for Swiss Waters”, Eawag, Dübendorf, Switzerland]{.event-where}
+:::
+
+The aim of the conference is to explore water quality in Swiss aquatic ecosystems from different perspectives. Rivers and streams are under increasing pressure from nutrients, pesticides, and other pollutants, with consequences for both ecosystems and human health. The conference will present different perspectives on potential solutions and discuss how water quality, biodiversity, and freshwater ecology can best be integrated.
+
+[See the programme and register by 15 October](https://aquaviva.ch/de/angebot/veranstaltungen/fachtagung-2026) (page in German).
+
+------------------------------------------------------------------------
+
+#### [Presentation:]{.event-type} AQUASCOPE: Integrating high resolution monitoring and trait-based modelling to understand and predict phytoplankton dynamics
 
 :::: {style="display:flex; flex-wrap:wrap; gap:1.5em; align-items:flex-start; justify-content:space-between;"}
 
 ::: {style="flex:1 1 30em;"}
-FOREMA StatisticsLab Colloquium “Understanding Change Between Observations”. My presentation: AQUASCOPE: Integrating high resolution monitoring and trait-based modelling to understand and predict phytoplankton dynamics.
+::: {.event-meta}
+[{{< fa calendar-days >}} 21 October 2026, 14.00–16.00, followed by an apéro]{.event-when}
+[{{< fa location-dot >}} FOREMA StatisticsLab Colloquium @ WSL, Englersaal, Birmensdorf, Switzerland]{.event-where}
+:::
 
-October 21st 2026, 14.00–16.00 with following Apéro, in the Englersaal, at WSL Birmensdorf.
+Talk at the FOREMA StatisticsLab Colloquium “Understanding Change Between Observations”.
 :::
 
 ::: {style="flex:0 0 auto; background:#ffffff; padding:12px; border-radius:10px; line-height:0; margin-bottom:0.8em;"}
@@ -32,9 +48,14 @@ Use the link to the [registration form](https://forms.cloud.microsoft/e/20fwkRSB
 
 ------------------------------------------------------------------------
 
-#### 18 September 2026 — *Propagation and predictability of regime shifts in lakes*
+#### [Poster:]{.event-type} Propagation and predictability of regime shifts in lakes
 
-Poster, Eawag Symposium, Dübendorf, Switzerland. Poster presenting the [SeeWandel-Klima](scientific_projects/seewandell/index.qmd) project's central question — can we detect, explain, and predict abrupt shifts in lake plankton communities? — using four decades of monthly monitoring on Lake Constance. With [Luis J. Gilarranz](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es), [Stefanie Eyring](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/), [Stephan B. Munch](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ), [Tanya L. Rogers](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ) and [Francesco Pomati](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/).
+::: {.event-meta}
+[{{< fa calendar-days >}} 18 September 2026]{.event-when}
+[{{< fa location-dot >}} Eawag Symposium, Dübendorf, Switzerland]{.event-where}
+:::
+
+Poster presenting the [SeeWandel-Klima](scientific_projects/seewandell/index.qmd) project's central question — can we detect, explain, and predict abrupt shifts in lake plankton communities? — using four decades of monthly monitoring on Lake Constance. With [Luis J. Gilarranz](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es), [Stefanie Eyring](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/), [Stephan B. Munch](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ), [Tanya L. Rogers](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ) and [Francesco Pomati](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/).
 
 [{{< fa file-pdf >}} Download the poster (PDF)](posters/2026-09-18_eawag-symposium_regime-shift-propagation-poster.pdf)
 
@@ -44,9 +65,14 @@ Poster, Eawag Symposium, Dübendorf, Switzerland. Poster presenting the [SeeWand
 
 ------------------------------------------------------------------------
 
-#### 25–27 August 2026 — *Advanced time series analysis using empirical dynamic modelling (EDM)*
+#### [Workshop:]{.event-type} Advanced time series analysis using empirical dynamic modelling (EDM)
 
-Eawag, Dübendorf, Switzerland. A three-day workshop I co-organised, bringing together participants interested in detecting causal relationships between variables without assuming a fixed model structure, and in forecasting how populations, communities and interactions respond to change over time. Participants were expected to arrive with a basic familiarity with dynamical systems, nonparametric regression, multivariable calculus and linear algebra.
+::: {.event-meta}
+[{{< fa calendar-days >}} 25–27 August 2026]{.event-when}
+[{{< fa location-dot >}} Eawag, Dübendorf, Switzerland]{.event-where}
+:::
+
+A three-day workshop I co-organised, bringing together participants interested in detecting causal relationships between variables without assuming a fixed model structure, and in forecasting how populations, communities and interactions respond to change over time. Participants were expected to arrive with a basic familiarity with dynamical systems, nonparametric regression, multivariable calculus and linear algebra.
 
 Dr. [Steve Munch](https://www.fisheries.noaa.gov/contact/stephan-munch) and Dr. [Tanya Rogers](https://www.fisheries.noaa.gov/contact/tanya-rogers-phd) (NOAA Fisheries and University of California, Santa Cruz) were invited to give the workshop.
 
@@ -62,9 +88,14 @@ If you are interested in the course materials, please [send me an email](contact
 
 ------------------------------------------------------------------------
 
-#### 25 June 2025 — *Microbial plankton uptake enhances the degradation of a biodegradable microplastic*
+#### [Flash talk:]{.event-type} Microbial plankton uptake enhances the degradation of a biodegradable microplastic
 
-Flash talk, Department of Aquatic Ecology, Eawag, Switzerland. Main results on how marine microbial plankton interact with PLGA (poly lactic-co-glycolic acid), a biodegradable microplastic: to what extent and in which size ranges ciliate and nanoflagellate communities take the particles up, and whether their grazing accelerates the polymer's degradation in seawater. Work carried out under the [AQUACOSM-plus](https://www.aquacosm.eu/) umbrella, in collaboration with Dr. Luca Schenone and [Ulises Lora](https://emm.icm.csic.es/ulises-lora/).
+::: {.event-meta}
+[{{< fa calendar-days >}} 25 June 2025]{.event-when}
+[{{< fa location-dot >}} Department of Aquatic Ecology, Eawag, Switzerland]{.event-where}
+:::
+
+Main results on how marine microbial plankton interact with PLGA (poly lactic-co-glycolic acid), a biodegradable microplastic: to what extent and in which size ranges ciliate and nanoflagellate communities take the particles up, and whether their grazing accelerates the polymer's degradation in seawater. Work carried out under the [AQUACOSM-plus](https://www.aquacosm.eu/) umbrella, in collaboration with Dr. Luca Schenone and [Ulises Lora](https://emm.icm.csic.es/ulises-lora/).
 
 Published as [Schenone et al. 2025](https://doi.org/10.1016/j.envpol.2025.126252), *Microbial plankton uptake enhances the degradation of a biodegradable microplastic* (Environmental Pollution) — code and data on [Zenodo](https://zenodo.org/records/14186093).
 
@@ -72,17 +103,27 @@ Published as [Schenone et al. 2025](https://doi.org/10.1016/j.envpol.2025.126252
 
 ------------------------------------------------------------------------
 
-#### 14 March 2024 — *Beavers influence stream dissolved organic carbon by coupling terrestrial–aquatic ecosystems*
+#### [Presentation:]{.event-type} Beavers influence stream dissolved organic carbon by coupling terrestrial–aquatic ecosystems
 
-[13th Workshop on Floodplain Ecology](https://www.wsl.ch/en/events-and-courses/auenoekologischer-workshop-1-1/), Swiss Federal Institute for Forest, Snow and Landscape Research (WSL), Switzerland. Talk on whether beaver ponds act as a source or a sink of dissolved organic carbon in Swiss streams, based on 16 sites sampled in 2021–2022. I present the causal hypothesis as a directed acyclic graph, the upstream–downstream sampling design behind the delta-DOC outcome, and the roles of aquatic primary production, terrestrial inputs, and pond age.
+::: {.event-meta}
+[{{< fa calendar-days >}} 14 March 2024]{.event-when}
+[{{< fa location-dot >}} [13th Workshop on Floodplain Ecology](https://www.wsl.ch/en/events-and-courses/auenoekologischer-workshop-1-1/), Swiss Federal Institute for Forest, Snow and Landscape Research (WSL), Switzerland]{.event-where}
+:::
+
+Talk on whether beaver ponds act as a source or a sink of dissolved organic carbon in Swiss streams, based on 16 sites sampled in 2021–2022. I present the causal hypothesis as a directed acyclic graph, the upstream–downstream sampling design behind the delta-DOC outcome, and the roles of aquatic primary production, terrestrial inputs, and pond age.
 
 [{{< fa file-pdf >}} Download the slides (PDF)](slides/2024-03_wsl_floodplain_workshop_beavers_doc.pdf)
 
 ------------------------------------------------------------------------
 
-#### December 2022 — *Aquecimento do mar e o Atol das Rocas*
+#### [Guest lecture:]{.event-type} Aquecimento do mar e o Atol das Rocas
 
-Universidade Federal do Rio Grande do Norte (UFRN), Brazil. Guest lecture on how ocean warming and marine heatwaves affect the food web of the Rocas Atoll, covering the thermal niches of the species involved, the long-term monitoring behind the work (PELD ILOC), and the modelling results and methods.
+::: {.event-meta}
+[{{< fa calendar-days >}} December 2022]{.event-when}
+[{{< fa location-dot >}} Universidade Federal do Rio Grande do Norte (UFRN), Brazil]{.event-where}
+:::
+
+Guest lecture on how ocean warming and marine heatwaves affect the food web of the Rocas Atoll, covering the thermal niches of the species involved, the long-term monitoring behind the work (PELD ILOC), and the modelling results and methods.
 
 *The presentation is in Portuguese.*
 
