@@ -78,7 +78,7 @@ Dr. [Steve Munch](https://www.fisheries.noaa.gov/contact/stephan-munch) and Dr. 
 
 Organised jointly by the [Pomati lab](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/) and the Machine Learning & Complex Systems group of [Marco Baity-Jesi](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/marco-baity-jesi/show/) at Eawag, with the support and funding of the [Biodiversity Center WSL–Eawag](https://biodiversitycenter.wsl.ch/en/?show=13).
 
-If you are interested in the course materials, please [send me an email](contact.qmd) and I would be happy to share them under personal agreement.
+If you are interested in the course materials, please [send me an email](contact.qmd) and I would be happy to share them under specific disclosure agreement.
 
 ::: {layout-ncol="2"}
 ![Working through the EDM theory during the workshop.](images/workshops/edm_workshop_classroom.jpg){fig-alt="Participants at the EDM workshop following a lecture at Eawag"}
