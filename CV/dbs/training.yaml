@@ -1,4 +1,8 @@
 methods:
+  course7:
+    title: Applied causal analysis methods for ecologists
+    location: WSL, Davos
+    left: "2026"
   course6:
     title: Introduction to Machine Learning with R
     location: SIB, Basel
