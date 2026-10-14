@@ -3,6 +3,10 @@ methods:
     title: Applied causal analysis methods for ecologists
     location: WSL, Davos
     left: "2026"
+  course7b:
+    title: Communicating in challenging situations - Resolving conflicts
+    location: Eawag, Dubendorf
+    left: "2026"
   course6:
     title: Introduction to Machine Learning with R
     location: SIB, Basel
@@ -33,16 +37,6 @@ methods:
     left: "2021"
     
 didactics:
-  course4:
-    title:
-      de: 
-      en: Communicating in challenging situations - Resolving conflicts
-      pt: 
-    location: 
-      de: 
-      en: Eawag, Dubendorf
-      pt: 
-    left: "2026"
   course3:
     title:
       de: 
