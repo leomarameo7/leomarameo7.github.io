@@ -33,6 +33,16 @@ methods:
     left: "2021"
     
 didactics:
+  course4:
+    title:
+      de: 
+      en: Communicating in challenging situations - Resolving conflicts
+      pt: 
+    location: 
+      de: 
+      en: Eawag, Dubendorf
+      pt: 
+    left: "2026"
   course3:
     title:
       de: 
