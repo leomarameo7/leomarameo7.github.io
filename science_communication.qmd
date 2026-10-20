@@ -19,6 +19,13 @@ The aim of the conference is to explore water quality in Swiss aquatic ecosystem
 
 [See the programme and register by 15 October](https://aquaviva.ch/de/angebot/veranstaltungen/fachtagung-2026) (page in German).
 
+::: {.slide-buttons}
+[{{< fa file-pdf >}} Slides EN (PDF)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_EN.pdf){.btn .btn-primary .btn-sm role="button"}
+[{{< fa file-code >}} Slides EN (HTML)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_EN.html){.btn .btn-primary .btn-sm role="button"}
+[{{< fa file-pdf >}} Folien DE (PDF)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_DE.pdf){.btn .btn-primary .btn-sm role="button"}
+[{{< fa file-code >}} Folien DE (HTML)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_DE.html){.btn .btn-primary .btn-sm role="button"}
+:::
+
 ------------------------------------------------------------------------
 
 #### [Presentation:]{.event-type} AQUASCOPE: Integrating high resolution monitoring and trait-based modelling to understand and predict phytoplankton dynamics
