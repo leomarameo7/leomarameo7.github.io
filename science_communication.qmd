@@ -40,12 +40,6 @@ Talk at the FOREMA StatisticsLab Colloquium “Understanding Change Between Obse
 
 ::::
 
-[Online participation via Microsoft Teams](https://teams.microsoft.com/meet/325545047970391?p=XqrLQk0Rdc7gJc2cGy)
-
-Contact: Roman Flury & Jonas Stillhard ([roman.flury@wsl.ch](mailto:roman.flury@wsl.ch), [jonas.stillhard@wsl.ch](mailto:jonas.stillhard@wsl.ch))
-
-Use the link to the [registration form](https://forms.cloud.microsoft/e/20fwkRSB6m).
-
 ------------------------------------------------------------------------
 
 #### [Poster:]{.event-type} Propagation and predictability of regime shifts in lakes
