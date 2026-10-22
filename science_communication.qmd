@@ -15,8 +15,6 @@ Presentations I have given or am about to give, and workshops, conferences and s
 [{{< fa location-dot >}} Aqua Viva conference “Clean Water – Challenges and Solutions for Swiss Waters”, Eawag, Dübendorf, Switzerland]{.event-where}
 :::
 
-The aim of the conference is to explore water quality in Swiss aquatic ecosystems from different perspectives. Rivers and streams are under increasing pressure from nutrients, pesticides, and other pollutants, with consequences for both ecosystems and human health. The conference will present different perspectives on potential solutions and discuss how water quality, biodiversity, and freshwater ecology can best be integrated.
-
 [See the programme and register by 15 October](https://aquaviva.ch/de/angebot/veranstaltungen/fachtagung-2026) (page in German).
 
 ::: {.slide-buttons}
@@ -24,6 +22,8 @@ The aim of the conference is to explore water quality in Swiss aquatic ecosystem
 [{{< fa file-code >}} Slides EN (HTML)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_EN.html){.btn .btn-primary .btn-sm role="button"}
 [{{< fa file-pdf >}} Folien DE (PDF)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_DE.pdf){.btn .btn-primary .btn-sm role="button"}
 [{{< fa file-code >}} Folien DE (HTML)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_DE.html){.btn .btn-primary .btn-sm role="button"}
+[{{< fa file-pdf >}} Diapositives FR (PDF)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_FR.pdf){.btn .btn-primary .btn-sm role="button"}
+[{{< fa file-code >}} Diapositives FR (HTML)](slides/2026-10_aqua_viva_beaver_ecosystem_engineer_FR.html){.btn .btn-primary .btn-sm role="button"}
 :::
 
 ------------------------------------------------------------------------
