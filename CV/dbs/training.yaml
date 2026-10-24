@@ -1,4 +1,8 @@
 methods:
+  course8:
+    title: "Empirical Dynamic Modelling: time-series analysis and forecast"
+    location: Eawag, Dubendorf
+    left: "2026"
   course7:
     title: Applied causal analysis methods for ecologists
     location: WSL, Davos
@@ -20,7 +24,7 @@ methods:
     location: Università della Svizzera italiana, Lugano
     left: "2024"
   course3b:
-    title: Joint species distribution modelling with R-package Hmsc
+    title: Joint species distribution modelling
     location: ISEC, Swansea, UK
     left: "2024"
   course3:
