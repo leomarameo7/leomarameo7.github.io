@@ -660,6 +660,9 @@ margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 .reveal .pc1 img{height:40px;width:40px;object-fit:contain;flex:0 0 auto;}
 .reveal .pc1 i{color:#6d7e96;font-style:normal;}
 .reveal .pc1.off{opacity:.38;}
+.reveal .gb1.tk{flex:none;width:100%;box-sizing:border-box;}
+.reveal .gb1.tk .gm2{font-size:19px;}
+.reveal .gtop canvas#att{background:#fff;}
 </style>
   <style type="text/css">.reveal
 div.sourceCode
@@ -1862,13 +1865,13 @@ GP learns <i>f</i>
 <i>k</i>(<i>x</i>,<i>x′</i>) = <i>σ</i><sup>2</sup> exp( − ∑<sub>i</sub> <i>φ<sub>i</sub></i> (<i>x<sub>i</sub></i> − <i>x′<sub>i</sub></i>)<sup>2</sup> )
 </div>
 </div>
-<div class="gb1 as">
+</div>
+<div class="gb1 as tk">
 <div class="gl">
-Assumptions
+Key assumption: Takens’ theorem
 </div>
 <div class="gm2">
-1 the series carry the dynamics<br>2 deterministic skeleton + noise<br>3 stationary rules, fine sampling
-</div>
+Delay coordinates of observed series, <i>x<sub>t</sub></i> = ( <i>y<sub>t</sub></i>, <i>y<sub>t−τ</sub></i>, …, <i>y<sub>t−(E−1)τ</sub></i> ) with <i>E</i> ≥ 2<i>d</i> + 1, rebuild a state space that is a smooth one-to-one image of the true attractor (dimension <i>d</i>): the geometry, and so the future, can be recovered from the data.
 </div>
 </div>
 </div>
@@ -3545,32 +3548,39 @@ window.QuartoSupport = function () {
       }
       function drawAtt(t, ang) {
         ax.clearRect(0, 0, W2, H2);
-        const c = Math.cos(ang), s = Math.sin(ang), sc = Math.min(W2, H2) * 0.78;
-        const P = i => { const a = Z[0][i] - .5, b = Z[1][i] - .5, d = Z[2][i] - .5; const xr = a * c + b * s, zr = -a * s + b * c; return [W2 / 2 + xr * sc, H2 / 2 - (d * 0.95 + zr * 0.28) * sc, zr]; };
-        ax.strokeStyle = '#b9c6d6'; ax.lineWidth = 1.2; ax.beginPath(); ax.rect(10, 10, W2 - 20, H2 - 20); ax.stroke();
-        ax.font = '700 22px Comfortaa'; ax.fillStyle = '#254396'; ax.fillText('x(t) = (x₁, x₂, x₃)', 22, H2 - 22);
+        const c = Math.cos(ang), s = Math.sin(ang), tl = 0.5, ct = Math.cos(tl), st = Math.sin(tl), sc = H2 * 0.5;
+        // 3D point (a, b, d) in [-.5, .5]^3 -> rotate about the vertical axis d, tilt, orthographic projection
+        const proj = (a, b, d) => { const xr = a * c - b * s, yr = a * s + b * c; return [W2 / 2 + xr * sc * 1.1, H2 / 2 + 6 - (d * ct + yr * st) * sc * 1.0, yr]; };
+        const o = -0.5, e = 0.5;
+        const corners = []; for (const a of [o, e]) for (const b of [o, e]) for (const d of [o, e]) corners.push([a, b, d]);
+        const edge = (p, q, col, w) => { const u = proj(...p), v = proj(...q); ax.strokeStyle = col; ax.lineWidth = w; ax.beginPath(); ax.moveTo(u[0], u[1]); ax.lineTo(v[0], v[1]); ax.stroke(); };
+        corners.forEach(p => corners.forEach(q => { const dif = (p[0] !== q[0]) + (p[1] !== q[1]) + (p[2] !== q[2]); if (dif === 1 && (p[0] + p[1] + p[2]) < (q[0] + q[1] + q[2])) edge(p, q, '#d3dde8', 1.2); }));
+        // the three coordinate axes from the corner (o, o, o), coloured as the three time series
+        [[[e + .1, o, o], 0, 'x\u2081'], [[o, e + .1, o], 1, 'x\u2082'], [[o, o, e + .1], 2, 'x\u2083']].forEach(([q, k, lab]) => {
+          edge([o, o, o], q, COLS[k], 4); const u = proj(...q); ax.fillStyle = COLS[k]; ax.beginPath(); ax.arc(u[0], u[1], 6, 0, 7); ax.fill();
+          ax.font = '700 22px Comfortaa'; ax.fillStyle = '#254396'; ax.fillText(lab, u[0] + 9, u[1] + 6);
+        });
+        const P = i => proj(Z[0][i] - .5, Z[1][i] - .5, Z[2][i] - .5);
         for (let i = 1; i <= t; i++) {
           const p = P(i - 1), q = P(i), age = (t - i) / N;
-          ax.strokeStyle = `rgba(37,67,150,${(0.15 + 0.85 * (1 - age * 0.8)).toFixed(2)})`; ax.lineWidth = 1.6;
+          ax.strokeStyle = `rgba(37,67,150,${(0.15 + 0.85 * (1 - age * 0.8)).toFixed(2)})`; ax.lineWidth = 1.7;
           ax.beginPath(); ax.moveTo(p[0], p[1]); ax.lineTo(q[0], q[1]); ax.stroke();
         }
         const p = P(t); ax.fillStyle = '#981711'; ax.beginPath(); ax.arc(p[0], p[1], 9, 0, 7); ax.fill(); ax.strokeStyle = '#fff'; ax.lineWidth = 2.5; ax.stroke();
-        // colour ticks showing the three coordinates of the current state
-        [0, 1, 2].forEach(k => { ax.fillStyle = COLS[k]; ax.beginPath(); ax.arc(W2 - 150 + k * 40, H2 - 30, 10, 0, 7); ax.fill(); ax.fillStyle = '#254396'; ax.font = '700 16px Comfortaa'; ax.fillText('x' + '₁₂₃'[k], W2 - 150 + k * 40 - 8, H2 - 50); });
       }
       let t0 = performance.now(), running = false, raf = 0;
       function frame(now) {
         if (!running) return;
         const dur = 18000, el = (now - t0) % (dur + 2500), u = Math.min(1, el / dur), t = Math.max(2, Math.floor(u * (N - 1)));
-        drawSeries(t); drawAtt(t, 0.5 + (now - t0) / 9000);
+        drawSeries(t); drawAtt(t, 0.3 + 0.5 * Math.sin((now - t0) / 3500));
         raf = requestAnimationFrame(frame);
       }
       function sync() {
-        if (/print-pdf/.test(location.search)) { drawSeries(N - 1); drawAtt(N - 1, 0.7); return; }
+        if (/print-pdf/.test(location.search)) { drawSeries(N - 1); drawAtt(N - 1, 0.3); return; }
         const here = !!document.querySelector('section.present #att');
         if (here && !running) { running = true; t0 = performance.now(); raf = requestAnimationFrame(frame); }
         if (!here && running) { running = false; cancelAnimationFrame(raf); }
-        if (!running) { drawSeries(N - 1); drawAtt(N - 1, 0.7); }
+        if (!running) { drawSeries(N - 1); drawAtt(N - 1, 0.3); }
       }
       function init() { Reveal.on('slidechanged', sync); Reveal.on('ready', sync); sync(); }
       if (window.Reveal && Reveal.isReady && Reveal.isReady()) init(); else if (window.Reveal) Reveal.on('ready', init); else window.addEventListener('load', () => window.Reveal && init());
