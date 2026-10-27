@@ -1303,12 +1303,12 @@ display:block!important;
 <i style="background:#128099"></i>positive<br><i style="background:#981711"></i>negative<br><i style="background:#8b7fb8"></i>positive or negative
 </div>
 </div>
-<span class="fragment"></span><span class="fragment"></span>
+<span class="fragment"></span>
 <div class="src">
 Network modified from Merz et al. 2023, Nat. Clim. Change.
 </div>
 <aside class="notes">
-<p>Click 1: temperature, phosphate and whitefish are added; the line intensity of every hypothesised link changes with the observed level of its source through 1975-2022 (phosphate fades, temperature rises). Click 2: spotlight on the hypotheses for the omnivores. Network after Merz et al. 2023.</p>
+<p>Key message: the plankton community changes across time. Temperature, phosphate and whitefish are linked to the guilds by the hypothesised links; line intensity follows the observed level of the source through 1975-2022 (phosphate fades, temperature rises). Click: spotlight on the hypotheses for the omnivores. Network after Merz et al. 2023.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -3097,7 +3097,7 @@ window.QuartoSupport = function () {
 
       let mode = 0, t0 = performance.now(), running = false, raf = 0, tFix = null;
       const CAPS = ['The plankton network of Merz et al. 2023: who can interact with whom',
-                    'Add temperature, phosphate and whitefish: link intensity = hypothesised strength × level of the source',
+                    'The plankton community changes across time',
                     'Spotlight: what we expect to drive the omnivores (Om)'];
       function draw(year) {
         const wide = mode >= 1;
@@ -3131,20 +3131,20 @@ window.QuartoSupport = function () {
       }
       function setMode() {
         const sl = document.querySelector('section.present #net') ? document.querySelector('section.present') : null;
-        mode = sl ? Math.min(2, sl.querySelectorAll('.fragment.visible').length) : 0;
+        mode = 1 + (sl ? Math.min(1, sl.querySelectorAll('.fragment.visible').length) : 0);
       }
       function sync() {
         const here = !!document.querySelector('section.present #net');
         setMode();
-        if (/print-pdf/.test(location.search)) { mode = 2; draw(2005); running = false; return; }
+        if (/print-pdf/.test(location.search)) { mode = 1; draw(1996); running = false; return; }
         if (here && !running) { running = true; t0 = performance.now(); raf = requestAnimationFrame(tick); }
         if (!here && running) { running = false; cancelAnimationFrame(raf); }
-        if (!running) draw(2005);
+        if (!running) draw(1996);
       }
       function init() {
         Reveal.on('slidechanged', sync); Reveal.on('fragmentshown', sync); Reveal.on('fragmenthidden', sync); Reveal.on('ready', sync);
         const isPrint = /print-pdf/.test(location.search);
-        if (isPrint) { mode = 2; draw(2005); } else sync();
+        if (isPrint) { mode = 1; draw(1996); } else sync();
       }
       if (window.Reveal && Reveal.isReady && Reveal.isReady()) init(); else if (window.Reveal) Reveal.on('ready', init); else window.addEventListener('load', () => window.Reveal && init());
     })();
