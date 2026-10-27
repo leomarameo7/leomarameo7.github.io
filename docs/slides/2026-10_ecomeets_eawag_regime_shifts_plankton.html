@@ -663,6 +663,11 @@ margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 .reveal .gb1.tk{flex:none;width:100%;box-sizing:border-box;}
 .reveal .gb1.tk .gm2{font-size:19px;}
 .reveal .gtop canvas#att{background:#fff;}
+.reveal .tkrow{display:flex;gap:14px;}
+.reveal .tkrow .gb1{flex:1;}
+.reveal .gb1.adv{border-left-color:var(--blue);}
+.reveal .gm3{font-size:25px;font-weight:700;color:var(--navy);line-height:1.3;}
+.reveal .gm4{font-size:20px;font-weight:400;color:var(--red);}
 </style>
   <style type="text/css">.reveal
 div.sourceCode
@@ -1861,12 +1866,22 @@ GP learns <i>f</i>
 </div>
 </div>
 </div>
-<div class="gb1 as tk">
+<div class="tkrow">
+<div class="gb1 adv">
 <div class="gl">
-Key assumption: Takens’ theorem
+Main advantage of EDM
 </div>
-<div class="gm2">
-Delay coordinates of observed series, <i>x<sub>t</sub></i> = ( <i>y<sub>t</sub></i>, <i>y<sub>t−τ</sub></i>, …, <i>y<sub>t−(E−1)τ</sub></i> ) with <i>E</i> ≥ 2<i>d</i> + 1, rebuild a state space that is a smooth one-to-one image of the true attractor (dimension <i>d</i>): the geometry, and so the future, can be recovered from the data.
+<div class="gm3">
+No model equations: the data reveal the dynamics
+</div>
+</div>
+<div class="gb1 as">
+<div class="gl">
+Takens’ theorem (key assumption)
+</div>
+<div class="gm3">
+Delay coordinates rebuild the attractor<br><span class="gm4"><i>E</i> ≥ 2<i>d</i> + 1</span>
+</div>
 </div>
 </div>
 </div>
