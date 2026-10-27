@@ -1346,9 +1346,6 @@ display:block!important;
 <div class="period">
 Study period: <b>1975–2022</b> · monthly time series
 </div>
-<div class="legend">
-<i style="background:#128099"></i>positive<br><i style="background:#981711"></i>negative<br><i style="background:#8b7fb8"></i>positive or negative
-</div>
 </div>
 <span class="fragment"></span>
 <div class="src">
@@ -3121,18 +3118,18 @@ window.QuartoSupport = function () {
       const W = 1200, H = 560;
       const P = {   // positions
         Pr: [470, 48], Om: [680, 48],
-        Ci: [250, 190], He: [420, 190], Ro: [590, 190], Mi: [900, 190],
+        Ci: [250, 190], He: [420, 190], Mi: [900, 190],
         Cy: [215, 380], Gr1: [318, 380], Gr2: [421, 380], Di1: [530, 380], Di2: [633, 380],
         Go1: [750, 380], Go2: [853, 380], Cr1: [965, 380], Cr2: [1068, 380],
         T: [62, 235], Ph: [640, 488], Wf: [1128, 70], Si: [400, 488], Ni: [150, 488]
       };
       const KEY = { T: 'T', P: 'Ph', W: 'Wf', S: 'Si', N: 'Ni' };
       const POS = c => P[KEY[c] || c];
-      const COL = { Pr: '#c9514c', Om: '#e07a72', He: '#cfe0f0', Ro: '#6d8cc4', Ci: '#8a7bb5', Mi: '#f4e3a1',
+      const COL = { Pr: '#c9514c', Om: '#e07a72', He: '#cfe0f0', Ci: '#8a7bb5', Mi: '#f4e3a1',
                     Cy: '#86b27b', Gr1: '#86b27b', Gr2: '#86b27b', Di1: '#86b27b', Di2: '#86b27b', Go1: '#86b27b', Go2: '#86b27b', Cr1: '#86b27b', Cr2: '#86b27b' };
       const DARK = { He: 1, Mi: 1 };      // dark silhouettes on light circles
-      const OFF = { Ci: 1, Ro: 1 };       // not in the Lake Constance data
-      const LAB = { Pr: 'Pr', Om: 'Om', He: 'He', Ro: 'Ro', Ci: 'Ci', Mi: 'Mi', Cy: 'Cy', Gr1: 'Gr₁', Gr2: 'Gr₂', Di1: 'Di₁', Di2: 'Di₂', Go1: 'Go₁', Go2: 'Go₂', Cr1: 'Cr₁', Cr2: 'Cr₂' };
+      const OFF = { Ci: 1 };       // not in the Lake Constance data
+      const LAB = { Pr: 'Pr', Om: 'Om', He: 'He', Ci: 'Ci', Mi: 'Mi', Cy: 'Cy', Gr1: 'Gr₁', Gr2: 'Gr₂', Di1: 'Di₁', Di2: 'Di₂', Go1: 'Go₁', Go2: 'Go₂', Cr1: 'Cr₁', Cr2: 'Cr₂' };
       const SIGN = { '+': '#128099', '-': '#981711', '+/-': '#8b7fb8' };
       const DRV = { T: '#e8743b', P: '#c99a10', W: '#254396', S: '#5f7f8f', N: '#2e9d6b' };
       const svg = document.createElementNS(NS, 'svg');
@@ -3142,7 +3139,7 @@ window.QuartoSupport = function () {
       const gBase = el('g', { class: 'base' }), gLinks = el('g', { class: 'links' }), gNodes = el('g', { class: 'nodes' }), gDrv = el('g', { class: 'drivers' }), gLab = el('g', { class: 'labs' });
 
       // --- base network (Merz et al. 2023, possible interactions)
-      NET.base.forEach(([a, b, t]) => {
+      NET.base.filter(([a, b]) => a !== 'Ro' && b !== 'Ro').forEach(([a, b, t]) => {
         const [x1, y1] = POS(a), [x2, y2] = POS(b);
         el('line', { x1, y1, x2, y2, class: 'be be-' + t }, gBase);
       });
@@ -3157,7 +3154,7 @@ window.QuartoSupport = function () {
         const [x1, y1] = POS(l.from), [x2, y2] = POS(l.to);
         const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy), bend = (['T', 'P', 'W'].includes(l.from) ? 0.16 : 0.08) * (l.from < l.to ? 1 : -1);
         const mx = (x1 + x2) / 2 - dy * bend, my = (y1 + y2) / 2 + dx * bend;
-        const col = DRV[l.from] || SIGN[l.sign];
+        const col = '#4b5a6b';
         const path = el('path', { d: `M${x1},${y1} Q${mx},${my} ${x2},${y2}`, fill: 'none', stroke: col, 'stroke-linecap': 'round', class: 'hl' }, gLinks);
         return Object.assign({ path, drv: !!DRV[l.from], col }, l);
       });
