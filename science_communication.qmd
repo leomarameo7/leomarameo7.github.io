@@ -15,7 +15,9 @@ Presentations I have given or am about to give, and workshops, conferences and s
 [{{< fa location-dot >}} Ecomeets at Eawag, Dübendorf, Switzerland]{.event-where}
 :::
 
-Talk at the Ecomeets at Eawag series on abrupt changes in lake plankton communities, based on four decades of monthly monitoring of Lake Constance within the [SeeWandel-Klima](scientific_projects/seewandell/index.qmd) project. I show how regime shifts are detected, how a Gaussian-process empirical dynamic model with hypotheses from the literature explains the drop of the omnivorous zooplankton in 2014, and whether shifts propagate through the plankton network. With [Luis J. Gilarranz](https://scholar.google.com/citations?user=zfw7_-cAAAAJ&hl=es), [Stefanie Eyring](https://www.eawag.ch/de/ueber-uns/portraet/organisation/mitarbeitende/profile/stefanie-eyring/show/), [Stephan B. Munch](https://scholar.google.com/citations?hl=es&user=-3etC50AAAAJ), [Tanya L. Rogers](https://scholar.google.com/citations?hl=es&user=1vigKlkAAAAJ) and [Francesco Pomati](https://www.eawag.ch/en/about-us/portrait/organisation/staff/profile/francesco-pomati/show/).
+Talk at the Ecomeets at Eawag series on abrupt changes in lake plankton communities, based on four decades of monthly monitoring of Lake Constance within the [SeeWandel-Klima](scientific_projects/seewandell/index.qmd) project.
+
+Since this presentation contains sensitive data that are under a disclosure agreement, please [write me an email](mailto:leocapi07@gmail.com) to get open access to it.
 
 ::: {.slide-buttons}
 [{{< fa file-pdf >}} Slides (PDF)](slides/2026-10_ecomeets_eawag_regime_shifts_plankton.pdf){.btn .btn-primary .btn-sm role="button"}
