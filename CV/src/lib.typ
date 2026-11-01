@@ -289,7 +289,9 @@
   // Title and social stack
   stack(
     dir: ltr,
+    spacing: 1.2em,
     titleStack,
+    align(horizon, box(width: 2.6cm, height: 2.6cm, radius: 50%, clip: true, image("../photo.jpg", width: 2.6cm, height: 2.6cm))),
     align(
       right + top,
       socialBlock,
