@@ -41,6 +41,16 @@ methods:
     left: "2021"
     
 didactics:
+  course4:
+    title:
+      de:
+      en: Media literacy for researchers and professors
+      pt:
+    location:
+      de:
+      en: ETH Zurich
+      pt:
+    left: "2026"
   course3:
     title:
       de: 
