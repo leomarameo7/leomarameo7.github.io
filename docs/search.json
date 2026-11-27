@@ -384,7 +384,7 @@
     "href": "notebooks/index_notebooks.html",
     "title": "Learning",
     "section": "",
-    "text": "Open Science\n\nRegistered Reports: what are they? — I explain the two-stage Registered Report format, how it differs from a preregistration, and where to find real Stage 1 and Stage 2 examples in ecology.\n\n\n\nEcological Modelling\n\nEmpirical Dynamic Modelling: an introduction — I introduce state-space reconstruction, Simplex projection, and S-map using rEDM, and show you how to tell a chaotic population from a noisy one.\nConvergent Cross Mapping — I use rEDM to test causal links between time series, on both a synthetic system and a classic predator-prey dataset, and address whether CCM needs to control for confounders the way regression does.\nEcopath with Ecosim, and its R counterpart Rpath — I introduce the EwE mass-balance framework, then rebuild my published Rocas Atoll food-web model in Rpath and run it forward under warming scenarios — including where the model stops being believable.\nGaussian Processes — I introduce Gaussian Process regression and the GP-EDM framework, working through the maths and then a few ecological toy examples.\n\n\n\nStatistics\n\nPriors — I visualize a handful of commonly used priors (Gamma, Exponential, Half-Cauchy, and more) so I can build some intuition about what they imply before I use them.\nMeasurement Error — I use brms to simulate how measurement error in a predictor and/or an outcome distorts a simple regression’s coefficients.\nSample Size Planning — I simulate an ecological dataset at increasing sample sizes to show you, concretely, how the number of observations you collect shapes the power and precision of a simple linear brms model.\n\n\n\n\n\n Back to top",
+    "text": "Open Science\n\nRegistered Reports: what are they? — I explain the two-stage Registered Report format, how it differs from a preregistration, and where to find real Stage 1 and Stage 2 examples in ecology.\n\n\n\nEcological Modelling\n\nEmpirical Dynamic Modelling: an introduction — I introduce state-space reconstruction, Simplex projection, and S-map using rEDM, and show you how to tell a chaotic population from a noisy one.\nConvergent Cross Mapping — I use rEDM to test causal links between time series, on both a synthetic system and a classic predator-prey dataset, and address whether CCM needs to control for confounders the way regression does.\nEcopath with Ecosim, and its R counterpart Rpath — I introduce the EwE mass-balance framework, then rebuild my published Rocas Atoll food-web model in Rpath and run it forward under warming scenarios — including where the model stops being believable.\nBifurcation diagrams — Four slides, two of them animated, on how to build a bifurcation diagram from a GP-EDM model, with the Lake Zurich example of Medeiros et al. (2025) and a look at the uncertainty.\nGaussian Processes — I introduce Gaussian Process regression and the GP-EDM framework, working through the maths and then a few ecological toy examples.\n\n\n\nStatistics\n\nPriors — I visualize a handful of commonly used priors (Gamma, Exponential, Half-Cauchy, and more) so I can build some intuition about what they imply before I use them.\nMeasurement Error — I use brms to simulate how measurement error in a predictor and/or an outcome distorts a simple regression’s coefficients.\nSample Size Planning — I simulate an ecological dataset at increasing sample sizes to show you, concretely, how the number of observations you collect shapes the power and precision of a simple linear brms model.\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Learning",
       "All notebooks"
@@ -1123,5 +1123,77 @@
     "title": "Research projects",
     "section": "Past Projects",
     "text": "Past Projects\n\n\n\n\n\n\n\n\n\n\nBeavers and their influence on terrestrial–aquatic ecosystems\n\n\n2023–2025\n\n\nHow beaver engineering reshapes species interactions and carbon cycling across the land–water boundary of Swiss streams.\n\n\n\n\n\n\n\n\n\n\n\n\nAtlantic reef ecosystems and sea warming\n\n\n2017–2021\n\n\nFood-web modelling and field experiments at Rocas Atoll to project how ocean warming will reshape a near-pristine tropical reef.\n\n\n\n\n\n\n\n\n\n\n\n\nAmazonian river food webs, deforestation and small-scale fisheries\n\n\n2015–2017\n\n\nFood-web modelling of the Tapajós River to anticipate how deforestation and fishing pressure may reshape Amazonian small-scale fisheries.\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "notebooks/bifurcation/bifurcation_diagrams.html",
+    "href": "notebooks/bifurcation/bifurcation_diagrams.html",
+    "title": "Bifurcation diagrams",
+    "section": "",
+    "text": "Four slides on how a bifurcation diagram is built from a Gaussian Process regression with time-delay embedding (GP-EDM), following Medeiros et al. (2025). Move between slides with the arrows; the first two are animated and have a video bar to play, pause and move back and forth.\nOpen the slides full screen",
+    "crumbs": [
+      "Learning",
+      "Ecological Modelling",
+      "Bifurcation diagrams"
+    ]
+  },
+  {
+    "objectID": "notebooks/bifurcation/bifurcation_diagrams.html#how-a-bifurcation-diagram-is-built",
+    "href": "notebooks/bifurcation/bifurcation_diagrams.html#how-a-bifurcation-diagram-is-built",
+    "title": "Bifurcation diagrams",
+    "section": "1. How a bifurcation diagram is built",
+    "text": "1. How a bifurcation diagram is built\nFix a driver, predict the next month, feed the prediction back as the new input many times, and plot the late values against the driver. Then change the driver and repeat. The equation on this slide is an illustration with invented numbers.",
+    "crumbs": [
+      "Learning",
+      "Ecological Modelling",
+      "Bifurcation diagrams"
+    ]
+  },
+  {
+    "objectID": "notebooks/bifurcation/bifurcation_diagrams.html#the-lake-zurich-example",
+    "href": "notebooks/bifurcation/bifurcation_diagrams.html#the-lake-zurich-example",
+    "title": "Bifurcation diagrams",
+    "section": "2. The Lake Zurich example",
+    "text": "2. The Lake Zurich example\nThe same recipe with real data: large green algae and phosphate. The model is trained on January 1978 to October 1987; for 301 phosphate levels it is iterated 1000 months and the last 100 are plotted. It is a re-run of the authors’ data and code.",
+    "crumbs": [
+      "Learning",
+      "Ecological Modelling",
+      "Bifurcation diagrams"
+    ]
+  },
+  {
+    "objectID": "notebooks/bifurcation/bifurcation_diagrams.html#algae-phosphate-and-the-shift",
+    "href": "notebooks/bifurcation/bifurcation_diagrams.html#algae-phosphate-and-the-shift",
+    "title": "Bifurcation diagrams",
+    "section": "3. Algae, phosphate and the shift",
+    "text": "3. Algae, phosphate and the shift\nThe monthly series from 1978 to 2019, with the shift that Medeiros et al. identify in November 1987.",
+    "crumbs": [
+      "Learning",
+      "Ecological Modelling",
+      "Bifurcation diagrams"
+    ]
+  },
+  {
+    "objectID": "notebooks/bifurcation/bifurcation_diagrams.html#uncertainty-about-the-function",
+    "href": "notebooks/bifurcation/bifurcation_diagrams.html#uncertainty-about-the-function",
+    "title": "Bifurcation diagrams",
+    "section": "4. Uncertainty about the function",
+    "text": "4. Uncertainty about the function\nA Gaussian Process gives a best guess of the monthly prediction function, \\(\\mu\\), and the uncertainty around it, \\(S\\). Panel a) iterates only \\(\\mu\\). Panel b) iterates 500 functions drawn from the posterior \\(f \\sim GP(\\mu, S)\\) and shows how high the algae get across them. Here the model is trained on 1978 to 2019, so this describes the transition with its uncertainty and is not an early warning. The uncertainty covers the function only: the model’s settings are held fixed and no monthly noise is added. This panel is my own addition to the authors’ method.",
+    "crumbs": [
+      "Learning",
+      "Ecological Modelling",
+      "Bifurcation diagrams"
+    ]
+  },
+  {
+    "objectID": "notebooks/bifurcation/bifurcation_diagrams.html#source",
+    "href": "notebooks/bifurcation/bifurcation_diagrams.html#source",
+    "title": "Bifurcation diagrams",
+    "section": "Source",
+    "text": "Source\nMedeiros LP, Sorenson DK, Johnson BJ, Palkovacs EP, Munch SB (2025). Revealing unseen dynamical regimes of ecosystems from population time-series data. PNAS 122, e2416637122. https://doi.org/10.1073/pnas.2416637122. Data and code: https://github.com/lucaspdmedeiros/gpedm-regime-shifts (MIT License).",
+    "crumbs": [
+      "Learning",
+      "Ecological Modelling",
+      "Bifurcation diagrams"
+    ]
   }
 ]
